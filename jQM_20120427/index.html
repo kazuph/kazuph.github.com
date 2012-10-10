@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ja-JP">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title></title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="css/impress.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <script src="src/prettify.js" type="text/javascript"></script>
+    <link href="src/prettify.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="impress-not-supported" onload="prettyPrint()">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+<div id="impress">
+
+<div id="title" class="step" data-y="0" data-x="0">
+<h1><a href="http://kazuph.github.com/jQuery_Mobile_Study_20120427">jQuery Mobileで</br>やるスマフォ最適化</a></h1>
+
+<p>@kazuph</p>
+
+<p>2012/04/27</p>
+
+</div>
+<div class="step" data-y="0" data-x="1200">
+<h2>自己紹介</h2>
+
+<ul>
+<li>@kazuph</li>
+<li>2年目エンジニア</li>
+<li>使用言語：
+<ul>
+<li>主にPerl(そんなころもありました)</li>
+<li>今はJava(Android), Objective-C(iPhone)</li>
+<li>仕事以外では何故かJavaScript(Processing.js, easelJS)</li>
+</ul></li>
+<li>仕様エディタ:
+<ul>
+<li>Vim(EclipseとXcodeのキーバインドも当然Vim)</li>
+</ul></li>
+<li>成果物:
+<ul>
+<li><a href="https://github.com/kazuph/TeiClock">全体会議用タイマー</a></li>
+<li><a href="http://www.tspaa.jp/nominate.html">Unity疾走アプリ：CADash!</a></li>
+<li><a href="http://fumit.blogspot.jp/2012/04/international-space-app-challenge-nasa.html">International Space Apps Challenge Tokyo 提出作品：LinkAStar(第2位！)</a></li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="2400">
+<h2>提供</h2>
+
+<ul>
+<li>impress.js
+<ul>
+<li><a href="https://github.com/bartaz/impress.js/">https://github.com/bartaz/impress.js/</a></li>
+</ul></li>
+<li>markdown2impress
+<ul>
+<li><a href="https://github.com/yoshiki/markdown2impress">https://github.com/yoshiki/markdown2impress</a></li>
+</ul></li>
+<li>実際にはこれらを書き換えて使っていますYO( ･`д･´)</li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="3600">
+<h1>jQuery Mobile</h1>
+
+<p>beyonde bad know-how
+<img src="http://jquerymobile.com/wp-content/uploads/2011/06/jquery-mobile-devices-beta.png" alt="jQuery Mobile"></p>
+
+</div>
+<div class="step" data-y="0" data-x="4800">
+<h2>Agenda（15分）</h2>
+
+<ul>
+<li>jQM(jQuery Mobile)</li>
+<li>スタートアップガイド</li>
+<li>60点のその先</li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="0">
+<h1>jQM</h1>
+
+</div>
+<div class="step" data-y="800" data-x="1200">
+<h2>jQM(jQuery Mobile)とは</h2>
+
+<ul>
+<li>スマフォのために用意されたjQuery製のフレームワーク</li>
+<li>簡単にスマフォアプリのような外観と挙動を付加するすることができる
+<ul>
+<li>ボタンやフォームなどがスマフォでのタッチ操作に最適化されている</li>
+</ul></li>
+<li>HTMLの初心者でもある程度までの実装が容易</li>
+<li>サポートされているプラットフォームが多い
+<ul>
+<li>※ただしCSSとJSの知識がないと60点のサイトしかつくれない</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="2400">
+<h2>デザイン &amp; UI</h2>
+
+<ul>
+<li>正直リファレンスを見るのが一番の近道
+<ul>
+<li><a href="http://jquerymobile.com/demos/1.1.0/">本家サイトによるDEMO</a></li>
+</ul></li>
+<li>新機能の紹介
+<ul>
+<li><a href="http://screw-axis.com/2012/04/20/jquery-mobile-1-1-0/">jQM1.1の新機能</a></li>
+</ul></li>
+<li>導入事例
+<ul>
+<li><a href="http://ascii.jp/elem/000/000/674/674677/">国内での適用事例</a></li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="3600">
+<h1>スタートアップガイド</h1>
+
+</div>
+<div class="step" data-y="800" data-x="4800">
+<h2>導入方法</h2>
+
+<ul>
+<li>以下をheadに追加</li>
+</ul>
+
+<script src="https://gist.github.com/2501207.js?file=gistfile1.txt"></script>
+
+</div>
+<div class="step" data-y="1600" data-x="0">
+<h2>魔法の呪文(Zencoding)</h2>
+
+<script src="https://gist.github.com/2501353.js?file=gistfile1.html"></script>
+
+<p>※書いててZencoding使えない人にはなんの意味もないことに気づいたw</p>
+
+<p><a href="https://gist.github.com/2504014">生成されるCODE</a></p>
+
+</div>
+<div class="step" data-y="1600" data-x="1200">
+<h2>jQM初期設定</h2>
+
+<script src="https://gist.github.com/2504175.js?file=gistfile1.html"></script>
+
+</div>
+<div class="step" data-y="1600" data-x="2400">
+<h2>DEMO</h2>
+
+</div>
+<div class="step" data-y="1600" data-x="3600">
+<h2>レイアウトを作成する便利ツール</h2>
+
+<p><a href="http://www.codiqa.com/">GUIでコーディングできる『Codiqa』</a>
+<img src="http://codiqa.com/static/images/v3/home/cta_image_right_builder.png" alt="Codiqa"></p>
+
+</div>
+<div class="step" data-y="1600" data-x="4800">
+<h2>簡単かも！</h2>
+
+</div>
+<div class="step" data-y="2400" data-x="0">
+<h2>デザイン</h2>
+
+<ul>
+<li>HTMLしかいじれないとどれも同じ見た目になってしまう</li>
+<li>jQMで実現できるレイアウトに制限があるので基本的にないものはCSSで実装するしかない</li>
+<li>デザイン性のあるCSSを書くのは敷居が高い
+<ul>
+<li>デザインロールというtoolもある</li>
+<li><a href="http://jquerymobile.com/themeroller/">GUIでcssを変更できる『ThemeRoller for jQuery Mobile』</a></li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="1200">
+<h1>60点のその先</h1>
+
+<ul>
+<li>その先のデザイン</li>
+<li>バッドノウハウを犯す前に・・・</li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="2400">
+<h2>独自にCSSを適用する</h2>
+
+<ul>
+<li>実際に弊社のプロダクト紹介</li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="3600">
+<h2>伝家の宝刀<br/>でーたえーじゃっくすふぉーるす！</h2>
+
+<ul>
+<li>という名のバッドノウハウ</li>
+<li>jQMを使うとしばしばよくわからないバグが発生する
+<ul>
+<li>jQueryMobileでAjaxスライドする実装をしたら元々動いていたjsがbindされまくって挙動がおかしくなる</li>
+</ul></li>
+<li>ネットで検索すると・・・
+<ul>
+<li>何かJSでトラブってたらとりあえずaタグやformに以下を追加・・・?
+<code class="prettyprint">
+data-ajax="false"
+</code></li>
+</ul></li>
+<li>これで問題が解消されることが多いが根本的な解決になっていない</li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="4800">
+<h2>そもそもAjaxを使わないようにする方法もあるが…</h2>
+
+<ul>
+<li>設定方法
+<code class="prettyprint">
+jQuery(document).bind("mobileinit", function(){
+　　jQuery.mobile.ajaxEnabled = false;
+});
+</code></li>
+<li>スライド遷移が使えなくなるのでjQMらしさがそこなわれる</li>
+<li>ていうかこれを無効にしたらjQMを使う意味を見失う(他のデザインだけのフレームワークでいい！)</li>
+<li>もっと根本的に解決したい！</li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="0">
+<h2>jQM独自のメソッドを覚える(一例)</h2>
+
+<ul>
+<li>jQueryMobile != jQuery</li>
+<li>jQM用に用意されたメソッド(関数｜手段)がたくさんあるよ！
+<ul>
+<li>Ajax遷移が完了したら実行される<a href="http://d.hatena.ne.jp/pikotea/20120405/1333631161">関数</a>
+<code class="prettyprint">
+$(document).delegate('#page1',  'pageshow',  function(){
+///
+});
+</code></li>
+<li>Ajaxで要素を追加するときに、jQMのcssを適用する<a href="http://hisasann.com/housetect/2011/06/jquerymobile_1.html">関数</a>
+<code class="prettyprint">
+$('ul').listview('refresh');
+</code></li>
+</ul></li>
+<li>jQueryMobileによって引き起こされる問題はjQueryMobileで解決できる!</li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="1200">
+<h2>パフォーマンス対策</h2>
+
+<ul>
+<li>Ajaxの遷移が重いと感じる場合は単純にアニメーションだけなしにできる
+<code class="prettyprint">
+$(document).bind('mobileinit',  function(){
+</code>
+<code class="prettyprint">
+　　$.mobile.defaultPageTransition = 'none';
+</code>
+<code class="prettyprint">
+});
+</code></li>
+<li>通常のクリック関数はダブルクリックの判定を待つため挙動が遅い
+<ul>
+<li>vclickを用いる
+<code class="prettyprint">
+$(document).delegate('a', 'vclick', function(e){
+e.preventDefault();
+var link = $(this);
+$.mobile.changePage(link.attr('href'), {
+transition: link.jqmData('transition')
+});
+});
+</code></li>
+</ul></li>
+<li>画面を予め読み込んでおく機能<a href="http://dev.screw-axis.com/doc/jquery_mobile/components/pages_dialogs/cache/">(プリフェッチ)</a></li>
+<li>生成されたDOMをキャッシュしておく機能<a href="http://dev.screw-axis.com/doc/jquery_mobile/components/pages_dialogs/cache/">(DOMキャッシュ)</a></li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="2400">
+<h2>まとめ</h2>
+
+<ul>
+<li>jQMを使えばHTML初心者でもスマフォ用サイトのコーディングができる</li>
+<li>jQM標準のレイアウトには限界があるので潔くCSSを書く</li>
+<li>バッドノウハウを使う前にjQMが解決策を提示してないかを調査する</li>
+<li>パフォーマンスに関しても通常のサイトよりもい向上する可能性の方が大きい</li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="3600">
+<h2>続きはWebで!</h2>
+
+<ul>
+<li>4/13に<a href="http://msto.jp/th2/">最新のjQMに対応している説明資料</a>があった(^q^)</li>
+<li><a href="http://dev.screw-axis.com/doc/jquery_mobile/">日本語リファレンス</a>もかなり充実</li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="4800">
+<h1>Any Questions?</h1>
+
+</div>
+
+    <div id="overview" class="step" data-x="2500" data-y="1500" data-scale="7">
+    </div>
+</div>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+</body>
+</html>
+
