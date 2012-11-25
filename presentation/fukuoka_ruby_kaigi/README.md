@@ -6,33 +6,13 @@
 ## 自己紹介
 * ID:@kazuph
 * 「かずふ」って読みます
-* 株式会社ガイアックス勤務
+* 株式会社ガイアックス
 * 2年目エンジニア
 * プログラムは大学から
 * 使用言語：Perl, Objective-C, JavaScript, Java
 * エディタ: Vim
 * 最近はスマフォアプリつくってます。
 
-## 業務はバリバリPerl
--> 元々Perlの会社
--> YAPCのスポンサーだったり
--> でも最近PHPの案件増えてきたり
-
-### 言語が変わるとコミュニケーションが生まれない
-
-### 言葉の壁は大きい…
-
-## Perlerは・・・
-今からはPHP勉強するとかないわ〜
-
-## PHPerは・・・
-<center>
-<iframe src="http://www.slideshare.net/slideshow/embed_code/14513064" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/do_aki/sore-php" title="Sore php" target="_blank">Sore php</a> </strong> from <strong><a href="http://www.slideshare.net/do_aki" target="_blank">do_aki</a></strong> </div>
-</center>
-
-### 戦争になりかねない！
-### そこで・・・
-### Rubyの出番だ！
 ### ところで皆さん
 ### ProjectEulerって
 ### 知ってますか！？
@@ -45,6 +25,8 @@
 
 [出展：ProjectEuler本家サイト](http://projecteuler.net)
 
+### ふーん
+
 ### じゃあ・・・
 ## 「お姉さん」は知ってますか！？
 ![oneesan](./img/oneesan.png)
@@ -52,17 +34,21 @@
 [出展：『フカシギの数え方』 おねえさんといっしょ！ みんなで数えてみよう！ ](http://www.youtube.com/watch?v=Q4gTV4r0zRs)
 
 ### ( ･\`ω･´)
-### で、ProjectEulerの問題ってのはつまるところ
+### で、ProjectEulerってのは
+### つまるところ
 
-## これ！
+## こういう問題をたくさん解くサイト
 ![oneesan](./img/kazoeruna.png)
 
 ### 全206カ国
 ### 総参加者25万人
 ### 全問題数403問(増殖中)
 ### つまり
-### お姉さんも403人（増殖中）
-### 繰り返すと
+### お姉さんも403人！
+##  増殖中！
+増殖している感じの画像
+
+### 繰り返します
 ### ProjectEulerとは
 ### 全206カ国
 ### 総参加者25万人
@@ -76,7 +62,57 @@
 
 ### もとい
 
-# Rubyでお姉さん（複数人）を救った話
+# Rubyでお姉さん<br />（複数人）<br />を救った話
 @kazuph
 
 2012/12/01
+
+## なんでこうなった？
+* Clean Coderに触発される
+* 仕事はパフォーマンス(本番)
+* プロのプログラマーは練習をする
+
+<img style="width:30%;float:right;" src="./img/cleancoder.png" alt="cleancoder">
+
+### プロのプログラマーは練習をする
+
+### 練習とかなんか部活みた〜い
+
+### 「じゃあ、部活しよう」
+
+### え
+
+### 「部活」
+
+### 突然の部活発足！！<br />（今年5月）
+## 朝練風景(写経中)
+![asaren](./img/asaren.png)
+
+
+## 写経教材
+* [TDD Perl](http://assets.en.oreilly.com/1/event/12/Practical%20Test-driven%20Development%20Presentation.pdf)
+
+<img style="width:45%;float:left;" src="./img/tddperl.png" alt="cleancoder">
+<img style="width:44%;float:left;margin-left:20px;" src="./img/tddperl-code.png" alt="cleancoder">
+
+### 最初Perlでやったら
+### PHPer組から悲鳴が・・・
+### やはりPerlとPHPは反発し合うのか・・・
+### ならば、
+### _
+<pre>
+＼　 __　 ／
+＿ （ｍ）　＿　　ﾋﾟｺｰﾝ
+　　 |ミ|
+／　｀´　 ＼
+　 ( ﾟ∀ﾟ)
+    　ノヽノ |
+    　　<　<
+
+</pre>
+</section>
+### Ruby
+* 言わずと知れた国産言語
+* ストレスのないプログラミング
+* 「キメると気持ちいい」らし
+い
