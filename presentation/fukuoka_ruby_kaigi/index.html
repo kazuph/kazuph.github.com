@@ -1,0 +1,142 @@
+<!doctype html>  
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>みんなでProjectEuler in Ruby</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="kazuph">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <!-- <link rel="stylesheet" href="css/theme/default.css" id="theme"> -->
+    <!-- ここでデザインの変更ができる-->
+    <link rel="stylesheet" href="css/theme/blue.css" id="theme">
+    <!-- <link rel="stylesheet" href="css/theme/serif.css" id="theme"> -->
+    <!-- <link rel="stylesheet" href="css/theme/sky.css" id="theme"> -->
+    <!-- <link rel="stylesheet" href="css/theme/simple.css" id="theme"> -->
+    <!-- <link rel="stylesheet" href="css/theme/beige.css" id="theme"> -->
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+      </script>
+
+      <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+      <![endif]-->
+    </head>
+
+    <body>
+
+      <div class="reveal">
+
+        <!-- Used to fade in a background when a specific slide state is reached -->
+        <div class="state-background"></div>
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+          <section>
+<h1>みんなでProjectEuler in Ruby</h1>
+
+<p>@kazuph</p>
+
+<p>2012/12/01</p>
+
+</section><section>
+<h2>自己紹介</h2>
+
+<ul>
+<li>ID:@kazuph</li>
+<li>「かずふ」って読みます</li>
+<li>株式会社ガイアックス</li>
+<li>2年目エンジニア</li>
+<li>使用言語：Perl, Ruby, Objective-C, JavaScript, C, Java</li>
+<li>エディタ: Vim</li>
+<li>最近はスマフォアプリつくってます。</li>
+</ul>
+
+</section><section>
+<h2>宇宙ハッカソンに出たり</h2>
+
+</section><section>
+<h2>ISUCON2で惨敗したり</h2>
+
+</section><section>
+<h3>突然ですが皆さん</h3>
+
+</section><section>
+<h3>ProjectEulerって</h3>
+
+</section><section>
+<h3>知ってますか！？</h3>
+
+</section><section>
+<h3>・・・</h3>
+
+</section><section>
+<h3>(´・ω・｀)</h3>
+
+</section><section>
+<h3>じゃあ・・・</h3>
+
+</section><section>
+<h3>お姉さんは知ってますか！？</h3>
+
+</section><section>
+<h3>( ･`ω･´)</h3>
+</section>
+        </div>
+
+        <!-- The navigational controls UI -->
+        <aside class="controls">
+          <a class="left" href="#">&#x25C4;</a>
+          <a class="right" href="#">&#x25BA;</a>
+          <a class="up" href="#">&#x25B2;</a>
+          <a class="down" href="#">&#x25BC;</a>
+        </aside>
+
+        <!-- Presentation progress bar -->
+        <div class="progress"><span></span></div>
+
+      </div>
+
+      <script src="lib/js/head.min.js"></script>
+      <script src="js/reveal.min.js"></script>
+
+      <script>
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+controls: true,
+progress: true,
+history: true,
+
+theme: Reveal.getQueryHash().theme || 'blue', // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'blue', // default/cube/page/concave/linear(2d)
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+]
+});
+
+</script>
+
+  </body>
+</html>
