@@ -170,7 +170,7 @@ body {
 .reveal blockquote {
   display: block;
   position: relative;
-  width: 70%;
+  /* width: 70%; */
   margin: 5px auto;
   padding: 5px;
 
