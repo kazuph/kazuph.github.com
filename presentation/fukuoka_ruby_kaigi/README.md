@@ -29,7 +29,7 @@
 
 ### じゃあ・・・
 ## 「お姉さん」は知ってますか！？
-![oneesan](./img/oneesan.png)
+![oneesan](./img/oneesan.jpg)
 
 [出展：『フカシギの数え方』 おねえさんといっしょ！ みんなで数えてみよう！ ](http://www.youtube.com/watch?v=Q4gTV4r0zRs)
 
@@ -38,7 +38,7 @@
 ### つまるところ
 
 ## こういう問題をたくさん解くサイト
-![oneesan](./img/kazoeruna.png)
+![oneesan](./img/kazoeruna.jpg)
 
 ### 全206カ国
 ### 総参加者25万人
@@ -72,7 +72,7 @@
 * 仕事はパフォーマンス(本番)
 * プロのプログラマーは練習をする
 
-<img style="width:30%;float:right;" src="./img/cleancoder.png" alt="cleancoder">
+<img style="width:30%;float:right;" src="./img/cleancoder.jpg" alt="cleancoder">
 
 ### プロのプログラマーは練習をする
 
@@ -86,14 +86,14 @@
 
 ### 突然の部活発足！！<br />（今年5月）
 ## 朝練風景(写経中)
-![asaren](./img/asaren.png)
+![asaren](./img/asaren.jpg)
 
 
 ## 写経教材
 * [TDD Perl](http://assets.en.oreilly.com/1/event/12/Practical%20Test-driven%20Development%20Presentation.pdf)
 
-<img style="width:45%;float:left;" src="./img/tddperl.png" alt="cleancoder">
-<img style="width:44%;float:left;margin-left:20px;" src="./img/tddperl-code.png" alt="cleancoder">
+<img style="width:45%;float:left;" src="./img/tddperl.jpg" alt="cleancoder">
+<img style="width:44%;float:left;margin-left:20px;" src="./img/tddperl-code.jpg" alt="cleancoder">
 
 ### 最初Perlでやったら
 ### PHPer組から悲鳴が・・・
@@ -101,7 +101,7 @@
 ### やはりPerlとPHPは反発し合うのか・・・
 ### ならば、
 ## そうだRubyにしよう！
-![picon](./img/picon.png)
+![picon](./img/picon.jpg)
 
 ## Ruby
 * 言わずと知れた国産言語
@@ -115,7 +115,7 @@
 ## Ruby入門
 * 一応最初にみんなで済ませました
 
-![tanoruby](./img/tanoruby.png)
+![tanoruby](./img/tanoruby.jpg)
 
 ### そして「練習」に取り組むため
 
