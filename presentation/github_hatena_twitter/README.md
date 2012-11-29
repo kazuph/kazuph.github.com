@@ -63,7 +63,7 @@ Vimの記事を書いたらたくさん「はてブ」もらえました
 
 ### 公開するとすごい人達に鍛えてもらえる可能性がある！
 
-### そう、エンジニアにとって<br />「公開する」と言えば
+### エンジニアにとって<br />「公開する」と言えば
 
 #### 僕 と github
 
@@ -79,14 +79,16 @@ Vimの記事を書いたらたくさん「はてブ」もらえました
 ## 何がわかるの？
 <img style="width:80%;" src="./img/github2.png" alt="hatebutoha">
 
-## 何がわかるの？
-* その人が管理しているソースコード
-* その開発履歴
-* フォロー/フォロワー関係など
-* レポジトリで行われるやりとりすべて（公開していれば）
+### 世界中の開発者のコードを見ることができる
+
+### 世界中の開発者達のやりとりを見ることができる
+
+### そんな素敵なサービスです
 
 ## 僕とgithub 1
 [社内会議用タイマー](http://kazuph.github.com/TeiClock/ "timer")
+
+* github単体で動作（サーバーいらない
 
 ![timer](img/timer.png "timer")
 
@@ -98,56 +100,63 @@ Vimの記事を書いたらたくさん「はてブ」もらえました
 ## 僕とgithub 3
 [Perlのネット上での実行環境](https://github.com/kazuph/PerlPad "perlpad")
 
+* 動作はdotcloudで
+
 ![perlpad](img/perlpad.png "perlpad")
 
 ## 僕とgithub 4
 [プログラミング部のサイト](https://github.com/gx-hackers/studio-256bit "perlpad")
+
+* github単体で動作（サーバーいらない
 
 ![bu](img/bu.png "bu")
 
 ## 僕とgithub 5
 [この資料](https://github.com/kazuph/kazuph.github.com/tree/master/presentation/github_hatena_twitter "kore")
 
+* github単体で動作（サーバーいらない
+
 ![kore](img/kore.png "kore")
 
 ## 僕とgithub 6～
 * 自分のVimとかターミナルの設定
 * その他の発表資料
-* ProjectEuelrの自分なりの解法
-* 専門書を写経したコード郡
+* 技術系の専門書を写経したコード
 * etc.
 
 ### そう何気なくVimの設定をあげていたら・・・
 
 #### 僕 と Vim
 
-## 突然の連絡
+## 突然の連絡！
 ![vim](img/vim.png "vim")
 
 ## ！
 ![vim1](img/vim1.png "vim1")
 
-## vimとは
-* Vimとはプログラムを編集するためのテキストエディタ
-* 機能拡張が容易で無数のPluginがある
+## 快諾？
+![vim2](img/vim2.png "vim2")
+
+## vimrcとは
+* Vimはテキストエディタ
 * vimrcとはvimの設定ファイル
+* 人によって行数の違いや個性がある
 
 ## vimrc読書会
 * vim仙人が出没して教えを請える
-* vim界の登竜門（たぶん
+* vim界の登竜門（たぶん、かな？ちがうか
 * 初級Vimmerの自分としてはかなり畏れ多い場所・・・
-
-## 快諾？
-![vim2](img/vim2.png "vim2")
 
 ## vimrc読書会に参加
 ![vim3](img/vim3.png "vim3")
 
 ## 沢山の凄腕Vimmerにdisられる
+チャットルームの様子
 ![vim5](img/vim5.png "vim5")
 
-## 人は叩かれて成長する。
+## vimrc読書会終了
 ![vim4](img/vim4.png "vim4")
+###  「人は叩かれて<br />成長する。」
 
 ### 公開したらすごい人達に鍛えてもらえた！
 
