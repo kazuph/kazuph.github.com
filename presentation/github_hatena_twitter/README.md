@@ -79,35 +79,67 @@ Vimの記事で100はてブ越えました!
 * フォロー/フォロワー関係など
 * あとコミットログなどがTLに流れてくる
 
-## 僕とgithub
-社内会議用タイマー
+## 僕とgithub 1
+[社内会議用タイマー](http://kazuph.github.com/TeiClock/ "timer")
+
 ![timer](img/timer.png "timer")
-[http://kazuph.github.com/TeiClock/](http://kazuph.github.com/TeiClock/ "timer")
 
-## 僕とgithub
-iPhoneアプリのサンプル
+## 僕とgithub 2
+[社内会議用タイマー](http://kazuph.github.com/TeiClock/ "timer")
+[iPhoneアプリのサンプル](https://github.com/kazuph/TableViewALAssetsLibrary "iphone")
+
 ![iphone](img/mock.png "iphone")
-[https://github.com/kazuph/TableViewALAssetsLibrary](https://github.com/kazuph/TableViewALAssetsLibrary "iphone")
 
-## 僕とgithub
-Perlのネット上での実行環境
+## 僕とgithub 3
+[Perlのネット上での実行環境](https://github.com/kazuph/PerlPad "perlpad")
+
 ![perlpad](img/perlpad.png "perlpad")
-[https://github.com/kazuph/PerlPad](https://github.com/kazuph/PerlPad "perlpad")
 
-## 僕とgithub
-プログラミング部のサイト
+## 僕とgithub 4
+[プログラミング部のサイト](https://github.com/gx-hackers/studio-256bit "perlpad")
+
 ![bu](img/bu.png "bu")
-[https://github.com/gx-hackers/studio-256bit](https://github.com/gx-hackers/studio-256bit "perlpad")
 
-## 僕とgithub
-この資料
+## 僕とgithub 5
+[この資料](https://github.com/kazuph/kazuph.github.com/tree/master/presentation/github_hatena_twitter "kore")
+
 ![kore](img/kore.png "kore")
-[https://github.com/gx-hackers/studio-256bit](https://github.com/gx-hackers/studio-256bit "perlpad")
 
-## 僕とgithub
+## 僕とgithub 6～
 * ProjectEuelrをひたすら解いているだけのリポジトリ
-* 自分のVimとかターミナルの設定を上げているリポジトリ
 * 専門書の写経用リポジトリ
+* 自分のVimとかターミナルの設定を上げているリポジトリ
 * etc.
 
-## 僕とgithubとvim
+### そう何気なくVimの設定をあげていたら・・・
+
+## 突然の連絡
+![vim](img/vim.png "vim")
+
+## ！
+![vim1](img/vim1.png "vim1")
+
+## 快諾？
+![vim2](img/vim2.png "vim2")
+
+## vimrc読書会に参加
+![vim3](img/vim3.png "vim3")
+
+## 沢山の凄腕Vimmerにdisられる
+<iframe width="90%" height="450px" src="http://lingr.com/room/vim/archives/2012/11/10#message-12888729"></iframe>
+
+## 人は叩かれて成長する。
+![vim4](img/vim4.png "vim4")
+
+### まったく予期していないイベントだったけど、
+
+### githubに公開してなかったら参加できなかったイベント
+
+### 自分を公開することで広がる縁
+
+
+## まとめ
+-> ブログを公開してみよう
+-> 車輪の再発明を恐れない
+-> 結果はネットにゆだねよう
+-> 偶然の縁を大切にしよう
