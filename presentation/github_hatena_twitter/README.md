@@ -15,14 +15,14 @@
 * 最近はスマフォアプリつくってます。
 
 ## ググればたくさん出てきます
-![ggr](/img/ggr.jpg "ggr")
+![ggr](img/ggr.jpg "ggr")
 
 #### 僕 と はてブ
 
 ## 直近
 Vimの記事で100はてブ越えました!
 
-![hatebu](/img/hatebu.jpg "hagebu")
+![hatebu](img/hatebu.jpg "hagebu")
 
 ## はてブとは？
  * はてブ＝はてなブックマーク
