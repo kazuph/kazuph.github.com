@@ -20,9 +20,9 @@
 #### 僕 と はてブ
 
 ## 直近
-Vimの記事で100はてブ越えました!
+Vimの記事で200はてブ越えました!
 
-![hatebu](img/hatebu.jpg "hagebu")
+![hatebu](img/hatebu.png "hagebu")
 
 ## はてブとは？
  * はてブ＝はてなブックマーク
