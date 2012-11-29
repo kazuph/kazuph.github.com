@@ -85,7 +85,6 @@ Vimの記事で100はてブ越えました!
 ![timer](img/timer.png "timer")
 
 ## 僕とgithub 2
-[社内会議用タイマー](http://kazuph.github.com/TeiClock/ "timer")
 [iPhoneアプリのサンプル](https://github.com/kazuph/TableViewALAssetsLibrary "iphone")
 
 ![iphone](img/mock.png "iphone")
@@ -113,6 +112,8 @@ Vimの記事で100はてブ越えました!
 
 ### そう何気なくVimの設定をあげていたら・・・
 
+#### 僕 と Vim
+
 ## 突然の連絡
 ![vim](img/vim.png "vim")
 
@@ -126,7 +127,7 @@ Vimの記事で100はてブ越えました!
 ![vim3](img/vim3.png "vim3")
 
 ## 沢山の凄腕Vimmerにdisられる
-<iframe width="90%" height="450px" src="http://lingr.com/room/vim/archives/2012/11/10#message-12888729"></iframe>
+![vim5](img/vim5.png "vim5")
 
 ## 人は叩かれて成長する。
 ![vim4](img/vim4.png "vim4")
@@ -137,9 +138,13 @@ Vimの記事で100はてブ越えました!
 
 ### 自分を公開することで広がる縁
 
+### 「自分」を公開していて良かった！
 
 ## まとめ
--> ブログを公開してみよう
--> 車輪の再発明を恐れない
--> 結果はネットにゆだねよう
--> 偶然の縁を大切にしよう
+* ブログを書こう、githubにコードを上げよう
+* 車輪の再発明は恐れず、「自分」を公開しよう
+* 結果はネットにゆだねよう
+* 偶然の縁を大切にしよう
+
+### Enjoy Your Engineering Life!
+### Thank you!
