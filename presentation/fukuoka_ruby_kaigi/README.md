@@ -4,14 +4,12 @@
 2012/12/01
 
 ## 自己紹介
-* ID:@kazuph
+* ID:kazuph
 * 「かずふ」って読みます
-* 株式会社ガイアックス
 * 2年目エンジニア
-* プログラムは大学から
-* 使用言語：Perl, Objective-C, JavaScript, Java
+* 使用言語：Perl, Objective-C, JavaScript, Java, Ruby
 * エディタ: Vim
-* 最近はスマフォアプリつくってます。
+* 続きは懇親会で！
 
 ### ところで皆さん
 ### ProjectEulerって
