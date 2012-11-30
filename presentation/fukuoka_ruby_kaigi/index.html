@@ -59,7 +59,7 @@
 <h3>ID:kazuph</h3>
 
 </section><section>
-<h3>「かずふ」って読みます</h3>
+<h3>「かずふ」って<br />読みます</h3>
 
 </section><section>
 <h3>2年目</h3>
@@ -87,20 +87,22 @@
 <h3>ProjectEulerって<br />知ってますか？</h3>
 
 </section><section>
-<h3>シーン</h3>
+<h3>しーん</h3>
 
 </section><section>
 <h2>ProjectEulerとは</h2>
 
 <blockquote>
-<p>挑戦的な数学/コンピュータのプログラミング問題集で、これを解くためには数学的な洞察力以上のものが要求される。
-数学によって、エレガントで効果的な方法にたどり着くことができるが、ほとんどの問題はコンピュータとプログラミングの能力が必要とされる。</p>
+<p>挑戦的な数学/コンピュータのプログラミング問題集で、ほとんどの問題はコンピュータとプログラミングの能力が必要とされる。</p>
 </blockquote>
 
 <p><a href="http://projecteuler.net">出展：ProjectEuler本家サイト</a></p>
 
 </section><section>
 <h3>ふーん</h3>
+
+</section><section>
+<h3>じゃあ</h3>
 
 </section><section>
 <h2>「お姉さん」は知ってますか！？</h2>
@@ -160,13 +162,14 @@
 </section><section>
 <h2>はい</h2>
 
-<p>と言うことで、ここからはまったく「お姉さん」とは関係なく始まった、
-会社のみんなでProjectEulerを解いてみた話をします。</p>
+<p>と言うことで、ここからはまったく「お姉さん」とは関係なく、会社のみんなでProjectEulerを解いてみた話をします。</p>
 
 </section><section>
 <h2>Start Euler</h2>
 
 <p>とある部長がSkypeで出題したのが発端
+<div class="fragment"> ↓</div>
+<div class="fragment"> みんなが解答をSkypeであげまくる</div>
 <div class="fragment"> ↓</div>
 <div class="fragment"> みんなが解いたソースを自分のリポジトリに上げ始めた</div>
 <div class="fragment"> ↓</div>
@@ -181,28 +184,43 @@
 <h3>翌週からJenkinsさん<br />雇われてた(^q^)</h3>
 
 </section><section>
-<h2>Euler System</h2>
+<h2>こんなん</h2>
 
 <p><img src="./img/pjeulercom.png" alt="pjeuler"></p>
 
 </section><section>
-<h3>そんな感じで楽しい<br />「ぷろおい！」生活が始まる</h3>
+<h2>Euler System</h2>
+
+<ul>
+<li>githubにpushするだけの簡単操作</li>
+<li>コミットすると実行結果と時間を更新</li>
+<li>問題ごとに実行速度順にランキングして表示</li>
+<li>現在ではRubyに加えて、Perl、PHP、Javascript、Pythonなどの言語に対応</li>
+</ul>
 
 </section><section>
-<h4>Euler 1</h4>
+<h3>そんな感じで楽しい<br />「ぷろおい！」生活が<br />始まる</h3>
 
 </section><section>
-<h2>Euler 1</h2>
+<h4>Problem 1</h4>
+
+</section><section>
+<h2>Problem 1</h2>
 
 <blockquote>
 <p>10未満の自然数のうち,  3 もしくは 5 の倍数になっているものは 3,  5,  6,  9 の4つがあり,  これらの合計は 23 になる.
 同じようにして,  1000 未満の 3 か 5 の倍数になっている数字の合計を求めよ.</p>
+
+<p>3 + 5 + 6 + 9 = 23</p>
 </blockquote>
 
 <p><a href="http://odz.sakura.ne.jp/projecteuler/index.php?cmd=read&amp;page=Problem%201">出展：ProjectEuler 問題1</a></p>
 
 </section><section>
-<h2>春●さんの解答</h2>
+<h3>当時のSkypeでの解答</h3>
+
+</section><section>
+<h2>某春◯さんの解答</h2>
 
 <pre><code>#!/usr/bin/env ruby
 # encoding: UTF-8
@@ -220,21 +238,34 @@ p total
 <h2>PHPerさんの解答</h2>
 
 <pre><code>&lt;?php
-$numbers = array();
-foreach(array(3,5) as $num){
-    for($i=0;$i&lt;1000;$i+=$num){
-        $numbers[] = $i;
-    }
+//3の倍数
+$total = 0;
+for($n = 1 ; 3 * $n &lt; 1000 ; $n++){
+    $total += 3 * $n;
 }
-echo array_sum(array_unique($numbers));
-?&gt;
+
+//5の倍数
+for($n = 1 ; 5 * $n &lt; 1000 ; $n++){
+    //3の倍数は除く
+    if( $n%3 != 0 )$total += 5 * $n;
+}
+
+echo $total;
+</code></pre>
+
+</section><section>
+<h2>Perlerさんの解答</h2>
+
+<pre><code>my $res = 0;
+map { $res += ( $_ % 3 &amp;&amp; $_ % 5 ) ? 0 : $_ } 1..999;
+say $res;
 </code></pre>
 
 </section><section>
 <h2>ワンライナー</h2>
 
 <ul>
-<li>春●さん②</li>
+<li>春◯さん②</li>
 </ul>
 
 <pre><code>$ perl -e &#39;$a; for(1..1000){unless($_%3&amp;&amp;$_%5){$a+=$_}};print &quot;$a&quot;&#39;
@@ -254,6 +285,13 @@ echo array_sum(array_unique($numbers));
 <pre><code>$sum = 0;for($i=0;$i&lt;1000;$i++)if($i%3===0||$i%5===0) $sum+=$i;
 </code></pre>
 
+<ul>
+<li>Rubyistの人</li>
+</ul>
+
+<pre><code>((0...1000).step(3).to_a | (0...1000).step(5).to_a).inject(0){|s, i|s+=i}
+</code></pre>
+
 </section><section>
 <h2>Perl6</h2>
 
@@ -264,37 +302,91 @@ echo array_sum(array_unique($numbers));
 <pre><code>perl6 -e &#39;say [+] (1..999).grep({!($_%3)||!($_%5)})&#39;
 </code></pre>
 
-</section><section>
-<h2>Ruby</h2>
+<p><div class="fragment"> 出題された瞬間からPerl6を勉強したいって思って勉強して</div>
+<div class="fragment"> その日にPerl6のビルドをして解答しました</div></p>
 
-<ul>
-<li>僕</li>
-</ul>
+</section><section>
+<h3>人によって書き方が<br />たくさんある！</h3>
+
+</section><section>
+<h3>こんな感じで社内で<br />盛り上がりました！</h3>
+
+</section><section>
+<h3>更にEuelr Systemができてからの投稿</h3>
+
+</section><section>
+<h2>ここからはスピードとの戦いです</h2>
+
+<pre><code>#!/usr/bin/env ruby
+def sum (max, num1, num2)
+  return (1..(max - 1)).select {|n|n % num1 == 0 || n % num2 == 0}.inject(&amp;:+)
+end
+p sum(1000, 3, 5)
+</code></pre>
+
+</section><section>
+<h2>ループを変更</h2>
+
+<p>ループはeachが速い</p>
+
+<pre><code># p (1..999).select {|n| n % 3 == 0 || n % 5 == 0}.inject(&amp;:+)
+total = 0
+(1..999).each{|n| total += n if n % 3 == 0 || n % 5 == 0}
+p total
+</code></pre>
+
+</section><section>
+<h2>CTOのズルい一投</h2>
+
+<p>数学的に解く</p>
+
+<pre><code>m = 1000; a1 = 3; a2 = 5
+m = m - 1; a3 = a1 * a2; b1 = (m / a1).to_i; b2 = (m / a2).to_i; b3 = (m / a3).to_i
+p (b1 * (b1 + 1) * a1 + b2 * (b2 + 1) * a2 - b3 * (b3 + 1) * a3) / 2
+</code></pre>
+
+</section><section>
+<h3>ループしたら負け</h3>
+
+</section><section>
+<h3>ならば！</h3>
+
+</section><section>
+<h2>演算コストを極める</h2>
+
+<p>「+」「-」「*」「/」を減らす</p>
 
 <pre><code>p( (999.div(3) * (3 + 999) + 999.div(5) * (5 + 995) - 999.div(15) * (15 + 990)) / 2)
 
 </code></pre>
 
 </section><section>
-<h2>CTOのズルい一投</h2>
+<h2>Win!</h2>
+
+<pre><code>m = 1000; a1 = 3; a2 = 5
+m = m - 1; a3 = a1 * a2; b1 = (m / a1).to_i; b2 = (m / a2).to_i; b3 = (m / a3).to_i
+p (b1 * (b1 + 1) * a1 + b2 * (b2 + 1) * a2 - b3 * (b3 + 1) * a3) / 2
+
+# Time: 0.12 msec
+</code></pre>
+
+<pre><code>p( (999.div(3) * (3 + 999) + 999.div(5) * (5 + 995) - 999.div(15) * (15 + 990)) / 2)
+
+# Time: 0.05 msec
+</code></pre>
 
 </section><section>
-<h2>速さの秘訣</h2>
+<h4>Problem 7</h4>
 
 </section><section>
-<h3>ループさせたら負け</h3>
+<h2>Problem 7</h2>
 
-</section><section>
-<h3>CTOの前にdefの話と==の方が速い話をする</h3>
+<blockquote>
+<p>素数を小さい方から6つ並べると 2,  3,  5,  7,  11,  13 であり,  6番目の素数は 13 である.
+10001 番目の素数を求めよ.</p>
+</blockquote>
 
-</section><section>
-<h3>僕がさらにCTOよりも速くした話</h3>
-
-</section><section>
-<h3>問題数を飛ばして素数の話</h3>
-
-</section><section>
-<h3>オイラー{素数の問題の話</h3>
+<p><a href="http://odz.sakura.ne.jp/projecteuler/index.php?cmd=read&amp;page=Problem%207">出展：ProjectEuler 問題7</a></p>
 
 </section><section>
 <h3>素数の問題</h3>
@@ -303,22 +395,119 @@ echo array_sum(array_unique($numbers));
 <h3>はい、そうです</h3>
 
 </section><section>
-<h3>require primeがありますね</h3>
+<h3>require &#39;prime&#39;がありますね</h3>
+
+<p>(or require &#39;mathn&#39;)</p>
+
+</section><section>
+<h2>require &#39;prime&#39;</h2>
+
+<pre><code>require &#39;prime&#39;
+
+i = 2
+j = 1
+
+loop do
+    if i.prime?
+        j += 1
+    end
+    if j &gt; 10001
+        break
+    end
+    i += 1
+end
+puts i
+</code></pre>
+
+</section><section>
+<h2>require &#39;mathn&#39; (こっちが推奨？)</h2>
+
+<pre><code>require &#39;mathn&#39;
+i = 1
+cnt = 0
+while i += 1
+  if Prime.instance.prime?(i)
+    cnt += 1
+    if cnt == 10001
+      break
+    end
+  end
+end
+p i
+</code></pre>
+
+</section><section>
+<h3>これでは味気なさすぎる</h3>
+
+</section><section>
+<h2>6k±1</h2>
+
+<pre><code>#!/usr/bin/env ruby
+# coding : utf-8
+require &#39;prime&#39;
+max = 10001
+primes = [2, 3, 5]
+n=0
+loop do
+  break if primes.size &gt; 10001
+  n+=1
+  prime = 6*n+1
+  primes &lt;&lt; prime if prime.prime?
+  prime +=4
+  primes &lt;&lt; prime if prime.prime?
+end
+p primes[max-1]
+</code></pre>
+
+</section><section>
+<h3>アルゴリズムを工夫してこそのEuler</h3>
+
+</section><section>
+<h3>そしてさらに高みを求めるのもEuler</h3>
+
+</section><section>
+<h3>require &#39;prime&#39;？</h3>
 
 </section><section>
 <h3>貧弱、貧弱！</h3>
 
 </section><section>
-<h3>素数には法則がある</h3>
+<h3>アルゴリズムを極める</h3>
+
+<pre><code>max = 10001
+def prime?(num, ary)
+  ary.each do |n|
+    break if n * n  &gt; num
+    return false if num % n == 0
+  end
+  return true
+end
+n = 0
+prime_ary = [2, 3, 5]
+while  prime_ary.count &lt; max
+  n += 1
+  prime = 6 * n + 1
+  if prime?(prime, prime_ary)
+    prime_ary.push(prime)
+  end
+  prime += 4
+  if prime?(prime, prime_ary)
+    prime_ary.push(prime)
+  end
+end
+p prime_ary[-1]
+</code></pre>
 
 </section><section>
-<h3>ろくけーの方法</h3>
+<h3>ベンチ結果</h3>
 
-</section><section>
-<h3>できれば図も</h3>
-
-</section><section>
-<h3>こっちの方が速いね！！</h3>
+<ul>
+<li>prime 3575.42 msec</li>
+<li>mathn 3445.56 msec</li>
+<li>6k±1 2767.65 msec</li>
+<li>素    223.41 msec
+<a href="https://github.com/takyam-git/pjeuler/tree/master/scripts/007">https://github.com/takyam-git/pjeuler/tree/master/scripts/007</a></li>
+</ul>
 
 </section><section>
 <h3>素数を制するものが</h3>
