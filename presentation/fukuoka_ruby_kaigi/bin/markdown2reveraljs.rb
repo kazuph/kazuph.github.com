@@ -15,7 +15,7 @@ html.gsub!(/<h(\d)>/) { "</section><section>\n<h" + $1 + ">"}
 html.sub!(/<\/section>/, "")
 html = html + "</section>"
 
-html.gsub!(/-&gt;(.+?)(<\/p>)?$/, "<ul><li class=\"fragment\">\\1</li></ul>\\2")
+html.gsub!(/-&gt;(.+?)(<\/p>)?$/, "<div class=\"fragment\">\\1</div>\\2")
 
 puts html
 

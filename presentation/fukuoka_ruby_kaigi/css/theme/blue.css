@@ -60,12 +60,20 @@ body {
 
 .reveal h2 {
   border-bottom: 2px solid #df871e;
+  font-size: 1.8EM;
 }
 
 .reveal h3 {
   padding-top:200px;
   text-align:center;
   font-size: 2.0em;
+}
+
+.reveal h4 {
+  padding-top:169px;
+  text-align:center;
+  font-size: 2.5em;
+  border-bottom: 2px solid #FF698E;
 }
 
 /*********************************************
