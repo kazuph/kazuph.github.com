@@ -19,7 +19,7 @@
 ### ProjectEulerって<br />知ってますか？
 ### しーん
 ## ProjectEulerとは
-> 挑戦的な数学/コンピュータのプログラミング問題集で、ほとんどの問題はコンピュータとプログラミングの能力が必要とされる。
+> 挑戦的な数学/コンピュータのプログラミング問題集。ほとんどの問題はコンピュータとプログラミングの能力が必要とされる。
 
 [出展：ProjectEuler本家サイト](http://projecteuler.net)
 
@@ -58,28 +58,28 @@
 ## はい
 と言うことで、ここからはまったく「お姉さん」とは関係なく、会社のみんなでProjectEulerを解いてみた話をします。
 
-## Start Euler
+## Eulerの始まり
 とある部長がSkypeで出題したのが発端
 -> ↓
 -> みんなが解答をSkypeであげまくる
 -> ↓
 -> みんなが解いたソースを自分のリポジトリに上げ始めた
 -> ↓
--> Facebookグループで解いた宣言！→レビュー
+-> Facebookグループで「解いた！」宣言→レビュー
 
 ## めんどくさくて
 ![fb_jenkis](./img/fb_jenkins.jpg)
 
-### 翌週からJenkinsさん<br />雇われてた(^q^)
-
-## こんなん
-![pjeuler](./img/pjeulercom.png)
+### 翌週にできてました(^q^)
 
 ## Euler System
 * githubにpushするだけの簡単操作
 * コミットすると実行結果と時間を更新
 * 問題ごとに実行速度順にランキングして表示
-* 現在ではRubyに加えて、Perl、PHP、Javascript、Pythonなどの言語に対応
+* 一応Ruby縛り(PHPerもPerlerも)
+
+## こんなん
+![pjeuler](./img/pjeulercom.png)
 
 ### そんな感じで楽しい<br />「ぷろおい！」生活が<br />始まる
 
@@ -238,8 +238,10 @@ p( (999.div(3) * (3 + 999) + 999.div(5) * (5 + 995) - 999.div(15) * (15 + 990)) 
 [出展：ProjectEuler 問題7](http://odz.sakura.ne.jp/projecteuler/index.php?cmd=read&page=Problem%207)
 ### 素数の問題
 ### はい、そうです
-### require 'prime'がありますね
+### require 'prime'が<br />ありますね
+<center>
 (or require 'mathn')
+</center>
 ## require 'prime'
 
 ```
@@ -260,7 +262,8 @@ end
 puts i
 ```
 
-## require 'mathn' (こっちが推奨？)
+## require 'mathn'
+(こっちが推奨？)
 
 ```
 require 'mathn'
@@ -297,17 +300,17 @@ end
 p primes[max-1]
 ```
 
-### アルゴリズムを工夫してこそのEuler
+### アルゴリズムを工夫<br />してこそのEuler
 
-### そしてさらに高みを求めるのもEuler
+### そしてさらに高みを<br />求めるのもEuler
 ### require 'prime'？
 ### 貧弱、貧弱！
 
-### アルゴリズムを極める
+## アルゴリズムを極める
 
 ```
 max = 10001
-def prime?(num, ary)
+def prime?(num,  ary)
   ary.each do |n|
     break if n * n  > num
     return false if num % n == 0
@@ -315,97 +318,51 @@ def prime?(num, ary)
   return true
 end
 n = 0
-prime_ary = [2, 3, 5]
+prime_ary = [2,  3,  5]
 while  prime_ary.count < max
   n += 1
   prime = 6 * n + 1
-  if prime?(prime, prime_ary)
-    prime_ary.push(prime)
-  end
+  prime_ary.push(prime) if prime?(prime,  prime_ary)
   prime += 4
-  if prime?(prime, prime_ary)
-    prime_ary.push(prime)
-  end
+  prime_ary.push(prime) if prime?(prime,  prime_ary)
 end
 p prime_ary[-1]
 ```
 
-### ベンチ結果
-* prime 3575.42 msec
-* mathn 3445.56 msec
-* 6k±1 2767.65 msec
-* 素    223.41 msec
+## ベンチ結果
+ 手法 | 実行時間 
+ ------|--------
+ prime | 3575.42 msec 
+ mathn | 3445.56 msec 
+ 6k±1|  2767.65 msec
+ 自前で全部実装  | 223.41 msec 
 https://github.com/takyam-git/pjeuler/tree/master/scripts/007
 
+### オイラーには素数を<br />計算する問題が多い
 
-### 素数を制するものが
+### ということは？
+
+### 素数を制する者が
 ### オイラーを制す！！
-### ⬆Facebookのそのままの画像でもいいかも
-### いいね！が全くつかない驚き！
-### 他のいいねがたくさんついてる画像
-### そんなこんなでオイラーで熱いバトルを繰り広げていた時
-### 僕
-### 「僕は素数の戦争が見てみたい」
-### 素数戦争勃発！！
-### ⬆アスキーアート
-### アスキーアート
-### あれ？
-### まぁ、いっか
-### 熱いバトル
-### だんさんのちんかいとう
-### パイソンのちんかいとう
-### 僕はひっそりと真ん中付近にいました
-### 世界は広い
-### 最後によかったことまとめ
-### パフォーマンスを意識してプログラミングをできるようになった
-### 他の言語で開発している人を巻き込んでRubyでやったので、言葉が通じるようになった
-### 逆にまったく見についていないことは、
-### 全くオブジェクティブな書き方が見についてない
-### Rubyでワンライナーが気持ちよすぎて逆にキモい
-### システム変更の余地あり
-### 課題
-### もっとオブジェクティブに書いた方が良いような問題でやる
-### TDDで書くようにする
-### TDD導入など
-### みなさんも会社でオイラーやって見るといいかも知れませんね
-### エンジョイオイラーライフ
-### さんきゅう
-### 完
 
+### そんなこんなで
 
+### 社内で熱いバトルを繰り広げています^^
 
+## 結果
+* パフォーマンスを意識してプログラミングをできるようになった
+* 他の言語で開発している人を巻き込んでRubyでやったので、言葉が通じるようになった
+* みんなで「同じ問題」を解いているので、レビューがとてもやり易い
+* 人や自分の癖がわかるようになった
 
+## 課題
+* 全くオブジェクト指向が身についてない
+* Rubyのワンライナーがキメると気持ちよすぎて逆にキモい
+* TDD導入など
 
+### 最後に
+### みんなと「競争」って<br />実は楽しい！
 
-
-
-
-
-
-
-
-### 全206カ国
-### 総参加者25万人
-### 全問題数403問(増殖中)
-### お姉さんも403人！
-## なんでこうなった？
-* Clean Coderに触発される
-* 仕事はパフォーマンス(本番)
-* プロのプログラマーは練習をする
-
-<img style="width:30%;float:right;" src="./img/cleancoder.jpg" alt="cleancoder">
-
-### プロのプログラマーは練習をする
-## 朝練風景(写経中)
-![asaren](./img/asaren.jpg)
-
-
-## 写経教材
-* [TDD Perl](http://assets.en.oreilly.com/1/event/12/Practical%20Test-driven%20Development%20Presentation.pdf)
-
-<img style="width:45%;float:left;" src="./img/tddperl.jpg" alt="cleancoder">
-<img style="width:44%;float:left;margin-left:20px;" src="./img/tddperl-code.jpg" alt="cleancoder">
-
-## そうだRubyにしよう！
-![picon](./img/picon.jpg)
-
+### みなさんも会社でオイラーを<br />やって見てください
+### Enjoy Euler Life!
+### Thank you!

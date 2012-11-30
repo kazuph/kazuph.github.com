@@ -93,7 +93,7 @@
 <h2>ProjectEulerとは</h2>
 
 <blockquote>
-<p>挑戦的な数学/コンピュータのプログラミング問題集で、ほとんどの問題はコンピュータとプログラミングの能力が必要とされる。</p>
+<p>挑戦的な数学/コンピュータのプログラミング問題集。ほとんどの問題はコンピュータとプログラミングの能力が必要とされる。</p>
 </blockquote>
 
 <p><a href="http://projecteuler.net">出展：ProjectEuler本家サイト</a></p>
@@ -165,7 +165,7 @@
 <p>と言うことで、ここからはまったく「お姉さん」とは関係なく、会社のみんなでProjectEulerを解いてみた話をします。</p>
 
 </section><section>
-<h2>Start Euler</h2>
+<h2>Eulerの始まり</h2>
 
 <p>とある部長がSkypeで出題したのが発端
 <div class="fragment"> ↓</div>
@@ -173,7 +173,7 @@
 <div class="fragment"> ↓</div>
 <div class="fragment"> みんなが解いたソースを自分のリポジトリに上げ始めた</div>
 <div class="fragment"> ↓</div>
-<div class="fragment"> Facebookグループで解いた宣言！→レビュー</div></p>
+<div class="fragment"> Facebookグループで「解いた！」宣言→レビュー</div></p>
 
 </section><section>
 <h2>めんどくさくて</h2>
@@ -181,12 +181,7 @@
 <p><img src="./img/fb_jenkins.jpg" alt="fb_jenkis"></p>
 
 </section><section>
-<h3>翌週からJenkinsさん<br />雇われてた(^q^)</h3>
-
-</section><section>
-<h2>こんなん</h2>
-
-<p><img src="./img/pjeulercom.png" alt="pjeuler"></p>
+<h3>翌週にできてました(^q^)</h3>
 
 </section><section>
 <h2>Euler System</h2>
@@ -195,8 +190,13 @@
 <li>githubにpushするだけの簡単操作</li>
 <li>コミットすると実行結果と時間を更新</li>
 <li>問題ごとに実行速度順にランキングして表示</li>
-<li>現在ではRubyに加えて、Perl、PHP、Javascript、Pythonなどの言語に対応</li>
+<li>一応Ruby縛り(PHPerもPerlerも)</li>
 </ul>
+
+</section><section>
+<h2>こんなん</h2>
+
+<p><img src="./img/pjeulercom.png" alt="pjeuler"></p>
 
 </section><section>
 <h3>そんな感じで楽しい<br />「ぷろおい！」生活が<br />始まる</h3>
@@ -395,9 +395,11 @@ p (b1 * (b1 + 1) * a1 + b2 * (b2 + 1) * a2 - b3 * (b3 + 1) * a3) / 2
 <h3>はい、そうです</h3>
 
 </section><section>
-<h3>require &#39;prime&#39;がありますね</h3>
+<h3>require &#39;prime&#39;が<br />ありますね</h3>
 
-<p>(or require &#39;mathn&#39;)</p>
+<p><center>
+(or require &#39;mathn&#39;)
+</center></p>
 
 </section><section>
 <h2>require &#39;prime&#39;</h2>
@@ -420,7 +422,9 @@ puts i
 </code></pre>
 
 </section><section>
-<h2>require &#39;mathn&#39; (こっちが推奨？)</h2>
+<h2>require &#39;mathn&#39;</h2>
+
+<p>(こっちが推奨？)</p>
 
 <pre><code>require &#39;mathn&#39;
 i = 1
@@ -460,10 +464,10 @@ p primes[max-1]
 </code></pre>
 
 </section><section>
-<h3>アルゴリズムを工夫してこそのEuler</h3>
+<h3>アルゴリズムを工夫<br />してこそのEuler</h3>
 
 </section><section>
-<h3>そしてさらに高みを求めるのもEuler</h3>
+<h3>そしてさらに高みを<br />求めるのもEuler</h3>
 
 </section><section>
 <h3>require &#39;prime&#39;？</h3>
@@ -472,10 +476,10 @@ p primes[max-1]
 <h3>貧弱、貧弱！</h3>
 
 </section><section>
-<h3>アルゴリズムを極める</h3>
+<h2>アルゴリズムを極める</h2>
 
 <pre><code>max = 10001
-def prime?(num, ary)
+def prime?(num,  ary)
   ary.each do |n|
     break if n * n  &gt; num
     return false if num % n == 0
@@ -483,176 +487,97 @@ def prime?(num, ary)
   return true
 end
 n = 0
-prime_ary = [2, 3, 5]
+prime_ary = [2,  3,  5]
 while  prime_ary.count &lt; max
   n += 1
   prime = 6 * n + 1
-  if prime?(prime, prime_ary)
-    prime_ary.push(prime)
-  end
+  prime_ary.push(prime) if prime?(prime,  prime_ary)
   prime += 4
-  if prime?(prime, prime_ary)
-    prime_ary.push(prime)
-  end
+  prime_ary.push(prime) if prime?(prime,  prime_ary)
 end
 p prime_ary[-1]
 </code></pre>
 
 </section><section>
-<h3>ベンチ結果</h3>
+<h2>ベンチ結果</h2>
 
-<ul>
-<li>prime 3575.42 msec</li>
-<li>mathn 3445.56 msec</li>
-<li>6k±1 2767.65 msec</li>
-<li>素    223.41 msec
-<a href="https://github.com/takyam-git/pjeuler/tree/master/scripts/007">https://github.com/takyam-git/pjeuler/tree/master/scripts/007</a></li>
-</ul>
+<table><thead>
+<tr>
+<th>手法</th>
+<th>実行時間</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>prime</td>
+<td>3575.42 msec</td>
+</tr>
+<tr>
+<td>mathn</td>
+<td>3445.56 msec</td>
+</tr>
+<tr>
+<td>6k±1</td>
+<td>2767.65 msec</td>
+</tr>
+<tr>
+<td>自前で全部実装</td>
+<td>223.41 msec</td>
+</tr>
+</tbody></table>
+
+<p><a href="https://github.com/takyam-git/pjeuler/tree/master/scripts/007">https://github.com/takyam-git/pjeuler/tree/master/scripts/007</a></p>
 
 </section><section>
-<h3>素数を制するものが</h3>
+<h3>オイラーには素数を<br />計算する問題が多い</h3>
+
+</section><section>
+<h3>ということは？</h3>
+
+</section><section>
+<h3>素数を制する者が</h3>
 
 </section><section>
 <h3>オイラーを制す！！</h3>
 
 </section><section>
-<h3>⬆Facebookのそのままの画像でもいいかも</h3>
+<h3>そんなこんなで</h3>
 
 </section><section>
-<h3>いいね！が全くつかない驚き！</h3>
+<h3>社内で熱いバトルを繰り広げています^^</h3>
 
 </section><section>
-<h3>他のいいねがたくさんついてる画像</h3>
-
-</section><section>
-<h3>そんなこんなでオイラーで熱いバトルを繰り広げていた時</h3>
-
-</section><section>
-<h3>僕</h3>
-
-</section><section>
-<h3>「僕は素数の戦争が見てみたい」</h3>
-
-</section><section>
-<h3>素数戦争勃発！！</h3>
-
-</section><section>
-<h3>⬆アスキーアート</h3>
-
-</section><section>
-<h3>アスキーアート</h3>
-
-</section><section>
-<h3>あれ？</h3>
-
-</section><section>
-<h3>まぁ、いっか</h3>
-
-</section><section>
-<h3>熱いバトル</h3>
-
-</section><section>
-<h3>だんさんのちんかいとう</h3>
-
-</section><section>
-<h3>パイソンのちんかいとう</h3>
-
-</section><section>
-<h3>僕はひっそりと真ん中付近にいました</h3>
-
-</section><section>
-<h3>世界は広い</h3>
-
-</section><section>
-<h3>最後によかったことまとめ</h3>
-
-</section><section>
-<h3>パフォーマンスを意識してプログラミングをできるようになった</h3>
-
-</section><section>
-<h3>他の言語で開発している人を巻き込んでRubyでやったので、言葉が通じるようになった</h3>
-
-</section><section>
-<h3>逆にまったく見についていないことは、</h3>
-
-</section><section>
-<h3>全くオブジェクティブな書き方が見についてない</h3>
-
-</section><section>
-<h3>Rubyでワンライナーが気持ちよすぎて逆にキモい</h3>
-
-</section><section>
-<h3>システム変更の余地あり</h3>
-
-</section><section>
-<h3>課題</h3>
-
-</section><section>
-<h3>もっとオブジェクティブに書いた方が良いような問題でやる</h3>
-
-</section><section>
-<h3>TDDで書くようにする</h3>
-
-</section><section>
-<h3>TDD導入など</h3>
-
-</section><section>
-<h3>みなさんも会社でオイラーやって見るといいかも知れませんね</h3>
-
-</section><section>
-<h3>エンジョイオイラーライフ</h3>
-
-</section><section>
-<h3>さんきゅう</h3>
-
-</section><section>
-<h3>完</h3>
-
-</section><section>
-<h3>全206カ国</h3>
-
-</section><section>
-<h3>総参加者25万人</h3>
-
-</section><section>
-<h3>全問題数403問(増殖中)</h3>
-
-</section><section>
-<h3>お姉さんも403人！</h3>
-
-</section><section>
-<h2>なんでこうなった？</h2>
+<h2>結果</h2>
 
 <ul>
-<li>Clean Coderに触発される</li>
-<li>仕事はパフォーマンス(本番)</li>
-<li>プロのプログラマーは練習をする</li>
+<li>パフォーマンスを意識してプログラミングをできるようになった</li>
+<li>他の言語で開発している人を巻き込んでRubyでやったので、言葉が通じるようになった</li>
+<li>みんなで「同じ問題」を解いているので、レビューがとてもやり易い</li>
+<li>人や自分の癖がわかるようになった</li>
 </ul>
 
-<p><img style="width:30%;float:right;" src="./img/cleancoder.jpg" alt="cleancoder"></p>
-
 </section><section>
-<h3>プロのプログラマーは練習をする</h3>
-
-</section><section>
-<h2>朝練風景(写経中)</h2>
-
-<p><img src="./img/asaren.jpg" alt="asaren"></p>
-
-</section><section>
-<h2>写経教材</h2>
+<h2>課題</h2>
 
 <ul>
-<li><a href="http://assets.en.oreilly.com/1/event/12/Practical%20Test-driven%20Development%20Presentation.pdf">TDD Perl</a></li>
+<li>全くオブジェクト指向が身についてない</li>
+<li>Rubyのワンライナーがキメると気持ちよすぎて逆にキモい</li>
+<li>TDD導入など</li>
 </ul>
 
-<p><img style="width:45%;float:left;" src="./img/tddperl.jpg" alt="cleancoder">
-<img style="width:44%;float:left;margin-left:20px;" src="./img/tddperl-code.jpg" alt="cleancoder"></p>
+</section><section>
+<h3>最後に</h3>
 
 </section><section>
-<h2>そうだRubyにしよう！</h2>
+<h3>みんなと「競争」って<br />実は楽しい！</h3>
 
-<p><img src="./img/picon.jpg" alt="picon"></p>
+</section><section>
+<h3>みなさんも会社でオイラーを<br />やって見てください</h3>
+
+</section><section>
+<h3>Enjoy Euler Life!</h3>
+
+</section><section>
+<h3>Thank you!</h3>
 </section>
         </div>
 

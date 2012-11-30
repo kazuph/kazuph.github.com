@@ -3,7 +3,7 @@
 require 'redcarpet'
 require 'erb'
 # define markdown
-markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(), :autolink => true,  :space_after_headers => true, :fenced_code_blocks => true, :no_intra_emphasis => true)
+markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(), :autolink => true,  :space_after_headers => true, :fenced_code_blocks => true, :no_intra_emphasis => true, :tables => true)
 # render html
 html = markdown.render(File.read('README.md'))
 
