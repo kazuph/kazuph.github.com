@@ -22,13 +22,13 @@
 
 #### ググって出てこない
 ## 僕の机 1
-![bt](img/dt.jpeg "bt")
+![bt](img/dt.jpg "bt")
 
 ## 僕の机 2
-![bt2](img/dt2.jpeg "bt2")
+![bt2](img/dt2.jpg "bt2")
 
 ## 僕の机 3
-![bt3](img/dt3.jpeg "bt3")
+<img style="width:50%;float:center;margin-left:100px;" src="./img/dt3.jpg" alt="hatebutoha">
 
 #### 僕 と はてブ
 
