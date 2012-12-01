@@ -1,16 +1,18 @@
-# みんなでProjectEuler in Ruby
+# みんなでProjectEuler<br />in Ruby
 @kazuph
 
 2012/12/01
 
 #### 自己紹介
-### ID:kazuph
-### 「かずふ」って<br />読みます
-### 2年目
+### <img style="width:15%;margin-top:-100px;" src="./img/praykazuph.png" alt="pray_kazuph"><br />かずふ<br />kazuph
+
+
+### 2年目エンジニア
 ## Vimの記事を書いたり
 ![hatebu](img/hatebu.png "hagebu")
 
-## Vim読書会に行ってdisられてきたりしている
+## vimrc読書会
+に行ってdisられてきたりしている
 ![vim4](img/vim4.png "vim4")
 ### Vimが大好きな<br />スマフォエンジニアです！
 ### 続きは懇親会で！
@@ -19,9 +21,9 @@
 ### ProjectEulerって<br />知ってますか？
 ### しーん
 ## ProjectEulerとは
-> 挑戦的な数学/コンピュータのプログラミング問題集。ほとんどの問題はコンピュータとプログラミングの能力が必要とされる。
+> 挑戦的な数学/コンピュータのプログラミング問題集サイト。
 
-[出展：ProjectEuler本家サイト](http://projecteuler.net)
+Link : [ProjectEuler](http://projecteuler.net)
 
 ### ふーん
 ### じゃあ
@@ -43,7 +45,7 @@
 ![tomenaide](./img/tomenaide.jpg)
 
 ### きれいなお姉さんは<br />救いたいですか？
-# みんなでProjectEuler in Ruby
+# みんなでProjectEuler<br />in Ruby
 @kazuph
 
 2012/12/01
@@ -63,14 +65,14 @@
 -> ↓
 -> みんなが解答をSkypeであげまくる
 -> ↓
--> みんなが解いたソースを自分のリポジトリに上げ始めた
+-> みんなが解いたソースを自分の<br />リポジトリに上げ始めた
 -> ↓
--> Facebookグループで「解いた！」宣言→レビュー
+-> Facebookグループで「解いた！」宣言<br />→レビュー
 
-## めんどくさくて
+## 他力本願
 ![fb_jenkis](./img/fb_jenkins.jpg)
 
-### 翌週にできてました(^q^)
+### 翌週にはありました(^q^)
 
 ## Euler System
 * githubにpushするだけの簡単操作
@@ -85,10 +87,7 @@
 
 #### Problem 1
 ## Problem 1
-> 10未満の自然数のうち,  3 もしくは 5 の倍数になっているものは 3,  5,  6,  9 の4つがあり,  これらの合計は 23 になる.
-> 同じようにして,  1000 未満の 3 か 5 の倍数になっている数字の合計を求めよ.
-
-> 3 + 5 + 6 + 9 = 23
+> 1000 未満の 3 か 5 の倍数になっている数字の合計を求めよ.
 
 [出展：ProjectEuler 問題1](http://odz.sakura.ne.jp/projecteuler/index.php?cmd=read&page=Problem%201)
 
@@ -135,39 +134,35 @@ say $res;
 
 ## ワンライナー
 
-* 春◯さん②
+春◯さん②
 
 ```
 $ perl -e '$a; for(1..1000){unless($_%3&&$_%5){$a+=$_}};print "$a"'
 ```
 
-* 僕
+僕
 
 ```
 $ perl -le 'print eval(join "+",(grep{!($_%3)||!($_%5)}1..(1e3-1)))'
 ```
 
-* PHPerの方②
+PHPerの方②
 
 ```
 $sum = 0;for($i=0;$i<1000;$i++)if($i%3===0||$i%5===0) $sum+=$i;
 ```
 
-* Rubyistの人
+Rubyistの人
 
 ```
 ((0...1000).step(3).to_a | (0...1000).step(5).to_a).inject(0){|s, i|s+=i}
 ```
 
-## Perl6
-* 僕
+## なぜかPerl6
 
 ```
 perl6 -e 'say [+] (1..999).grep({!($_%3)||!($_%5)})'
 ```
-
--> 出題された瞬間からPerl6を勉強したいって思って勉強して
--> その日にPerl6のビルドをして解答しました
 
 ### 人によって書き方が<br />たくさんある！
 ### こんな感じで社内で<br />盛り上がりました！
@@ -176,18 +171,12 @@ perl6 -e 'say [+] (1..999).grep({!($_%3)||!($_%5)})'
 ## ここからはスピードとの戦いです
 
 ```
-#!/usr/bin/env ruby
-def sum (max, num1, num2)
-  return (1..(max - 1)).select {|n|n % num1 == 0 || n % num2 == 0}.inject(&:+)
-end
-p sum(1000, 3, 5)
+p (1..999).select {|n| n % 3 == 0 || n % 5 == 0}.inject(&:+)
 ```
 
-## ループを変更
-ループはeachが速い
+## ループはeachが速い
 
 ```
-# p (1..999).select {|n| n % 3 == 0 || n % 5 == 0}.inject(&:+)
 total = 0
 (1..999).each{|n| total += n if n % 3 == 0 || n % 5 == 0}
 p total
@@ -198,7 +187,8 @@ p total
 
 ```
 m = 1000; a1 = 3; a2 = 5
-m = m - 1; a3 = a1 * a2; b1 = (m / a1).to_i; b2 = (m / a2).to_i; b3 = (m / a3).to_i
+m = m - 1; a3 = a1 * a2; 
+b1 = (m / a1).to_i; b2 = (m / a2).to_i; b3 = (m / a3).to_i
 p (b1 * (b1 + 1) * a1 + b2 * (b2 + 1) * a2 - b3 * (b3 + 1) * a3) / 2
 ```
 
@@ -207,7 +197,7 @@ p (b1 * (b1 + 1) * a1 + b2 * (b2 + 1) * a2 - b3 * (b3 + 1) * a3) / 2
 ### ならば！
 
 ## 演算コストを極める
-「+」「-」「*」「/」を減らす
+四則演算「+」「-」「*」「/」を減らす
 
 ```
 p( (999.div(3) * (3 + 999) + 999.div(5) * (5 + 995) - 999.div(15) * (15 + 990)) / 2)
@@ -221,18 +211,17 @@ m = 1000; a1 = 3; a2 = 5
 m = m - 1; a3 = a1 * a2; b1 = (m / a1).to_i; b2 = (m / a2).to_i; b3 = (m / a3).to_i
 p (b1 * (b1 + 1) * a1 + b2 * (b2 + 1) * a2 - b3 * (b3 + 1) * a3) / 2
 
-# Time: 0.12 msec
 ```
+Time: 0.12 msec
 
 ```
 p( (999.div(3) * (3 + 999) + 999.div(5) * (5 + 995) - 999.div(15) * (15 + 990)) / 2)
 
-# Time: 0.05 msec
 ```
+Time: 0.05 msec
 
 #### Problem 7
 ## Problem 7
-> 素数を小さい方から6つ並べると 2,  3,  5,  7,  11,  13 であり,  6番目の素数は 13 である.
 > 10001 番目の素数を求めよ.
 
 [出展：ProjectEuler 問題7](http://odz.sakura.ne.jp/projecteuler/index.php?cmd=read&page=Problem%207)
@@ -281,7 +270,9 @@ p i
 ```
 
 ### これでは味気なさすぎる
-## 6k±1
+## 6k±1フィルタ
+6の倍数±1以外は素数でないので省く
+
 ```
 #!/usr/bin/env ruby
 # coding : utf-8
@@ -329,27 +320,41 @@ end
 p prime_ary[-1]
 ```
 
-## ベンチ結果
+## 10倍速い！
  手法 | 実行時間 
  ------|--------
  prime | 3575.42 msec 
  mathn | 3445.56 msec 
  6k±1|  2767.65 msec
  自前で全部実装  | 223.41 msec 
+
 https://github.com/takyam-git/pjeuler/tree/master/scripts/007
 
-### オイラーには素数を<br />計算する問題が多い
+### アルゴリズムの神秘
 
-### ということは？
+### オイラーには素数を<br />計算する問題が多い
 
 ### 素数を制する者が
 ### オイラーを制す！！
 
 ### そんなこんなで
 
-### 社内で熱いバトルを繰り広げています^^
+### 社内で熱いバトルを<br />繰り広げています^^
 
-## 結果
+### 社内の火種は
+### 日本中に飛び火
+## 素数戦争勃発！
+YAPC × CodeIQ ×ガイアックス
+
+オンラインで素数問題の解答を投稿
+
+![bu](img/bu.png "bu")
+
+### ﾄﾞﾔｧ!m9( ･\`ω･´)
+
+### まとめ
+
+## やって良かったこと
 * パフォーマンスを意識してプログラミングをできるようになった
 * 他の言語で開発している人を巻き込んでRubyでやったので、言葉が通じるようになった
 * みんなで「同じ問題」を解いているので、レビューがとてもやり易い
@@ -364,5 +369,5 @@ https://github.com/takyam-git/pjeuler/tree/master/scripts/007
 ### みんなと「競争」って<br />実は楽しい！
 
 ### みなさんも会社でオイラーを<br />やって見てください
-### Enjoy Euler Life!
+### Enjoy Your Euler Life!
 ### Thank you!

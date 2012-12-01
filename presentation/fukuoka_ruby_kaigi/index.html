@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>みんなでProjectEuler in Ruby</title>
+    <title>みんなでProjectEuler<br />in Ruby</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="kazuph">
@@ -46,7 +46,7 @@
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
           <section>
-<h1>みんなでProjectEuler in Ruby</h1>
+<h1>みんなでProjectEuler<br />in Ruby</h1>
 
 <p>@kazuph</p>
 
@@ -56,13 +56,10 @@
 <h4>自己紹介</h4>
 
 </section><section>
-<h3>ID:kazuph</h3>
+<h3><img style="width:15%;margin-top:-100px;" src="./img/praykazuph.png" alt="pray_kazuph"><br />かずふ<br />kazuph</h3>
 
 </section><section>
-<h3>「かずふ」って<br />読みます</h3>
-
-</section><section>
-<h3>2年目</h3>
+<h3>2年目エンジニア</h3>
 
 </section><section>
 <h2>Vimの記事を書いたり</h2>
@@ -70,9 +67,10 @@
 <p><img src="img/hatebu.png" alt="hatebu" title="hagebu"></p>
 
 </section><section>
-<h2>Vim読書会に行ってdisられてきたりしている</h2>
+<h2>vimrc読書会</h2>
 
-<p><img src="img/vim4.png" alt="vim4" title="vim4"></p>
+<p>に行ってdisられてきたりしている
+<img src="img/vim4.png" alt="vim4" title="vim4"></p>
 
 </section><section>
 <h3>Vimが大好きな<br />スマフォエンジニアです！</h3>
@@ -93,10 +91,10 @@
 <h2>ProjectEulerとは</h2>
 
 <blockquote>
-<p>挑戦的な数学/コンピュータのプログラミング問題集。ほとんどの問題はコンピュータとプログラミングの能力が必要とされる。</p>
+<p>挑戦的な数学/コンピュータのプログラミング問題集サイト。</p>
 </blockquote>
 
-<p><a href="http://projecteuler.net">出展：ProjectEuler本家サイト</a></p>
+<p>Link : <a href="http://projecteuler.net">ProjectEuler</a></p>
 
 </section><section>
 <h3>ふーん</h3>
@@ -143,7 +141,7 @@
 <h3>きれいなお姉さんは<br />救いたいですか？</h3>
 
 </section><section>
-<h1>みんなでProjectEuler in Ruby</h1>
+<h1>みんなでProjectEuler<br />in Ruby</h1>
 
 <p>@kazuph</p>
 
@@ -171,17 +169,17 @@
 <div class="fragment"> ↓</div>
 <div class="fragment"> みんなが解答をSkypeであげまくる</div>
 <div class="fragment"> ↓</div>
-<div class="fragment"> みんなが解いたソースを自分のリポジトリに上げ始めた</div>
+<div class="fragment"> みんなが解いたソースを自分の<br />リポジトリに上げ始めた</div>
 <div class="fragment"> ↓</div>
-<div class="fragment"> Facebookグループで「解いた！」宣言→レビュー</div></p>
+<div class="fragment"> Facebookグループで「解いた！」宣言<br />→レビュー</div></p>
 
 </section><section>
-<h2>めんどくさくて</h2>
+<h2>他力本願</h2>
 
 <p><img src="./img/fb_jenkins.jpg" alt="fb_jenkis"></p>
 
 </section><section>
-<h3>翌週にできてました(^q^)</h3>
+<h3>翌週にはありました(^q^)</h3>
 
 </section><section>
 <h2>Euler System</h2>
@@ -208,10 +206,7 @@
 <h2>Problem 1</h2>
 
 <blockquote>
-<p>10未満の自然数のうち,  3 もしくは 5 の倍数になっているものは 3,  5,  6,  9 の4つがあり,  これらの合計は 23 になる.
-同じようにして,  1000 未満の 3 か 5 の倍数になっている数字の合計を求めよ.</p>
-
-<p>3 + 5 + 6 + 9 = 23</p>
+<p>1000 未満の 3 か 5 の倍数になっている数字の合計を求めよ.</p>
 </blockquote>
 
 <p><a href="http://odz.sakura.ne.jp/projecteuler/index.php?cmd=read&amp;page=Problem%201">出展：ProjectEuler 問題1</a></p>
@@ -264,46 +259,31 @@ say $res;
 </section><section>
 <h2>ワンライナー</h2>
 
-<ul>
-<li>春◯さん②</li>
-</ul>
+<p>春◯さん②</p>
 
 <pre><code>$ perl -e &#39;$a; for(1..1000){unless($_%3&amp;&amp;$_%5){$a+=$_}};print &quot;$a&quot;&#39;
 </code></pre>
 
-<ul>
-<li>僕</li>
-</ul>
+<p>僕</p>
 
 <pre><code>$ perl -le &#39;print eval(join &quot;+&quot;,(grep{!($_%3)||!($_%5)}1..(1e3-1)))&#39;
 </code></pre>
 
-<ul>
-<li>PHPerの方②</li>
-</ul>
+<p>PHPerの方②</p>
 
 <pre><code>$sum = 0;for($i=0;$i&lt;1000;$i++)if($i%3===0||$i%5===0) $sum+=$i;
 </code></pre>
 
-<ul>
-<li>Rubyistの人</li>
-</ul>
+<p>Rubyistの人</p>
 
 <pre><code>((0...1000).step(3).to_a | (0...1000).step(5).to_a).inject(0){|s, i|s+=i}
 </code></pre>
 
 </section><section>
-<h2>Perl6</h2>
-
-<ul>
-<li>僕</li>
-</ul>
+<h2>なぜかPerl6</h2>
 
 <pre><code>perl6 -e &#39;say [+] (1..999).grep({!($_%3)||!($_%5)})&#39;
 </code></pre>
-
-<p><div class="fragment"> 出題された瞬間からPerl6を勉強したいって思って勉強して</div>
-<div class="fragment"> その日にPerl6のビルドをして解答しました</div></p>
 
 </section><section>
 <h3>人によって書き方が<br />たくさんある！</h3>
@@ -317,20 +297,13 @@ say $res;
 </section><section>
 <h2>ここからはスピードとの戦いです</h2>
 
-<pre><code>#!/usr/bin/env ruby
-def sum (max, num1, num2)
-  return (1..(max - 1)).select {|n|n % num1 == 0 || n % num2 == 0}.inject(&amp;:+)
-end
-p sum(1000, 3, 5)
+<pre><code>p (1..999).select {|n| n % 3 == 0 || n % 5 == 0}.inject(&amp;:+)
 </code></pre>
 
 </section><section>
-<h2>ループを変更</h2>
+<h2>ループはeachが速い</h2>
 
-<p>ループはeachが速い</p>
-
-<pre><code># p (1..999).select {|n| n % 3 == 0 || n % 5 == 0}.inject(&amp;:+)
-total = 0
+<pre><code>total = 0
 (1..999).each{|n| total += n if n % 3 == 0 || n % 5 == 0}
 p total
 </code></pre>
@@ -341,7 +314,8 @@ p total
 <p>数学的に解く</p>
 
 <pre><code>m = 1000; a1 = 3; a2 = 5
-m = m - 1; a3 = a1 * a2; b1 = (m / a1).to_i; b2 = (m / a2).to_i; b3 = (m / a3).to_i
+m = m - 1; a3 = a1 * a2; 
+b1 = (m / a1).to_i; b2 = (m / a2).to_i; b3 = (m / a3).to_i
 p (b1 * (b1 + 1) * a1 + b2 * (b2 + 1) * a2 - b3 * (b3 + 1) * a3) / 2
 </code></pre>
 
@@ -354,7 +328,7 @@ p (b1 * (b1 + 1) * a1 + b2 * (b2 + 1) * a2 - b3 * (b3 + 1) * a3) / 2
 </section><section>
 <h2>演算コストを極める</h2>
 
-<p>「+」「-」「*」「/」を減らす</p>
+<p>四則演算「+」「-」「*」「/」を減らす</p>
 
 <pre><code>p( (999.div(3) * (3 + 999) + 999.div(5) * (5 + 995) - 999.div(15) * (15 + 990)) / 2)
 
@@ -367,13 +341,15 @@ p (b1 * (b1 + 1) * a1 + b2 * (b2 + 1) * a2 - b3 * (b3 + 1) * a3) / 2
 m = m - 1; a3 = a1 * a2; b1 = (m / a1).to_i; b2 = (m / a2).to_i; b3 = (m / a3).to_i
 p (b1 * (b1 + 1) * a1 + b2 * (b2 + 1) * a2 - b3 * (b3 + 1) * a3) / 2
 
-# Time: 0.12 msec
 </code></pre>
+
+<p>Time: 0.12 msec</p>
 
 <pre><code>p( (999.div(3) * (3 + 999) + 999.div(5) * (5 + 995) - 999.div(15) * (15 + 990)) / 2)
 
-# Time: 0.05 msec
 </code></pre>
+
+<p>Time: 0.05 msec</p>
 
 </section><section>
 <h4>Problem 7</h4>
@@ -382,8 +358,7 @@ p (b1 * (b1 + 1) * a1 + b2 * (b2 + 1) * a2 - b3 * (b3 + 1) * a3) / 2
 <h2>Problem 7</h2>
 
 <blockquote>
-<p>素数を小さい方から6つ並べると 2,  3,  5,  7,  11,  13 であり,  6番目の素数は 13 である.
-10001 番目の素数を求めよ.</p>
+<p>10001 番目の素数を求めよ.</p>
 </blockquote>
 
 <p><a href="http://odz.sakura.ne.jp/projecteuler/index.php?cmd=read&amp;page=Problem%207">出展：ProjectEuler 問題7</a></p>
@@ -444,7 +419,9 @@ p i
 <h3>これでは味気なさすぎる</h3>
 
 </section><section>
-<h2>6k±1</h2>
+<h2>6k±1フィルタ</h2>
+
+<p>6の倍数±1以外は素数でないので省く</p>
 
 <pre><code>#!/usr/bin/env ruby
 # coding : utf-8
@@ -499,7 +476,7 @@ p prime_ary[-1]
 </code></pre>
 
 </section><section>
-<h2>ベンチ結果</h2>
+<h2>10倍速い！</h2>
 
 <table><thead>
 <tr>
@@ -528,10 +505,10 @@ p prime_ary[-1]
 <p><a href="https://github.com/takyam-git/pjeuler/tree/master/scripts/007">https://github.com/takyam-git/pjeuler/tree/master/scripts/007</a></p>
 
 </section><section>
-<h3>オイラーには素数を<br />計算する問題が多い</h3>
+<h3>アルゴリズムの神秘</h3>
 
 </section><section>
-<h3>ということは？</h3>
+<h3>オイラーには素数を<br />計算する問題が多い</h3>
 
 </section><section>
 <h3>素数を制する者が</h3>
@@ -543,10 +520,31 @@ p prime_ary[-1]
 <h3>そんなこんなで</h3>
 
 </section><section>
-<h3>社内で熱いバトルを繰り広げています^^</h3>
+<h3>社内で熱いバトルを<br />繰り広げています^^</h3>
 
 </section><section>
-<h2>結果</h2>
+<h3>社内の火種は</h3>
+
+</section><section>
+<h3>日本中に飛び火</h3>
+
+</section><section>
+<h2>素数戦争勃発！</h2>
+
+<p>YAPC × CodeIQ ×ガイアックス</p>
+
+<p>オンラインで素数問題の解答を投稿</p>
+
+<p><img src="img/bu.png" alt="bu" title="bu"></p>
+
+</section><section>
+<h3>ﾄﾞﾔｧ!m9( ･`ω･´)</h3>
+
+</section><section>
+<h3>まとめ</h3>
+
+</section><section>
+<h2>やって良かったこと</h2>
 
 <ul>
 <li>パフォーマンスを意識してプログラミングをできるようになった</li>
@@ -574,7 +572,7 @@ p prime_ary[-1]
 <h3>みなさんも会社でオイラーを<br />やって見てください</h3>
 
 </section><section>
-<h3>Enjoy Euler Life!</h3>
+<h3>Enjoy Your Euler Life!</h3>
 
 </section><section>
 <h3>Thank you!</h3>
