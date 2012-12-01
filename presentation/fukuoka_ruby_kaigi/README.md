@@ -362,6 +362,8 @@ YAPC × CodeIQ ×ガイアックス
 
 オンラインで素数問題の解答を投稿
 
+実行速度でバトル！王者を決める！
+
 ![bu](img/bu.png "bu")
 
 ### ﾄﾞﾔｧ!m9( ･\`ω･´)
@@ -381,9 +383,6 @@ YAPC × CodeIQ ×ガイアックス
 
 ### 最後に
 ### みんなと「競争」って<br />実は楽しい！
-
-## ISUCON然り
-![isucon](img/isucon.png "isucon")
 
 ### みなさんも会社でオイラーを<br />やって見てください
 ### Enjoy Your Euler Life!
