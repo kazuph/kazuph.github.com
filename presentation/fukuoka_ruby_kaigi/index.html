@@ -103,7 +103,7 @@
 <h3>じゃあ</h3>
 
 </section><section>
-<h2>「お姉さん」は知ってますか！？</h2>
+<h2>この「お姉さん」は知ってますか！？</h2>
 
 <p><img src="./img/oneesan.jpg" alt="oneesan"></p>
 
@@ -119,7 +119,7 @@
 <h3>ProjectEulerとは</h3>
 
 </section><section>
-<h2>こういう問題をたくさん解くサイト</h2>
+<h2>↓な問題をたくさん解くサイト</h2>
 
 <p><img src="./img/kazoeruna.jpg" alt="oneesan"></p>
 
@@ -133,9 +133,14 @@
 <h3>これ以上お姉さんに数えさせちゃいけない！！</h3>
 
 </section><section>
-<h2>こんなことになってしまう前に！</h2>
+<h2>こんなことや</h2>
 
 <p><img src="./img/tomenaide.jpg" alt="tomenaide"></p>
+
+</section><section>
+<h2>こんなことになってしまう前に！</h2>
+
+<p><img src="./img/nesan1.png" alt="nesan1"></p>
 
 </section><section>
 <h3>きれいなお姉さんは<br />救いたいですか？</h3>
@@ -165,7 +170,7 @@
 </section><section>
 <h2>Eulerの始まり</h2>
 
-<p>とある部長がSkypeで出題したのが発端
+<p>とある部長がSkypeで問題１を<br />出題したのが発端
 <div class="fragment"> ↓</div>
 <div class="fragment"> みんなが解答をSkypeであげまくる</div>
 <div class="fragment"> ↓</div>
@@ -176,19 +181,21 @@
 </section><section>
 <h2>他力本願</h2>
 
+<p>めんどくさいことはJenkinsさんにお願い！</p>
+
 <p><img src="./img/fb_jenkins.jpg" alt="fb_jenkis"></p>
 
 </section><section>
-<h3>翌週にはありました(^q^)</h3>
+<h3>翌週には完成してました(^q^)</h3>
 
 </section><section>
-<h2>Euler System</h2>
+<h2>僕らのつくったEulerSystem</h2>
 
 <ul>
 <li>githubにpushするだけの簡単操作</li>
-<li>コミットすると実行結果と時間を更新</li>
-<li>問題ごとに実行速度順にランキングして表示</li>
-<li>一応Ruby縛り(PHPerもPerlerも)</li>
+<li>コミットすると実行(結果|時間)を更新</li>
+<li>問題ごとに実行速度順にランキング</li>
+<li>言語は一応Ruby縛り</li>
 </ul>
 
 </section><section>
@@ -206,7 +213,7 @@
 <h2>Problem 1</h2>
 
 <blockquote>
-<p>1000 未満の 3 か 5 の倍数になっている数字の合計を求めよ.</p>
+<p>1000 未満の 3 か 5 の倍数になっている<br />数字の合計を求めよ.</p>
 </blockquote>
 
 <p><a href="http://odz.sakura.ne.jp/projecteuler/index.php?cmd=read&amp;page=Problem%201">出展：ProjectEuler 問題1</a></p>
@@ -228,6 +235,9 @@ total = 0
 end
 p total
 </code></pre>
+
+</section><section>
+<h3>※ここからのコードは<br />時間がないので<br />雰囲気だけ味わってね☆彡</h3>
 
 </section><section>
 <h2>PHPerさんの解答</h2>
@@ -292,7 +302,7 @@ say $res;
 <h3>こんな感じで社内で<br />盛り上がりました！</h3>
 
 </section><section>
-<h3>更にEuelr Systemができてからの投稿</h3>
+<h3>更にEuelr Systemが<br />できてからの投稿</h3>
 
 </section><section>
 <h2>ここからはスピードとの戦いです</h2>
@@ -379,6 +389,8 @@ p (b1 * (b1 + 1) * a1 + b2 * (b2 + 1) * a2 - b3 * (b3 + 1) * a3) / 2
 </section><section>
 <h2>require &#39;prime&#39;</h2>
 
+<p>素数の判定をしてくれる</p>
+
 <pre><code>require &#39;prime&#39;
 
 i = 2
@@ -455,6 +467,8 @@ p primes[max-1]
 </section><section>
 <h2>アルゴリズムを極める</h2>
 
+<p>素数の判定を自前で実装で</p>
+
 <pre><code>max = 10001
 def prime?(num,  ary)
   ary.each do |n|
@@ -476,7 +490,7 @@ p prime_ary[-1]
 </code></pre>
 
 </section><section>
-<h2>10倍速い！</h2>
+<h2>ベンチマーク結果</h2>
 
 <table><thead>
 <tr>
@@ -502,13 +516,16 @@ p prime_ary[-1]
 </tr>
 </tbody></table>
 
-<p><a href="https://github.com/takyam-git/pjeuler/tree/master/scripts/007">https://github.com/takyam-git/pjeuler/tree/master/scripts/007</a></p>
+<p>なんと10倍速い！</p>
 
 </section><section>
 <h3>アルゴリズムの神秘</h3>
 
 </section><section>
 <h3>オイラーには素数を<br />計算する問題が多い</h3>
+
+</section><section>
+<h3>つまりは、</h3>
 
 </section><section>
 <h3>素数を制する者が</h3>
@@ -521,6 +538,9 @@ p prime_ary[-1]
 
 </section><section>
 <h3>社内で熱いバトルを<br />繰り広げています^^</h3>
+
+</section><section>
+<h3>そして</h3>
 
 </section><section>
 <h3>社内の火種は</h3>
@@ -548,17 +568,17 @@ p prime_ary[-1]
 
 <ul>
 <li>パフォーマンスを意識してプログラミングをできるようになった</li>
-<li>他の言語で開発している人を巻き込んでRubyでやったので、言葉が通じるようになった</li>
+<li>全員がRubyでやったので言葉が通じるようになった</li>
 <li>みんなで「同じ問題」を解いているので、レビューがとてもやり易い</li>
 <li>人や自分の癖がわかるようになった</li>
 </ul>
 
 </section><section>
-<h2>課題</h2>
+<h2>今後の課題</h2>
 
 <ul>
 <li>全くオブジェクト指向が身についてない</li>
-<li>Rubyのワンライナーがキメると気持ちよすぎて逆にキモい</li>
+<li>Rubyのワンライナーがキメると気持ちよすぎて逆にキモい（明らかに自分のせい</li>
 <li>TDD導入など</li>
 </ul>
 
@@ -567,6 +587,11 @@ p prime_ary[-1]
 
 </section><section>
 <h3>みんなと「競争」って<br />実は楽しい！</h3>
+
+</section><section>
+<h2>ISUCON然り</h2>
+
+<p><img src="img/isucon.png" alt="isucon" title="isucon"></p>
 
 </section><section>
 <h3>みなさんも会社でオイラーを<br />やって見てください</h3>

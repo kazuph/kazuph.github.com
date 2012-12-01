@@ -6,7 +6,6 @@
 #### 自己紹介
 ### <img style="width:15%;margin-top:-100px;" src="./img/praykazuph.png" alt="pray_kazuph"><br />かずふ<br />kazuph
 
-
 ### 2年目エンジニア
 ## Vimの記事を書いたり
 ![hatebu](img/hatebu.png "hagebu")
@@ -27,7 +26,7 @@ Link : [ProjectEuler](http://projecteuler.net)
 
 ### ふーん
 ### じゃあ
-## 「お姉さん」は知ってますか！？
+## この「お姉さん」は知ってますか！？
 ![oneesan](./img/oneesan.jpg)
 
 [出展：『フカシギの数え方』 おねえさんといっしょ！ みんなで数えてみよう！ ](http://www.youtube.com/watch?v=Q4gTV4r0zRs)
@@ -35,14 +34,17 @@ Link : [ProjectEuler](http://projecteuler.net)
 ### ( ･\`ω･´)/
 ### つまるところ
 ### ProjectEulerとは
-## こういう問題をたくさん解くサイト
+## ↓な問題をたくさん解くサイト
 ![oneesan](./img/kazoeruna.jpg)
 
 ### こんな問題が<br />400問以上
 ### お姉さんに見せたら<br />大変なことに！？
 ### これ以上お姉さんに数えさせちゃいけない！！
-## こんなことになってしまう前に！
+## こんなことや
 ![tomenaide](./img/tomenaide.jpg)
+
+## こんなことになってしまう前に！
+![nesan1](./img/nesan1.png)
 
 ### きれいなお姉さんは<br />救いたいですか？
 # みんなでProjectEuler<br />in Ruby
@@ -61,7 +63,7 @@ Link : [ProjectEuler](http://projecteuler.net)
 と言うことで、ここからはまったく「お姉さん」とは関係なく、会社のみんなでProjectEulerを解いてみた話をします。
 
 ## Eulerの始まり
-とある部長がSkypeで出題したのが発端
+とある部長がSkypeで問題１を<br />出題したのが発端
 -> ↓
 -> みんなが解答をSkypeであげまくる
 -> ↓
@@ -70,15 +72,17 @@ Link : [ProjectEuler](http://projecteuler.net)
 -> Facebookグループで「解いた！」宣言<br />→レビュー
 
 ## 他力本願
+めんどくさいことはJenkinsさんにお願い！
+
 ![fb_jenkis](./img/fb_jenkins.jpg)
 
-### 翌週にはありました(^q^)
+### 翌週には完成してました(^q^)
 
-## Euler System
+## 僕らのつくったEulerSystem
 * githubにpushするだけの簡単操作
-* コミットすると実行結果と時間を更新
-* 問題ごとに実行速度順にランキングして表示
-* 一応Ruby縛り(PHPerもPerlerも)
+* コミットすると実行(結果|時間)を更新
+* 問題ごとに実行速度順にランキング
+* 言語は一応Ruby縛り
 
 ## こんなん
 ![pjeuler](./img/pjeulercom.png)
@@ -87,7 +91,7 @@ Link : [ProjectEuler](http://projecteuler.net)
 
 #### Problem 1
 ## Problem 1
-> 1000 未満の 3 か 5 の倍数になっている数字の合計を求めよ.
+> 1000 未満の 3 か 5 の倍数になっている<br />数字の合計を求めよ.
 
 [出展：ProjectEuler 問題1](http://odz.sakura.ne.jp/projecteuler/index.php?cmd=read&page=Problem%201)
 
@@ -106,6 +110,8 @@ total = 0
 end
 p total
 ```
+
+### ※ここからのコードは<br />時間がないので<br />雰囲気だけ味わってね☆彡
 
 ## PHPerさんの解答
 ```
@@ -167,7 +173,7 @@ perl6 -e 'say [+] (1..999).grep({!($_%3)||!($_%5)})'
 ### 人によって書き方が<br />たくさんある！
 ### こんな感じで社内で<br />盛り上がりました！
 
-### 更にEuelr Systemができてからの投稿
+### 更にEuelr Systemが<br />できてからの投稿
 ## ここからはスピードとの戦いです
 
 ```
@@ -232,6 +238,8 @@ Time: 0.05 msec
 (or require 'mathn')
 </center>
 ## require 'prime'
+素数の判定をしてくれる
+
 
 ```
 require 'prime'
@@ -298,6 +306,8 @@ p primes[max-1]
 ### 貧弱、貧弱！
 
 ## アルゴリズムを極める
+素数の判定を自前で実装で
+
 
 ```
 max = 10001
@@ -320,7 +330,7 @@ end
 p prime_ary[-1]
 ```
 
-## 10倍速い！
+## ベンチマーク結果
  手法 | 実行時間 
  ------|--------
  prime | 3575.42 msec 
@@ -328,11 +338,13 @@ p prime_ary[-1]
  6k±1|  2767.65 msec
  自前で全部実装  | 223.41 msec 
 
-https://github.com/takyam-git/pjeuler/tree/master/scripts/007
+なんと10倍速い！
 
 ### アルゴリズムの神秘
 
 ### オイラーには素数を<br />計算する問題が多い
+
+### つまりは、
 
 ### 素数を制する者が
 ### オイラーを制す！！
@@ -340,6 +352,8 @@ https://github.com/takyam-git/pjeuler/tree/master/scripts/007
 ### そんなこんなで
 
 ### 社内で熱いバトルを<br />繰り広げています^^
+
+### そして
 
 ### 社内の火種は
 ### 日本中に飛び火
@@ -356,17 +370,20 @@ YAPC × CodeIQ ×ガイアックス
 
 ## やって良かったこと
 * パフォーマンスを意識してプログラミングをできるようになった
-* 他の言語で開発している人を巻き込んでRubyでやったので、言葉が通じるようになった
+* 全員がRubyでやったので言葉が通じるようになった
 * みんなで「同じ問題」を解いているので、レビューがとてもやり易い
 * 人や自分の癖がわかるようになった
 
-## 課題
+## 今後の課題
 * 全くオブジェクト指向が身についてない
-* Rubyのワンライナーがキメると気持ちよすぎて逆にキモい
+* Rubyのワンライナーがキメると気持ちよすぎて逆にキモい（明らかに自分のせい
 * TDD導入など
 
 ### 最後に
 ### みんなと「競争」って<br />実は楽しい！
+
+## ISUCON然り
+![isucon](img/isucon.png "isucon")
 
 ### みなさんも会社でオイラーを<br />やって見てください
 ### Enjoy Your Euler Life!
