@@ -3,19 +3,6 @@
 
 2012/12/01
 
-#### 自己紹介
-### <img style="width:15%;margin-top:-100px;" src="./img/praykazuph.png" alt="pray_kazuph"><br />かずふ<br />kazuph
-
-### 2年目エンジニア
-## Vimの記事を書いたり
-![hatebu](img/hatebu.png "hagebu")
-
-## vimrc読書会
-に行ってdisられてきたりしている
-![vim4](img/vim4.png "vim4")
-### Vimが大好きな<br />スマフォエンジニアです！
-### 続きは懇親会で！
-
 ### 突然ですが皆さん
 ### ProjectEulerって<br />知ってますか？
 ### しーん
@@ -32,7 +19,6 @@ Link : [ProjectEuler](http://projecteuler.net)
 [出展：『フカシギの数え方』 おねえさんといっしょ！ みんなで数えてみよう！ ](http://www.youtube.com/watch?v=Q4gTV4r0zRs)
 
 ### ( ･\`ω･´)/
-### つまるところ
 ### ProjectEulerとは
 ## ↓な問題をたくさん解くサイト
 ![oneesan](./img/kazoeruna.jpg)
@@ -69,7 +55,7 @@ Link : [ProjectEuler](http://projecteuler.net)
 -> ↓
 -> みんなが解いたソースを自分の<br />リポジトリに上げ始めた
 -> ↓
--> Facebookグループで「解いた！」宣言<br />→レビュー
+-> 「解いた！」宣言<br />→レビュー
 
 ## 他力本願
 めんどくさいことはJenkinsさんにお願い！
