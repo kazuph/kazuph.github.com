@@ -1,64 +1,186 @@
-# deck.js
+# 僕と僕のはてブとgithubとVimの付き合い方
+@kazuph
 
-A JavaScript library for building modern HTML presentations. deck.js is flexible enough to let advanced CSS and JavaScript authors craft highly customized decks, but also provides templates and themes for the HTML novice to build a standard slideshow.
+2012/11/30
 
-## Quick Start
+#### 自己紹介
 
-This repository includes a `boilerplate.html` as a starting point, with all the extensions included. Just [download it](https://github.com/imakewebthings/deck.js/zipball/stable), open `boilerplate.html`, and start editing your slides.
+## 自己紹介
+<img style="width:15%;float:right;" src="./img/praykazuph.png" alt="pray_kazuph">
 
-## Documentation
+* ID:@kazuph
+* 「かずふ」って読みます
+* 2年目エンジニア
+* プログラミングは大学から
+* 使用言語：Perl, Objective-C, JavaScript, Java
+* エディタ: Vim
+* 最近はスマフォアプリつくってます。
 
-Check out the [documentation page](http://imakewebthings.github.com/deck.js/docs) for more information on the methods, events, and options available in core and all the included extensions.  A sample standard slide deck is included in the package under the `introduction` folder.  You can also [view that sample deck](http://imakewebthings.github.com/deck.js/introduction) online to play with the available style and transition themes.
+## ググればたくさん出てきます
+![ggr](img/ggr.jpg "ggr")
 
-## Extensions, Themes, and Related Projects
 
-Take a look at [the wiki](https://github.com/imakewebthings/deck.js/wiki) for lists of extensions, themes, and other related goodies.  If you have a publicly available project of your own, feel free to add to the list.
+#### ググって出てこない
+## 僕の机 1
+![bt](img/dt.jpg "bt")
 
-## Dependencies (included in this repository)
+## 僕の机 2
+![bt2](img/dt2.jpg "bt2")
 
-- [jQuery](http://jquery.com)
-- [Modernizr](http://modernizr.com)
+## 僕の机 3
+<img style="width:50%;float:center;margin-left:100px;" src="./img/dt3.jpg" alt="hatebutoha">
 
-## Tests & Support
+#### 僕 と はてブ
 
-Unit tests are written with [Jasmine](http://pivotal.github.com/jasmine/) and [jasmine-jquery](https://github.com/velesin/jasmine-jquery). You can [run them here](http://imakewebthings.github.com/deck.js/test).
+## 直近
+* Vimの記事を書いたらたくさん「はてブ」もらえました！
 
-deck.js has been tested with jQuery 1.6+ and works in IE7+, Chrome, FF, Safari, and Opera. The more capable browsers receive greater enhancements, but a basic cutaway slideshow will work for all browsers listed above. Please don't give your presentations in IE6.
+![hatebu](img/hatebu.png "hagebu")
 
-For any questions or general discussion about deck.js please direct your attention to the [mailing list](http://groups.google.com/group/deckjs) (uses Google groups.)  If you would like to report a bug, please see the [issues page](https://github.com/imakewebthings/deck.js/issues).
+## はてブとは？
+ * はてブ＝はてなブックマーク
+ * おそらく日本のエンジニアが最もよく使っているソーシャルブックマークサービス
+<img style="width:50%;float:right;" src="./img/hatebutoha.jpg" alt="hatebutoha">
 
-## Known Bug(s)
+## 僕のはてブ歴一覧
+[http://b.hatena.ne.jp/entrylist?sort=count&url=kazuph.hateblo.jp](http://b.hatena.ne.jp/entrylist?sort=count&url=kazuph.hateblo.jp "ninki")
+<img style="width:80%;text-align:center;" src="./img/ninki.png" alt="ninki">
 
-There is an issue with certain builds of Chrome that result in a solid blue background and generally broken decks.  This is a bug in Chrome ([Issue 91518](http://code.google.com/p/chromium/issues/detail?id=91518)) that stems from hardware acceleration of 3d transforms.  Current workarounds:
+### だからなんなの？
 
-- Use a different browser. This problem doesn't exist in Safari, FF, Opera.
-- Disable hardware compositing by setting `--disable-accelerated-compositing` in the Chrome loading options
-- Replace instances of `translate3d` with `translate` in the CSS of your decks (though this will slow down performance on iOS devices and Safari.)
+## はてブ歴からわかる人となり
+<img style="width:80%;text-align:center;" src="./img/ninki2.png" alt="ninki">
 
-Firefox contains a bug that allows users to scroll horizontally using the trackpad despite `overflow-x:hidden`. ([Bug 664275](https://bugzilla.mozilla.org/show_bug.cgi?id=664275) and [Bug 325942](https://bugzilla.mozilla.org/show_bug.cgi?id=325942).) If anyone knows of any workarounds to this issue please contact me.
+### 自称でなく他人から後押しされた証拠があるということ
 
-## Printing
+## はてブ数＝戦闘力
+* まわりから見た場合の分かり易い指標
+* （はてブされたことがない＝戦闘力0ではないけどね）
 
-Core includes stripped down black and white print styles for the standard slide template that is suitable for handouts.
+例
 
-## Awesome Contributors
+-> 「Vim戦闘力300！しかもまだまだ上がっている…だと！？」
+-> 「Perl戦闘力…たったの13か…ゴミめ」
 
-- [jbuck](https://github.com/jbuck)
-- [cykod](https://github.com/cykod)
-- [dougireton](https://github.com/dougireton)
-- [awirick](https://github.com/awirick)
-- Daniel Knittl-Frank
-- [alexch](https://github.com/alexch)
+## 晒されるデメリット
+* 数値化されてしまうことで逆に低く見られてしまうかもしれない
+* 炎上してしまうかも？w
 
-If you would like to contribute a patch to deck.js please do as much as you can of the following:
+### 逆に
 
-- Add or amend Jasmine tests.
-- Add inline documentation.
-- If the standard snippet of an extension changes, please change it in both the introduction deck and the snippet html in the extension folder.
-- If the API changes, it would be awesome to receive a parallel pull request to the gh-pages branch which updates the public-facing documentation.
+## 晒されるメリット
+* 世界中の人の目に届く
+* 実力が上の人からフィードバックをもらえるかも
+* そのやり取りが誰かの役に立つかも
 
-## License
+### 「公開」するとすごい人達に<br />鍛えてもらえる可能性も！
 
-Copyright (c) 2011-2012 Caleb Troughton
+### エンジニアにとって<br />「公開する」と言えば
 
-Dual licensed under the [MIT license](https://github.com/imakewebthings/deck.js/blob/master/MIT-license.txt) and [GPL license](https://github.com/imakewebthings/deck.js/blob/master/GPL-license.txt).
+#### 僕 と github
+
+## githubとは？
+ * ネット上でソース管理ができるサイト
+ * ＋SNSが融合したサービス
+
+<img style="width:40%;float:right;" src="./img/github.png" alt="hatebutoha">
+
+### 世界中の開発者のコードを見ることができる
+
+### 世界中の開発者達のやりとりを見ることができる
+
+### 逆に自分がその一員にも<br />なれるかもしれない
+
+### そんな素敵な<br />サービス
+
+## 僕とgithub 1
+[社内会議用タイマー](http://kazuph.github.com/TeiClock/ "timer")
+
+* github単体で動作（サーバーいらない
+
+![timer](img/timer.png "timer")
+
+## 僕とgithub 2
+[iPhoneアプリのサンプル](https://github.com/kazuph/TableViewALAssetsLibrary "iphone")
+
+![iphone](img/mock.png "iphone")
+
+## 僕とgithub 3
+[Perlのネット上での実行環境](https://github.com/kazuph/PerlPad "perlpad")
+
+* 動作はdotcloudで
+
+![perlpad](img/perlpad.png "perlpad")
+
+## 僕とgithub 4
+[プログラミング部のサイト](https://github.com/gx-hackers/studio-256bit "perlpad")
+
+* github単体で動作（サーバーいらない
+
+![bu](img/bu.png "bu")
+
+## 僕とgithub 5
+[この資料](https://github.com/kazuph/kazuph.github.com/tree/master/presentation/github_hatena_twitter "kore")
+
+* github単体で動作（サーバーいらない
+
+![kore](img/kore.png "kore")
+
+## 僕とgithub 他にも色々
+* 自分のVimとかターミナルの設定
+* その他の発表資料
+* 技術系の専門書を写経したコード
+* etc.
+
+### そう何気なくVimの設定をあげていたら・・・
+
+#### 僕 と Vim
+
+## vimとは
+* Vimはテキストエディタ
+* vimrcというvimの設定ファイル
+ * 人によって設定ファイルの個性に違いがある
+
+## 突然の連絡！
+![vim](img/vim.png "vim")
+
+## ！
+![vim1](img/vim1.png "vim1")
+
+## 快諾？
+![vim2](img/vim2.png "vim2")
+
+## vimrc読書会
+* vim仙人が出没して教えを請う場所
+* vim界の登竜門（たぶん、かな？ちがうか
+* 初級Vimmerの自分としてはかなり畏れ多い場所・・・
+
+## vimrc読書会に参加
+![vim3](img/vim3.png "vim3")
+
+## 沢山の凄腕Vimmerにdisられる
+チャットルームの様子
+![vim5](img/vim5.png "vim5")
+
+## vimrc読書会終了
+![vim4](img/vim4.png "vim4")
+###  「人は叩かれて<br />成長する。」
+
+### 公開したらすごい人達に鍛えてもらえた！
+
+### まったく予期していないイベントだったけど、
+
+### githubに公開してなかったら参加できなかったイベント
+
+### 公開することで<br />広がる縁
+
+### 「自分」を公開していて良かった！
+
+## まとめ
+* ブログを書こう、githubにコードを上げよう
+* 車輪の再発明は恐れず、今の成長途中の「自分」を公開しよう
+* 結果はネットにゆだねよう
+* 偶然の縁を大切にしよう
+
+### Enjoy Your <br />Engineering Life!
+### Thank you!
