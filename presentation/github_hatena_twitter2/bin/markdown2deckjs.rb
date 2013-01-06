@@ -11,12 +11,14 @@ html = markdown.render(File.read('README.md'))
 title = $1 if html =~ /<h1>(.+?)<\/h1>/
 
 # for reveal.js
-html.gsub!(/<h(\d)>/) { "</section><section>\n<h" + $1 + ">"}
+html.gsub!(/<h(\d)>/) { "</section><section class='slide'>\n<h" + $1 + ">"}
 html.sub!(/<\/section>/, "")
 html = html + "</section>"
 
-html.gsub!(/-&gt;(.+?)(<\/p>)?$/, "<ul><li class=\"fragment\">\\1</li></ul>\\2")
+# set animation
+html.gsub!(/-&gt;(.+?)(<\/p>)?$/, "<ul><li class=\"slide\">\\1</li></ul>\\2")
 
+# presentation html
 puts html
 
 # embed html
