@@ -195,16 +195,25 @@ body.deck-container {
   min-height: 100%;
   position: relative;
 }
-.slide h1 {
+.slide h1, .slide h4 {
   font-size: 4.5em;
 }
-.slide h1, .slide .vcenter {
+.slide h3 {
+  font-size: 3.0em;
+}
+.slide h1, .slide h4, .slide h3, .slide .vcenter {
   font-weight: bold;
   text-align: center;
   padding-top: 1em;
   max-height: 100%;
 }
-.csstransforms .slide h1, .csstransforms .slide .vcenter {
+.slide h3 {
+  font-weight: bold;
+  text-align: center;
+  padding-top: 2.5em;
+  max-height: 100%;
+}
+.csstransforms .slide h1, h4, h3, .csstransforms .slide .vcenter {
   /* padding: 0 48px; */
   /* position: absolute; */
   left: 0;
@@ -216,7 +225,7 @@ body.deck-container {
   /* -o-transform: translate(0, -50%); */
   /* transform: translate(0, -50%); */
 }
-.slide .vcenter h1 {
+.slide .vcenter h1, h4, h3 {
   position: relative;
   top: auto;
   padding: 0;
@@ -233,16 +242,16 @@ body.deck-container {
   margin: 0 0 .66666em 0;
   border-bottom: 3px solid #888;
 }
-.slide h3 {
-  font-size: 1.4375em;
-  font-weight: bold;
-  margin-bottom: .30435em;
-}
-.slide h4 {
-  font-size: 1.25em;
-  font-weight: bold;
-  margin-bottom: .25em;
-}
+/* .slide h3 { */
+/*   font-size: 1.4375em; */
+/*   font-weight: bold; */
+/*   margin-bottom: .30435em; */
+/* } */
+/* .slide h4 { */
+/*   font-size: 1.25em; */
+/*   font-weight: bold; */
+/*   margin-bottom: .25em; */
+/* } */
 .slide h5 {
   font-size: 1.125em;
   font-weight: bold;
@@ -359,12 +368,12 @@ body.deck-container {
     margin: 0.5cm;
 }
 
-  p, h2, h3 {
+  p, h2 {
     orphans: 3;
     widows: 3;
   }
 
-  h2, h3 {
+  h2 {
     page-break-after: avoid;
   }
 

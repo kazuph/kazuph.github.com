@@ -27,6 +27,16 @@
   font-weight: 100;
   text-shadow: 0 0 10px #fff, 0 0 2px #fff;
 }
+.deck-container .slide h4 {
+  color: #fff;
+  font-weight: normal;
+  font-weight: 100;
+  text-shadow: 0 0 10px #fff, 0 0 2px #fff;
+  /* border-bottom: 0px solid #fff; */
+  /* -moz-box-shadow: 0px 6px 2px -2px #fff; */
+  /* -webkit-box-shadow: 0px 6px 2px -2px #fff; */
+  /* box-shadow: 0px 6px 2px -2px #fff; */
+}
 .deck-container .slide pre {
   border-color: #333;
 }
