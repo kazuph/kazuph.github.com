@@ -214,16 +214,16 @@ body.deck-container {
   max-height: 100%;
 }
 .csstransforms .slide h1, h4, h3, .csstransforms .slide .vcenter {
-  /* padding: 0 48px; */
-  /* position: absolute; */
+  padding: 0 48px;
+  position: absolute;
   left: 0;
   right: 0;
   top: 50%;
-  /* -webkit-transform: translate(0, -50%); */
-  /* -moz-transform: translate(0, -50%); */
-  /* -ms-transform: translate(0, -50%); */
-  /* -o-transform: translate(0, -50%); */
-  /* transform: translate(0, -50%); */
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
 }
 .slide .vcenter h1, h4, h3 {
   position: relative;

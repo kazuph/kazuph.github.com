@@ -1,22 +1,31 @@
-# 僕と僕のはてブとgithubとVimの付き合い方
+# 新卒で入って<br />2年が経った話
+
 @kazuph
 
 2013/01/09
 
-## 自己紹介
-<img style="width:15%;float:right;" src="./img/praykazuph.png" alt="pray_kazuph">
+#### $ whoami
+# $ whoami
+## 忍者の末裔
+![praykazuph](img/praykazuph.jpg "ggr")
 
-* ID:@kazuph
-* 「かずふ」って読みます
-* 2年目エンジニア
-* プログラミングは大学から
-* 使用言語：Perl, Objective-C, JavaScript, Java
-* エディタ: Vim
-* 最近はスマフォアプリつくってます。
+## ある有名な方と被ります
+ID:@kazuph 「かずふ」
+
+## (これでも|実は？)
+2年目エンジニア
+
+## なんでここにいるの？
+
+
+大学2年の時の授業でプログラミングにハマる
+使用言語：Perl, Objective-C, JavaScript, Java
+エディタ: Vim
+最近はスマフォアプリつくってます。
+```
 
 ## ググればたくさん出てきます
 ![ggr](img/ggr.jpg "ggr")
-
 
 #### ググって出てこない
 ## 僕の机 1
