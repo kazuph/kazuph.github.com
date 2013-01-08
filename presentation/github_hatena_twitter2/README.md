@@ -1,9 +1,7 @@
 # 僕と僕のはてブとgithubとVimの付き合い方
 @kazuph
 
-2012/11/30
-
-#### 自己紹介
+2013/01/09
 
 ## 自己紹介
 <img style="width:15%;float:right;" src="./img/praykazuph.png" alt="pray_kazuph">
