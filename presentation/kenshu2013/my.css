@@ -1,0 +1,16 @@
+.reveal h1 { font-size: 4.00em; }
+.reveal h2 { font-size: 2.00em; }
+.reveal h4 {
+  text-align:center;
+  border-bottom: 4px solid #FF698E;
+  font-size: 3.00em;
+}
+
+.reveal h5 {
+  text-align:center;
+  font-size: 3.00em;
+}
+
+img {
+  height:57%
+}
