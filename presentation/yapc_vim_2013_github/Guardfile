@@ -1,0 +1,12 @@
+guard 'shell' do
+  watch(/README.md/) {|m|
+    `ruby bin/markdown2reveraljs.rb` 
+    `ruby bin/markdown2html.rb` 
+  }
+end
+
+guard 'livereload' do
+  watch(%r{.*})
+  watch(%r{css/theme/*\.css})
+end
+
