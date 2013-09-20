@@ -1,4 +1,4 @@
-# Vim実践入門 @@~Perl編~
+# Vim実践入門 ~Perl編~
 
 YAPC::ASIA 2013 9/20 at 慶応大学
 
