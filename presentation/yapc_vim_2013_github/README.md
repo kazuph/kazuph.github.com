@@ -628,7 +628,7 @@ NeoBundle 'scrooloose/syntastic'
 
 ### 補完を簡単にしたい
 
-[neocomplate](https://github.com/Shougo/neocomplete.vim)
+[neocomplete](https://github.com/Shougo/neocomplete.vim)
 
 本来補完の機能はVim自体にあるが、
 
