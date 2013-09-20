@@ -311,7 +311,7 @@ $ vim <filename> # 複数ファイルなら vim *.pm
 
 ### 「慣れ」れば高速
 
-/#sectionn
+/#section
 
 ### インサートモード
 
