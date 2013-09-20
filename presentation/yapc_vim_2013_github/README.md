@@ -317,7 +317,7 @@ $ vim <filename> # 複数ファイルなら vim *.pm
 
 ![vimq](./images/insert.gif)
 
-※`Esc`は`Ctrl+c` or `Ctrl + [` で代用できる
+※`Esc`は `Ctrl + [` で代用できる
 ※⎋:Esc
 
 #section
