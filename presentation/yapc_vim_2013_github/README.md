@@ -755,6 +755,13 @@ autocmd FileType perl inoremap <buffer> <expr> = smartchr#loop(' = ', ' => ', '=
 外部コマンドとしてprove実行でいいかな…
 ![prove](./images/prove.gif)
 
+### [追加]gitでの差分を編集時に表示
+
+```
+NeoBundle 'airblade/vim-gitgutter'
+```
+![git](./images/git.gif)
+
 #### これから
 
 ### Vimを学べる本

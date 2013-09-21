@@ -1,8 +1,8 @@
 #!/usr/bin/env perl
-	use strict;
+    use strict;
 use warnings;
 my $hash = {
-			hoge => 'ほげ',
+            hoge => 'ほげ',
 fuga => 'ふが',
 };
-	print $hash->{fuga};
+    print $hash->{fuga};
