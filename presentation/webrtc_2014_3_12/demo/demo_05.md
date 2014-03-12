@@ -1,0 +1,20 @@
+# sortします
+requires 'Time::Out', 0.11;
+requires 'DBD::SQLite', 1.33;
+requires 'YAML::XS', 0.38;
+requires 'Plack::Middleware::ReverseProxy', 0.09;
+requires 'Data::Dump', 1.21;
+requires 'Diff::LibXDiff', 0.05;
+requires 'Starman', 0.3005;
+requires 'HTML::FillInForm::Lite', 1.09;
+requires 'JSON', 2.50;
+requires 'Log::Minimal', 0.13;
+requires 'Plack::Middleware::Log::Minimal', 0.06;
+requires 'Module::Find', 0.11;
+requires 'Plack::Middleware::Session', 0.15;
+requires 'Cache::Memcached::Fast', 0.19;
+requires 'Amon2::DBI', 0.06;
+requires 'Amon2', 3.32;
+requires 'Text::Xslate', 1.5006;
+requires 'Text::Xslate::Bridge::TT2Like', 0.00010;
+requires 'Time::Piece', 1.20;
