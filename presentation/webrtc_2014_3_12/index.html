@@ -188,10 +188,74 @@ document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.se
 </ul>
 
 </section><section>
-<h3>WebRTCの簡単な仕組み</h3>
+<h3>WebRTCを使うための最低限の知識</h3>
+
+<ul>
+<li>基本はブラウザ間でのP2P
+
+<ul>
+<li>カメラの映像を送るために処理能力の高いサーバーを設置する必要はない</li>
+<li>ただしそれはP2Pを確立したあとの話</li>
+</ul></li>
+<li>接続を確立するために以下の2台のサーバーが必要
+
+<ul>
+<li>ICEサーバー
+
+<ul>
+<li>NAT越えをするために必要</li>
+<li>大手が用意してくれているものがある
+
+<ul>
+<li>google: stun.l.google.com:19302</li>
+<li>Mozilla: stun.services.mozilla.com</li>
+<li>SkyWay: stun.skyway.io:3478</li>
+</ul></li>
+</ul></li>
+<li>Signalingサーバー
+
+<ul>
+<li>自前で用意(WebSocketが使われることが多い模様)</li>
+</ul></li>
+</ul></li>
+</ul>
+
+</section><section>
+<h3>試してみる</h3>
+
+<ul>
+<li>時間はないので詳しい説明は端折ります＞＜</li>
+<li><a href="https://github.com/kazuph/RTCPeerConnectionSample">単純にVideoChatするだけのサンプル</a>
+
+<ul>
+<li><a href="https://github.com/kazuph/RTCPeerConnectionSample/blob/master/js/application.js">全体で300行くらいのJSファイルで実現</a></li>
+<li><a href="https://github.com/peers/peerjs/blob/master/examples/videochat/index.html">OSSのpeerjsならさらに短く50行くらい</a></li>
+</ul></li>
+</ul>
 
 </section><section>
 <h3>WebRTCの可能性</h3>
+
+<ul>
+<li>JSでできることによって敷居がだいぶ下がった</li>
+<li>気軽にビデオチャットチャットのできるサービスが今後増えそう</li>
+<li>＋αで様々な可能性(顔認識やJSによる柔軟なUI)</li>
+<li>Androidでも利用可能</li>
+</ul>
+
+</section><section>
+<h3>Enjoy WebRTC!</h3>
+
+</section><section>
+<h3>参考URL</h3>
+
+<ul>
+<li><a href="http://blog.wnotes.net/blog/article/webrtc-beginning">WebRTCを仕組みから実装までやってみる</a></li>
+<li><a href="http://qiita.com/atskimura/items/97b2cc04e19781f4a4e6">WebRTCのオープンソースソフトウェアまとめ</a></li>
+<li><a href="http://www.qcontokyo.com/data_2013/ToruYoshikawa_QConTokyo2013.pdf">WebRTCで変わるWebの未来</a></li>
+<li><a href="https://github.com/ysugimoto/RTCPeerConnectionSample">サンプル</a></li>
+<li><a href="https://github.com/peers/peerjs">peerjs(OSS)</a></li>
+</ul>
 </section>
   </div>
   <div class="progress"><span></span></div>

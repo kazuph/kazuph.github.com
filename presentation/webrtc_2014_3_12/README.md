@@ -101,10 +101,44 @@
 - WebRTC自体が立ち上がり始めたのが2011年ごろ
 - ChromeとFirefox同士でWebRTCでビデオチャットができるようになったのが2013/2/5
 - オプションなしでChromeの安定版で使えるようになったのが2013/5/21日のv27から
-- [IDEA*IDEA](http://www.ideaxidea.com/archives/2014/03/video_chat.html)でまとめられたのが2014/3/4日
+- [IDEA\*IDEA](http://www.ideaxidea.com/archives/2014/03/video_chat.html)でまとめられたのが2014/3/4日
     - それ前後でネットで実用レベルのビデオチャットが流行り始めた
 
-### WebRTCの簡単な仕組み
+### WebRTCを使うための最低限の知識
+
+- 基本はブラウザ間でのP2P
+    - カメラの映像を送るために処理能力の高いサーバーを設置する必要はない
+    - ただしそれはP2Pを確立したあとの話
+- 接続を確立するために以下の2台のサーバーが必要
+    - ICEサーバー
+        - NAT越えをするために必要
+        - 大手が用意してくれているものがある
+            - google: stun.l.google.com:19302
+            - Mozilla: stun.services.mozilla.com
+            - SkyWay: stun.skyway.io:3478
+    - Signalingサーバー
+        - 自前で用意(WebSocketが使われることが多い模様)
+
+### 試してみる
+
+- 時間はないので詳しい説明は端折ります＞＜
+- [単純にVideoChatするだけのサンプル](https://github.com/kazuph/RTCPeerConnectionSample)
+    - [全体で300行くらいのJSファイルで実現](https://github.com/kazuph/RTCPeerConnectionSample/blob/master/js/application.js)
+    - [OSSのpeerjsならさらに短く50行くらい](https://github.com/peers/peerjs/blob/master/examples/videochat/index.html)
 
 ### WebRTCの可能性
+
+- JSでできることによって敷居がだいぶ下がった
+- 気軽にビデオチャットチャットのできるサービスが今後増えそう
+- ＋αで様々な可能性(顔認識やJSによる柔軟なUI)
+- Androidでも利用可能
+
+### Enjoy WebRTC!
+
+### 参考URL
+- [WebRTCを仕組みから実装までやってみる](http://blog.wnotes.net/blog/article/webrtc-beginning)
+- [WebRTCのオープンソースソフトウェアまとめ](http://qiita.com/atskimura/items/97b2cc04e19781f4a4e6)
+- [WebRTCで変わるWebの未来](http://www.qcontokyo.com/data_2013/ToruYoshikawa_QConTokyo2013.pdf)
+- [サンプル](https://github.com/ysugimoto/RTCPeerConnectionSample)
+- [peerjs(OSS)](https://github.com/peers/peerjs)
 
