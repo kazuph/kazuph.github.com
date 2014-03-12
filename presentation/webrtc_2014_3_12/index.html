@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>Vim実践入門 ~Perl編~</title>
+<title>最近俺の中でWebRTCが熱いと話題に！wwwwwwwwwww</title>
 <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 <meta name="author" content="kazuph">
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -26,9 +26,9 @@ document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.se
 <div class="reveal">
   <div class="slides">
     <section>
-<h1>Vim実践入門 ~Perl編~</h1>
+<h1>最近俺の中でWebRTCが熱いと話題に！wwwwwwwwwww</h1>
 
-<p>YAPC::ASIA 2013 9/20 at 慶応大学</p>
+<p>2014 3/12</p>
 
 <p>株式会社GaiaX Kazuhiro Homma (@kazuph)</p>
 
@@ -39,15 +39,33 @@ document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.se
 
 <ul>
 <li>@kazuph / 本間 和弘(Kazuhiro Homma)</li>
-<li>Web&amp;SmartPhone Engineer / 株式会社ガイアックス</li>
+<li>Web &amp; SmartPhone Engineer / 株式会社ガイアックス</li>
 <li><a href="http://kazuph.hateblo.jp/entry/2013/06/16/235744">社内でCPAN Authorになろうハッカソンを開催しました！！</a></li>
 <li><a href="http://kazuph.hateblo.jp/entry/2012/11/28/105633">Vimのsnippetについてあまり知らなかったので設定してみたら便利過ぎてつらい</a></li>
+<li>最近rebuildfmにはまってるのでもし懇親会で話せたら</li>
 </ul>
 
 </section><section>
 <h2>Whoami</h2>
 
-<p>去年の素数戦争の企画・運用をやってました</p>
+<p>スキル</p>
+
+<ul>
+<li>iPhone/Android/API同時開発</li>
+<li>社内リアルISUCON(コンテンツキャッシュ・クエリ改善・アーキテクチャの変更…)</li>
+<li>他にも改善系を勝手にやってました
+
+<ul>
+<li>構築をansible化</li>
+<li>グラフをGrowthForecast/HRForecast/Yohoushiで作成</li>
+<li>PhantomJSでレンダリング含めたサイトのレスポンス測定</li>
+</ul></li>
+</ul>
+
+</section><section>
+<h2>Whoami</h2>
+
+<p>そういえば一昨年の素数戦争の企画と運用をやってました</p>
 
 <p><img class='used-markdown' src="./images/primewars.jpg" alt="primewars"></p>
 
@@ -55,966 +73,125 @@ document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.se
 
 <p><a href="http://yapc.pjeuler.com/dir/yapc2012">Yapc::Asia2012::素数戦争(PrimeWars)</a></p>
 
+<p>今日は素数の話をしてくれる人がいて楽しみ！(・∀・)</p>
+
 </section><section>
-<h3>言語別開発環境</h3>
+<h2>Whoami</h2>
+
+<p><a href="http://yapcasia.org/2013/talk/show/cc936cac-e238-11e2-8767-0fa16aeab6a4">去年はVimの発表をしました〜</a></p>
+
+<p><img style="height:55%" src="https://scontent-b.xx.fbcdn.net/hphotos-ash4/t1/1234396_666350153384821_1293058392_n.jpg"/></p>
+
+</section><section>
+<h3>よろしくお願いします！</h3>
+
+</section>
+
+</section><section>
+<h2>今日話す内容</h2>
+
+<p><div class="fragment"> 最初はAnsibleの話を考えていた</div></p>
+
+<p><div class="fragment"> 自分の中の賞味期限が切れたので</div></p>
+
+</section><section>
+<h5>今日はWebRTCの話をします！</h5>
+
+</section><section>
+<h2>Agenda</h2>
 
 <ul>
-<li>メモ(日本語)
+<li>WebRTCとは？</li>
+<li>使ってみる！</li>
+<li>WebRTCの可能性</li>
+</ul>
+
+</section><section>
+<h4>WebRTCとは？</h4>
+
+</section><section>
+<h3>ビデオチャットって何をつかってますか？</h3>
 
 <ul>
-<li>GVim</li>
+<li>自分の達の開発スタイル
+
+<ul>
+<li>福岡エンジニア１人と東京にエンジニア１人、営業１人という組合せで開発</li>
+<li>会わずにTODOだけ共有して作業と精神的にもつらい</li>
+<li>SkypeかLINEで常に繋ぎっぱなしにしてコミュニケーション
+
+<ul>
+<li>話さないときもつないでる</li>
 </ul></li>
-<li>Perl
-
-<ul>
-<li>Vim</li>
-</ul></li>
-<li>iPhone / Objective-C
-
-<ul>
-<li>XCode + XVim</li>
-</ul></li>
-<li>Android / JAVA
-
-<ul>
-<li>Eclipse + Vimperator</li>
-</ul></li>
-<li>Chrome
-
-<ul>
-<li>Vimium</li>
 </ul></li>
 </ul>
 
 </section><section>
-<h3>chrome-vim-cheatsheet</h3>
+<h5>最近まではもっぱらSkypeかLINE</h5>
 
-<p><img class='used-markdown' src="./images/chromevim.png" alt="chromevim">
-<a href="http://kazuph.hateblo.jp/entry/2013/02/13/011525">すぐにVimチートシートを見れるGoogle Chromeの拡張作った。</a></p>
-
-</section><section>
-<h3>完全なるVimmerです</h3>
-
-<p><img class='used-markdown' src="./images/nafuda.jpg" alt="nafuda"></p>
-
-</section>
-
-</section><section><section>
-<h3>発表することになったきっかけ</h3>
+<p><img class='used-markdown' src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-prn1/t31/p843x403/1492137_716579588361877_1540450441_o.jpg" alt="skype"></p>
 
 </section><section>
-<h3>typestarさんのEmacsの発表</h3>
-
-<p><img class='used-markdown' src="./images/emacs.png" alt="hatebu"></p>
-
-</section><section>
-<h3>本当にすいませんm(_ _)m</h3>
-
-</section><section>
-<h3>まさかの裏番か・・・！？</h3>
-
-<p><img class='used-markdown' src="./images/makisan.png" alt="hatebu"></p>
-
-</section><section>
-<h2><a href="http://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E6%88%A6%E4%BA%89">エディター宗教戦争</a></h2>
-
-</section><section>
-<h3>回避！</h3>
-
-<p>裏番組にするのは回避されました！！</p>
-
-<p><img class='used-markdown' src="./images/vim_s.png" alt="vim_s"></p>
-
-</section><section>
-<h3>本当にありがとうございました！！１</h3>
-
-</section>
-</section><section><section>
-<h2>対象</h2>
+<h3>イケてないところ</h3>
 
 <ul>
-<li>Vimを使ったことがないけど興味はある</li>
-<li>使ってみたけど挫折した</li>
-<li>もう一度Vimを基礎から勉強し直したい</li>
-<li>Vimのプラグインに手を出すことに二の足を踏んでいる</li>
-<li>そういえば他人がVimを使ってる光景をあまり見たことがない</li>
-<li>etc...</li>
-</ul>
-
-</section><section>
-<h2>!!注意!!</h2>
-
-<p>※Vimの基礎からは扱いますが初心者向けの速度で発表しません。</p>
-
-<p>※vimtutorを済ましてると理解が捗ると思います。</p>
-
-</section><section>
-<h2>非対象</h2>
-
-<p>Vim戦闘力が1000以上</p>
-
-<p>[参考]<a href="http://vim-users.jp/2009/07/hack-39/">Vimの戦闘力を計測する</a></p>
-
-</section>
-</section><section><section>
-<h3>今日発表しないこと</h3>
-
-</section><section>
-<h3>Vimの中でシェルを実行</h3>
-
-<p><img class='used-markdown' src="./images/vimshell.gif" alt="vimshell"></p>
-
-</section><section>
-<h3>暗黒美夢王(ダークネスヴィムマスター)</h3>
-
-<p><a href="http://vinarian.blogspot.jp/2013/05/1.html">バトルエディターズ 第1話：彼の名は暗黒美夢王</a></p>
-
-<p><img class='used-markdown' src="./images/shogosan.png" alt="shogosan"></p>
-
-</section><section>
-<h3>Vimで走り幅跳び</h3>
-
-<p><img class='used-markdown' src="./images/habatobi.gif" alt="habatobi"></p>
-
-</section><section>
-<h3>っていう話はしません！</h3>
-
-</section>
-</section><section><section>
-<h3>今日のモチベーション</h3>
-
-</section><section>
-<h3>「動いているVim」と「検索ワード」を<br />覚えて帰ってもらう</h3>
-
-</section><section>
-<h3>発表後でも学ぶことができるスライド</h3>
-
-</section>
-
-</section><section>
-<h3>あじぇんだ</h3>
+<li>Skype
 
 <ul>
-<li>Vim（自体について）</li>
-<li>Vimの基礎(モード・移動・編集・デフォルト機能)</li>
-<li>VimPlugin(拡張・補完・その他便利な機能)</li>
-<li>VimとPerl</li>
-</ul>
-
-</section><section>
-<h4>Vim</h4>
-
-</section><section><section>
-<h3>Vimとは？</h3>
-
-<ul>
-<li>作者…オランダ人のプログラマーBram Moolenaarさん</li>
-<li>Vi IMproved(viの改良版)で略してVim</li>
-<li>対応OS
-
-<ul>
-<li>Unix系、Windows、Mac、Android、iPhone</li>
+<li>動画や音声が乱れる</li>
+<li>複数人の画面共有が有料</li>
 </ul></li>
-<li>発表現在(2013/09/20)のバージョン…7.4
+<li>LINE
 
 <ul>
-<li>発表の内容は以降特に断りなく最新版のVimを使っている前提で話します</li>
-</ul></li>
-<li>特徴
-
-<ul>
-<li>モードという概念がある</li>
-<li>ショートカットを覚えるのにものすごい記憶力を必要とする</li>
-<li>初心者のやる気を削ぐ</li>
+<li>Skypeよりも動画は綺麗だが重い時がある</li>
+<li>画面共有ができない＞＜</li>
 </ul></li>
 </ul>
 
 </section><section>
-<h3>その他の特徴</h3>
+<h5>なかなかイケてる<br />ビデオチャットツールって<br />ないなぁ(´・ω・｀)</h5>
 
 </section><section>
-<h3>2012年のAdventCalendarが終わらない</h3>
+<h5>そこで登場したのが</h5>
 
-<p>現在290日以上継続中・・・！！
-<img class='used-markdown' src="./images/vac.png" alt="vac"></p>
+</section><section>
+<h5>突然のWebRTC</h5>
+
+<p><img class='used-markdown' src="https://scontent-b.xx.fbcdn.net/hphotos-ash3/t1/578981_579894275430228_1006323660_n.jpg" alt="vmux"></p>
+
+<p>※この画像は <a href="https://vmux.co/">vmux</a> 使用時のもの</p>
+
+</section><section>
+<h3>WebRTCのイケてるところ</h3>
 
 <ul>
-<li><a href="http://atnd.org/events/33746">Vim Advent Calendar 2012</a></li>
+<li>ブラウザだけで完結している</li>
+<li>動画と音声が綺麗</li>
+<li>画面共有ができるサービスもある（<a href="https://appear.in/">apprear.in</a>）</li>
+<li>コーディングの内容も共有できるサービスもある（<a href="http://codassium.com/">codassium.com</a>）</li>
+<li>オープンソースのサービスがある（<a href="https://vmux.co/">vmux</a>）</li>
 </ul>
 
 </section><section>
-<h3>ネット上の情報の多さが圧倒的</h3>
-
-<p><img class='used-markdown' src="./images/trend.jpg" alt="trend"></p>
-
-<p>googleトレンド調べ</p>
-
-</section><section>
-<h3>Vimの話題を日本語で</h3>
-
-<p><a href="http://lingr.com/room/vim">Linger - vim-users.jp</a></p>
-
-<p><img class='used-markdown' src="./images/vimrc.png" alt="vimrc"></p>
-
-<p><a href="http://lingr.com/room/vim/archives/2012/11/10#message-12888729">自分もvimrc読書会でdisられたりしました</a></p>
-
-</section><section>
-<h3>その他情報ソース</h3>
-
-<p>詳しくはWebで</p>
-
-<p><a href="http://hachiojipm.github.io/entry/2013-09-11-01.html">Hachioji.pm 日めくりテックトーク</a></p>
-
-</section><section>
-<h2>Vimの情報は周りに溢れているので安心して使ってください。</h2>
-
-</section>
-
-</section><section>
-<h4>Vimの基礎（前半戦）</h4>
-
-<p>⎋:Esc,  ⌃:Ctrl,  ⇧:Shift,  ⇥:Tab</p>
-
-</section><section>
-<h3>Vimの基礎の内容</h3>
+<h3>いつから盛り上がったのか？</h3>
 
 <ul>
-<li>インストール方法</li>
-<li>vimrc</li>
-<li>モードの話</li>
-<li>ファイル開閉</li>
-<li>移動</li>
-<li>インサートモードモード</li>
-<li>ビジュアルモード</li>
-<li>オペレーター</li>
-<li>モーション</li>
-<li>テキストオブジェクト</li>
-<li>検索・置換</li>
-<li>ファイル間移動(gf, ctags)</li>
-<li>Exコマンド/外部コマンドの実行</li>
-</ul>
-
-</section><section>
-<h3>Vimのインストール方法</h3>
+<li>WebRTC自体が立ち上がり始めたのが2011年ごろ</li>
+<li>ChromeとFirefox同士でWebRTCでビデオチャットができるようになったのが2013/2/5</li>
+<li>オプションなしでChromeの安定版で使えるようになったのが2013/5/21日のv27から</li>
+<li><a href="http://www.ideaxidea.com/archives/2014/03/video_chat.html">IDEA*IDEA</a>でまとめられたのが2014/3/4日
 
 <ul>
-<li>Mac
-
-<ul>
-<li><a href="https://code.google.com/p/macvim-kaoriya/">macvim-kaoriya</a>よりダウンロード</li>
-</ul></li>
-<li>Win
-
-<ul>
-<li><a href="http://www.kaoriya.net/software/vim/">香り屋さんVim</a>よりダウンロード</li>
-</ul></li>
-<li><p>Redhat系</p>
-
-<ul>
-<li><p>以下のコマンドよりインストール</p>
-
-<pre><code>sudo yum install vim-enhanced
-</code></pre></li>
-</ul></li>
-<li><p>Debian系</p>
-
-<ul>
-<li><p>以下のコマンドよりインストール</p>
-
-<pre><code>sudo apt-get install vim-full
-</code></pre></li>
-</ul></li>
-</ul>
-
-</section><section><section>
-<h3>Vimの設定ファイルについて</h3>
-
-<p>基本的にはこの場所
-$HOME/.vimrc</p>
-
-<p>※Windowsの場合は_vimrcがあると先に読み込まれる</p>
-
-</section><section>
-<h3>vimrcを瞬時に開く</h3>
-
-<p>ショートカットを設定</p>
-
-<pre><code>&quot; .vimrcを瞬時に開く
-nnoremap &lt;Space&gt;&lt;Space&gt;. :e $MYVIMRC&lt;CR&gt;
-&quot; vimrcの設定を反映
-nnoremap &lt;Space&gt;&lt;Space&gt;.. :&lt;C-u&gt;source $MYVIMRC&lt;CR&gt;
-</code></pre>
-
-</section>
-</section><section><section>
-<h3>Vimのモード</h3>
-
-<p>Vimには大きく分けて4つのモードがある</p>
-
-</section><section>
-<h3>Vimのモード</h3>
-
-<ul>
-<li>ノーマルモード…基本のモード。移動やコピペ、削除、他のモードへの移行ができ、Escキーなどでいつでも戻ってこれる。</li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-<li>インサートモード…入力できるモード。いくつか編集を楽にするためのショートカットも使用できる。</li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-<li>ヴィジュアルモード…テキストを選択して、コピー(yank)したり削除したりできる。コマンドモードとの連携もできる。</li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-<li>コマンドモード…保存や終了、検索、置換、その他便利なコマンドを使用して編集ができる。</li>
-</ul>
-
-</section><section>
-<h3>モードが分かれていることについて</h3>
-
-<ul>
-<li>良い点
-
-<ul>
-<li>それぞれのモードにプログラマが集中できる</li>
-<li>キーバインドがシンプルになる
-
-<ul>
-<li>小指つらいを回避</li>
-</ul></li>
-</ul></li>
-<li>悪い点
-
-<ul>
-<li>直感的じゃない(非人間的)</li>
-<li>記憶力・慣れが必要(学習障壁が高い)</li>
-<li>初心者殺し</li>
+<li>それ前後でネットで実用レベルのビデオチャットが流行り始めた</li>
 </ul></li>
 </ul>
 
 </section><section>
-<h3>Vimは「慣れ」れば高速！！</h3>
+<h3>WebRTCの簡単な仕組み</h3>
 
 </section><section>
-<h3>プログラマーの最強の武器「Vim」を<br />使いこなしましょう！</h3>
-
-</section>
-
-</section><section>
-<h3>ここから基本コマンドの説明</h3>
-
-</section><section>
-<h3>ファイルを開く、保存、終了</h3>
-
-<p>コマンドラインで</p>
-
-<pre><code>$ vim &lt;filename&gt; # 複数ファイルなら vim *.pm
-</code></pre>
-
-<p>でファイルを開く</p>
-
-<p><br /></p>
-
-<p>保存 <code>:w</code>, 終了 <code>:q</code>, 保存と終了 <code>:wq</code></p>
-
-</section><section><section>
-<h3>ノーマルモードでの移動方法</h3>
-
-<p>カーソルキーだめです</p>
-
-</section><section>
-<h3>上下左右</h3>
-
-<p><code>hjkl</code> を使う</p>
-
-<p><img class='used-markdown' src="./images/hjkl.gif" alt="hjkl"></p>
-
-</section><section>
-<h3>単語ごとに移動</h3>
-
-<p>次の単語の先頭 <code>w</code>, 次の単語の末尾<code>e</code>, 前の単語の先頭 <code>b</code></p>
-
-<p><img class='used-markdown' src="./images/web.gif" alt="web"></p>
-
-</section><section>
-<h3>ファイル先頭・ 末尾</h3>
-
-<p>&lt;HOME&gt;キー、&lt;END&gt;キーを使わない</p>
-
-<p>行の頭へ移動する <code>0</code>,
-文章の頭へ移動する <code>^</code>,
-行末へ移動する <code>$</code></p>
-
-<p><img class='used-markdown' src="./images/0.gif" alt="0"></p>
-
-</section><section>
-<h3>その他</h3>
-
-<p><img class='used-markdown' src="./images/ggG.gif" alt="ggG"></p>
-
-<p>※<code>:se nu</code>で行番号を表示する</p>
-
-</section><section>
-<h3>「慣れ」れば高速</h3>
-
-</section>
-
-</section><section>
-<h3>インサートモード</h3>
-
-<p><img class='used-markdown' src="./images/insert.gif" alt="vimq"></p>
-
-<p>※<code>Esc</code>は <code>Ctrl + [</code> で代用できる
-※⎋:Esc</p>
-
-</section><section><section>
-<h3>ヴィジュアルモード</h3>
-
-<p>文字選択 <code>v</code>,
-行選択 <code>Shift+v</code>,
-矩形選択 <code>Ctrl+v</code></p>
-
-<p><img class='used-markdown' src="./images/visual.gif" alt="vimq">
-※⎋:Esc</p>
-
-</section><section>
-<h3>オペーレーターと組み合わせる</h3>
-
-<p>削除 <code>d</code>,
-置き換え <code>c</code>,
-コピー（ヤンク）<code>y</code>,
-ペースト<code>p</code></p>
-
-<p><img class='used-markdown' src="./images/vo.gif" alt="vo">
-</section>
-
-</section><section>
-<h3>オペレーターとモーションの組合わせ</h3>
-
-<p>例えば削除の場合</p>
-
-<p><img class='used-markdown' src="./images/dw.gif" alt="dw"></p>
-
-<p>※<code>.</code>は直前の操作を繰り返してくれる</p>
-
-</section><section>
-<h3>テキストオブジェクト</h3>
-
-<p>文字の塊を操作する
-<img class='used-markdown' src="./images/to.gif" alt="to"></p>
-
-</section><section>
-<h3>取り消しと(取り消し)^2</h3>
-
-<p><img class='used-markdown' src="./images/undo.gif" alt="undo"></p>
-
-</section><section><section>
-<h3>検索</h3>
-
-<p>デフォルトが微妙なのでvimrcを設定</p>
-
-</section><section>
-<h3>検索用vimrc</h3>
-
-<p>下の設定をvimrcに書くことで、検索結果をハイライトし、<br />大文字小文字の区別を無視してくれる。</p>
-
-<p>$HOME/.vimrc</p>
-
-<pre><code>&quot; 検索語を強調表示
-set hlsearch
-
-&quot; 検索時に大文字・小文字を区別しない
-set ignorecase
-
-&quot; ただし、検索後に大文字小文字が
-&quot; 混在しているときは区別する
-set smartcase
-</code></pre>
-
-</section><section>
-<h2>DEMO</h2>
-
-<p><code>/&lt;検索したい単語&gt;</code> , <code>*</code>でカーソル下の単語を即時検索`</p>
-
-<p><img class='used-markdown' src="./images/search3.gif" alt="search3"></p>
-
-<p>※ハイライトの解除は <code>:nohl</code></p>
-
-</section>
-</section><section><section>
-<h3>置換</h3>
-
-<p><code>:%s/&lt;置換したいワード&gt;/&lt;置換後のワード&gt;/gc</code></p>
-
-<p><code>%</code>は「文章全体」という意味</p>
-
-<p><img class='used-markdown' src="./images/sub.gif" alt="sub"></p>
-
-</section><section>
-<h3>Visualモードと組み合わせる</h3>
-
-<p>選択部分だけに対して置換が行える</p>
-
-<p><img class='used-markdown' src="./images/sub2.gif" alt="sub2"></p>
-
-</section>
-</section><section><section>
-<h3>ファイル間移動</h3>
-
-<p>ファイル名の場所で <code>gf</code></p>
-
-<p><img class='used-markdown' src="./images/gf.gif" alt="gf"></p>
-
-<p>※<code>Ctrl+o</code>で前ファイルに戻る、<code>Ctrl+i</code>で進む</p>
-
-</section>
-</section><section><section>
-<h3>ctags</h3>
-
-<p>Package名部分 or メソッド名部分で <code>Ctrl+]</code> とすることで、<br />定義箇所へ移動することができる</p>
-
-<p>予めプロジェクト直下で以下のコマンドを実行する必要がある</p>
-
-<pre><code>ctags -R
-</code></pre>
-
-</section><section>
-<h3>DEMO</h3>
-
-<p><img class='used-markdown' src="./images/ctags.gif" alt="ctags"></p>
-
-</section>
-</section><section><section>
-<h3>Exコマンドの実行</h3>
-
-<p>Exコマンドを実行 <code>:&lt;Exコマンド&gt;</code>,</p>
-
-<p>例) 文章全体をソート <code>:%sort</code>,
-選択範囲をソート <code>:&#39;&lt;,&#39;&gt;sort</code></p>
-
-</section><section>
-<h3>文章をsortしてみる</h3>
-
-<p><img class='used-markdown' src="./images/ex.gif" alt="ex"></p>
-
-<p>cpanfileをソートするときとかに便利</p>
-
-</section>
-
-</section><section><section>
-<h3>外部コマンドの実行</h3>
-
-<p>外部コマンドを実行 <code>:!&lt;外部コマンド&gt;</code>,</p>
-
-<p>例） <code>:!ls</code>, <code>:%!sort</code>, <code>:&#39;&lt;,&#39;&gt;!sort</code></p>
-
-<p>例えばgitコマンドやperlのワンライナーとかも普通に実行できます</p>
-
-</section><section>
-<h3>awkとcutでモジュール名だけ抽出する</h3>
-
-<p>cpanfileを例に
-<img class='used-markdown' src="./images/awk.gif" alt="awk"></p>
-
-</section>
-
-</section><section>
-<h3>まだまだ紹介したりませんが、</h3>
-
-</section><section>
-<h3>Vimの標準機能だけですでに色々なことができることがわかったと思います。</h3>
-
-</section><section>
-<h4>VimPlugin(後半戦)</h4>
-
-<p>⎋:Esc,  ⌃:Ctrl,  ⇧:Shift,  ⇥:Tab</p>
-
-</section><section>
-<h3>VimPluginの内容</h3>
-
-<ul>
-<li>Vim全般
-
-<ul>
-<li>pluginの管理方法</li>
-<li>加速させられたjk</li>
-<li>瞬時に目的のファイルを開く</li>
-<li>キャメルとスネーク</li>
-<li>処理の実行</li>
-<li>ドキュメント</li>
-<li>シンタックスチェック</li>
-<li>補完・スニペット</li>
-</ul></li>
-<li>VimとPerl
-
-<ul>
-<li>オムニ補完</li>
-<li>バリデーション</li>
-<li>Perlのシンタックスハイライト</li>
-<li>テキスト整形</li>
-<li>文字入力</li>
-<li>テストの実行</li>
-</ul></li>
-</ul>
-
-</section><section>
-<h3>VimPluginとは？</h3>
-
-<p>デフォルトのVimを更に便利にするもの。
-Vimの機能拡張をするものからVimに新たなエコシステムを提供する巨大なプラグインまである。</p>
-
-</section><section><section>
-<h3>bundleみたいにpluginを管理する</h3>
-
-<p><a href="https://github.com/Shougo/neobundle.vim">NeoBundle</a></p>
-
-</section><section>
-<h3>NeoBundle導入</h3>
-
-<p>Vimプラグインを管理するためのプラグイン。</p>
-
-<p>まずはNeoBundleをgit clone</p>
-
-<pre><code>$ mkdir -p ~/.vim/bundle
-$ git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-</code></pre>
-
-<p>最低限の<code>~/.vimrc</code>の設定</p>
-
-<pre><code>set nocompatible
-if has(&#39;vim_starting&#39;)
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-call neobundle#rc(expand(&#39;~/.vim/bundle/&#39;))
-
-NeoBundle &#39;...&#39;
-
-filetype plugin indent on
-syntax on
-NeoBundleCheck
-</code></pre>
-
-</section><section>
-<h3>インストールしたいプラグインの記述</h3>
-
-<p>例えばvimprocというプラグインをインストールしたい場合</p>
-
-<pre><code>git@github.com:Shougo/vimproc.vim.git
-</code></pre>
-
-<p><code>git@github.com:</code>の部分を省略できる</p>
-
-<pre><code>NeoBundle &#39;Shougo/vimproc&#39;
-</code></pre>
-
-</section><section>
-<h3>プラグインのインストール</h3>
-
-<p>コマンドモードで <code>:NeoBundleInstall</code></p>
-
-<p>もしくは <code>NeoBundleCheck</code> を記述しているなら</p>
-
-<p>起動時に半自動でインストール可能</p>
-
-<p>ちなみにアップデートは <code>:NeoBundleUpdate</code></p>
-
-</section>
-
-</section><section>
-<h3>とういことでここから<br />いくつか便利なプラグインを紹介</h3>
-
-<p>NeoBundleInstallしてる前提で話します</p>
-
-</section><section><section>
-<h3>加速させられたjk</h3>
-
-<p><a href="https://github.com/rhysd/accelerated-jk">accelerated-jk</a></p>
-
-<p>.vimrc設定</p>
-
-<pre><code>NeoBundle &#39;rhysd/accelerated-jk&#39;
-let g:accelerated_jk_acceleration_table = [10,5,3]
-nmap j &lt;Plug&gt;(accelerated_jk_gj)
-nmap k &lt;Plug&gt;(accelerated_jk_gk)
-</code></pre>
-
-</section><section>
-<h3>DEMO</h3>
-
-<p>左：普通のjk, 右：加速されたjk</p>
-
-<p><span style="text-align:left">
-<img style="min-width:40%;" src="./images/jk1.gif">
-</span>
-<span style="text-align:right">
-<img style="min-width:40%;" src="./images/jk2.gif">
-</span></p>
-
-<p>上下に高速に移動できる</p>
-
-</section>
-
-</section><section>
-<h3>[実演]瞬時に目的のファイルを開く</h3>
-
-<p><img class='used-markdown' src="./images/ctrlp.gif" alt="ctrlp"></p>
-
-<p><a href="https://github.com/kien/ctrlp.vim">CtrlP</a>…
-<code>Ctrl+p</code>を押すとファイルリストが開き、</p>
-
-<p>曖昧な文字を入力しても目的のファイルを開ける。</p>
-
-<pre><code>NeoBundle &#39;kien/ctrlp.vim&#39;
-</code></pre>
-
-</section><section>
-<h3>キャメルケース</h3>
-
-<p><img class='used-markdown' src="./images/camel.gif" alt="chamel"></p>
-
-<p>キャメルケースをスネークケースに置き換える</p>
-
-<pre><code>NeoBundle &#39;kana/vim-operator-user.git&#39;
-NeoBundle &#39;tyru/operator-camelize.vim&#39;
-nmap C &lt;Plug&gt;(operator-camelize-toggle)
-</code></pre>
-
-</section><section>
-<h3>様々な言語をVimから実行する</h3>
-
-<p><img class='used-markdown' src="./images/quickrun.gif" alt="quickrun"></p>
-
-<p><a href="https://github.com/thinca/vim-quickrun">quickrun</a> …
-実行は <code>\r</code></p>
-
-<pre><code>NeoBundle &#39;thinca/vim-quickrun&#39;
-NeoBundle &quot;y-uuki/perl-local-lib-path.vim&quot;
-autocmd FileType perl PerlLocalLibPath
-</code></pre>
-
-</section><section>
-<h3>ドキュメントを瞬時に引きたい</h3>
-
-<pre><code>NeoBundle &#39;thinca/vim-ref&#39;
-</code></pre>
-
-<p><img class='used-markdown' src="./images/vimref.gif" alt="vimref">
-※別にPerl専用プラグインというわけじゃない</p>
-
-</section><section>
-<h3>syntaxチェックよろ</h3>
-
-<p><img class='used-markdown' src="./images/syntastic.gif" alt="syntastic"></p>
-
-<p><a href="https://github.com/scrooloose/syntastic">syntastic</a>
-…保存時に自動でシンタックスチェックが走る</p>
-
-<pre><code>NeoBundle &#39;scrooloose/syntastic&#39;
-</code></pre>
-
-</section><section><section>
-<h3>補完を簡単にしたい</h3>
-
-<p><a href="https://github.com/Shougo/neocomplete.vim">neocomplete</a></p>
-
-<p>本来補完の機能はVim自体にあるが、</p>
-
-<p>それをとても使いやすく提供してくれているもの</p>
-
-<p>設定は長いので<a href="https://gist.github.com/kazuph/6590028">gist</a>に上げました</p>
-
-</section><section>
-<h3>DEMO</h3>
-
-<p><img class='used-markdown' src="./images/neocon.gif" alt="neocon">
-入力中に自動で補完候補が表示される</p>
-
-</section>
-</section><section><section>
-<h3>スニペットで手抜きしたい</h3>
-
-<p><a href="https://github.com/Shougo/neosnippet.vim">neosnippet</a>…登録されているスニペットを補完候補に出し展開する支援をする</p>
-
-<p>設定は長いので<a href="https://gist.github.com/kazuph/6590028">ここ</a>を参照のこと</p>
-
-</section><section>
-<h3>スニペットファイル例</h3>
-
-<pre><code>snippet #!
-    #!/usr/bin/env perl
-snippet sub
-    sub ${1:function_name} {
-        ${0}
-    }
-snippet map
-    map {  ${0: body }    }  ${1: @array } ;
-</code></pre>
-
-<p><a href="https://github.com/honza/vim-snippets/blob/master/snippets/perl.snippets">honzaさんのperlのsnippet</a></p>
-
-</section><section>
-<h3>DEMO</h3>
-
-<p><img class='used-markdown' src="./images/snippet.gif" alt="snippet">
-⎋:Esc,  ⌃:Ctrl,  ⇧:Shift,  ⇥:Tab</p>
-
-</section><section>
-<h3>自分のオリジナルsnippetファイルを使う</h3>
-
-<p>設定</p>
-
-<pre><code>let g:neosnippet#snippets_directory=&#39;~/.vim/bundle/vim-snippets/snippets, ~/dotfiles/snippets&#39;
-</code></pre>
-
-<p>すぐに開けるようにショートカットの作成</p>
-
-<pre><code>&quot; snippets/perl.snipを瞬時に開く
-nnoremap &lt;Space&gt;&lt;Space&gt;ps :vs $HOME/dotfiles/snippets/perl.snip&lt;CR&gt;
-</code></pre>
-
-</section>
-
-</section><section>
-<h4>VimとPerl</h4>
-
-<p>⎋:Esc,  ⌃:Ctrl,  ⇧:Shift,  ⇥:Tab</p>
-
-</section><section>
-<h3>オムニ補完</h3>
-
-<p><img class='used-markdown' src="./images/omni.gif" alt="omni"></p>
-
-<p><code>Ctrl+x, Ctrl+o</code>でモジュール、メソッド候補を表示する</p>
-
-<pre><code>NeoBundle &quot;c9s/perlomni.vim&quot;
-</code></pre>
-
-</section><section>
-<h3>ありがちなミスを防ぐ</h3>
-
-<p><img class='used-markdown' src="./images/pv.gif" alt="pv"></p>
-
-<p>ファイルエンコーディングミス, パッケージ名間違い</p>
-
-<pre><code>NeoBundle &quot;mattn/perlvalidate-vim.git&quot;
-</code></pre>
-
-<p><a href="http://perl-users.jp/articles/advent-calendar/2011/casual/1">Windowsなperlユーザーも捗るみたいです</a></p>
-
-</section><section>
-<h3>VimのPerlシンタックス力を強化</h3>
-
-<pre><code>NeoBundle &quot;vim-perl/vim-perl&quot;
-</code></pre>
-
-<p>シンタックスハイライトの設定</p>
-
-<pre><code>augroup filetypedetect
-    au BufNewFile,BufRead *.psgi    setf perl
-    au BufNewFile,BufRead *.t       setf perl
-    au BufNewFile,BufRead *.tt      setf tt2html
-    au BufNewFile,BufRead *.tt2     setf tt2html
-    au BufNewFile,BufRead cpanfile  setf perl
-augroup END
-</code></pre>
-
-<p>※tt2htmlを使用する場合はvim-perlが必須</p>
-
-</section><section>
-<h3>自動でテキスト整形させる</h3>
-
-<p><img class='used-markdown' src="./images/tidy.gif" alt="tidy"></p>
-
-<pre><code>cpanm Perl::Tidy
-</code></pre>
-
-<pre><code>nnoremap ,pt &lt;Esc&gt;:%! perltidy -se&lt;CR&gt;
-vnoremap ,pt &lt;Esc&gt;:&#39;&lt;,&#39;&gt;! perltidy -se&lt;CR&gt;
-</code></pre>
-
-</section><section>
-<h3>入力しづらい文字を簡単に入力</h3>
-
-<p><img class='used-markdown' src="./images/chr.gif" alt="chr"></p>
-
-<pre><code>NeoBundle &quot;smartchr&quot;
-inoremap &lt;expr&gt; ,  smartchr#one_of(&#39;,  &#39;,  &#39;, &#39;)
-autocmd FileType perl inoremap &lt;buffer&gt; &lt;expr&gt; . smartchr#loop(&#39; . &#39;, &#39;<div class="fragment">&#39;, &#39;.&#39;)</div>
-autocmd FileType perl inoremap &lt;buffer&gt; &lt;expr&gt; = smartchr#loop(&#39; = &#39;, &#39; =&gt; &#39;, &#39;=&#39;)
-</code></pre>
-
-</section><section>
-<h3>テストの実行</h3>
-
-<p>外部コマンドとしてprove実行でいいかな…
-<img class='used-markdown' src="./images/prove.gif" alt="prove"></p>
-
-</section><section>
-<h3>[追加]gitでの差分を編集時に表示</h3>
-
-<pre><code>NeoBundle &#39;airblade/vim-gitgutter&#39;
-</code></pre>
-
-<p><img class='used-markdown' src="./images/git.gif" alt="git"></p>
-
-</section><section>
-<h4>これから</h4>
-
-</section><section>
-<h3>Vimを学べる本</h3>
-
-<p>この順番で目を通すと幸せになると思います。</p>
-
-<ol>
-<li><p><a href="http://www.amazon.co.jp/%E5%85%A5%E9%96%80vi-%E7%AC%AC6%E7%89%88-%E3%83%AA%E3%83%B3%E3%83%80-%E3%83%A9%E3%83%A0/dp/4873110831/ref=sr_1_5?s=books&amp;ie=UTF8&amp;qid=1379389009&amp;sr=1-5&amp;keywords=vim">入門vi</a></p></li>
-<li><p><a href="http://www.amazon.co.jp/%E5%AE%9F%E8%B7%B5Vim-%E6%80%9D%E8%80%83%E3%81%AE%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%81%A7%E7%B7%A8%E9%9B%86%E3%81%97%E3%82%88%E3%81%86-Drew-Neil/dp/4048916599/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1379389009&amp;sr=1-1&amp;keywords=vim">実践Vim 思考のスピードで編集しよう!</a></p></li>
-<li><p><a href="http://www.amazon.co.jp/Vim%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E3%83%90%E3%82%A4%E3%83%96%E3%83%AB-%EF%BD%9E%E4%BD%9C%E6%A5%AD%E5%8A%B9%E7%8E%87%E3%82%92%E3%82%AB%E3%82%A4%E3%82%BC%E3%83%B3%E3%81%99%E3%82%8B150%E3%81%AE%E6%8A%80-Vim%E3%82%B5%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%BC%E3%82%BA/dp/4774147958/ref=sr_1_2?s=books&amp;ie=UTF8&amp;qid=1379389009&amp;sr=1-2&amp;keywords=vim">Vimテクニックバイブル　~作業効率をカイゼンする150の技</a></p></li>
-</ol>
-
-</section><section>
-<h3>参考URL</h3>
-
-<ul>
-<li><p>Perlについて</p>
-
-<ul>
-<li><a href="http://mattn.kaoriya.net/software/lang/perl/20100901231137.htm">VimmerなPerl開発環境</a></li>
-<li><a href="http://perl-users.jp/articles/advent-calendar/2012/casual/1">Perlでアプリケーションをささっと書くのに役立つTips</a></li>
-<li><a href="http://perl-users.jp/articles/advent-calendar/2012/casual/13">vim で Perl を書くときのための tips</a></li>
-</ul></li>
-<li><p>今回の発表を実現するvimrc</p>
-
-<ul>
-<li><a href="https://gist.github.com/kazuph/6590028">https://gist.github.com/kazuph/6590028</a></li>
-</ul></li>
-</ul>
-
-</section><section>
-<h3>最後に</h3>
-
-</section><section>
-<h3>Vimはオープンソースであり</h3>
-
-</section><section>
-<h3>チャリティーウェアです</h3>
-
-</section><section>
-<h3>Vimがいいなと思ったら</h3>
-
-</section><section>
-<h3>　</h3>
-
-<p><img class='used-markdown' src="./images/uganda.png" alt="ウガンダ"></p>
-
-</section><section>
-<h3>ご清聴ありがとうございました!!!</h3>
+<h3>WebRTCの可能性</h3>
 </section>
   </div>
   <div class="progress"><span></span></div>

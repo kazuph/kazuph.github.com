@@ -1,4 +1,0 @@
-" Vi互換を捨てる
-set nocompatible
-" vimのプラグイン機能をON
-filetype plugin indent on
