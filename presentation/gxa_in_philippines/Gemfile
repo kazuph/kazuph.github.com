@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+
+group :development do
+  gem 'slideshow'
+  gem 'guard'
+  gem 'guard-shell'
+  gem 'guard-livereload'
+  gem 'redcarpet'
+end
