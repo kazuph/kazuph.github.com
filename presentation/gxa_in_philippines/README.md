@@ -85,19 +85,38 @@ Kazuhiro Homma (@kazuph)
 
 ## 2. The Famous Thing ;)
 
+## This is
+
+## Miyagawa's Podcast
+
+![./images/miyagawa.png](./images/miyagawa.png)
+
 ## Miyagawa's Podcast
 
 - Miyagawa is one of the most famous Engineers in Japan
     - He Started Podcast from a year ago
+    - He talk about
+        - the up-to-date information
+        - his experience for 20 years
+        - his co-worker (He live in US)
 
 ## English Podcast is a lot
 
+- [37signals podcast](http://37signals.com/podcast)
+- [the changelog](http://37signals.com/podcast)
+- [accidental tech podcat](http://37signals.com/podcast)
+- etc...
+
+## Tech Info by English is shared faster then by Japan
+
+## Very Useful!
+
 /#section
 
-## summary
+## Summary
 
--> 1. Twitter is Very Convenience for aggregate information.
--> 3. I Thought I'd study English hard... (Podcast is great!)
+- 1. Twitter is Very Convenience for aggregate information.
+- 2. I Thought I'd study English hard... (Podcast is great!)
 
 ## Thank you
 
