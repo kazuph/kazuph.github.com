@@ -24,7 +24,7 @@ Kazuhiro Homma (@kazuph)
 ## I made
 
 - Base of community site (from scratch)
-    - Diet community site and App (iPhone/Android)
+    - By using it, Diet community site and App (iPhone/Android)
 - Blog service for business
 - Matching Service (Now!)
 
