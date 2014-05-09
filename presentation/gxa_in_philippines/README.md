@@ -53,10 +53,23 @@ Kazuhiro Homma (@kazuph)
 
 ## Golang
 
+- Open source programming language backed by Google
+- Designed around simplicity, reliability, and efficiency
+
+## Google Trend
+
+![trend](./images/golang-trend.png)
+
+## Golang main character
+Gopher
+
+![trend](./images/gopher.png)
+
 ## DEMO
 
 - Creating Simple Web App
 - Comparing with Sinatra (Ruby's WAF)
+- Cross Compile
 
 ## Golang SUGEEEE! (is great)
 
@@ -64,7 +77,7 @@ Kazuhiro Homma (@kazuph)
 
 ## Japanese Engineer Culture
 
-## 3 topics
+## 2 topics
 
 -> 1. The Engineer Community
 -> 2. The Famous Podcat
