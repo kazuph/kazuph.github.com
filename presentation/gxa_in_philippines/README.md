@@ -1,6 +1,4 @@
-# Japanese Engineering Culture
-
-GX::ASIA 2014
+# GX::ASIA 2014
 
 Kazuhiro Homma (@kazuph)
 
@@ -10,16 +8,14 @@ Kazuhiro Homma (@kazuph)
 
 <img style="width:150px;height:150px;float: bottom" src="./images/kazuph.png"/>
 
-- Kazuhiro Homma
+- Kazuhiro Homma (Facebook)
     - kazuph (Please, google! Follow Me!)
 
 ## I am
 
 - Web Engineer
 - Smart Phone Application Engineer
-- Ops Engineer
 - CPAN Author
-- YAPC::ASIA 2013 Presentator
 
 ## I made
 
@@ -33,8 +29,8 @@ Kazuhiro Homma (@kazuph)
 ## I can write...
 
 -> Perl
--> Java
--> Objective-C
+-> Java (Android)
+-> Objective-C (iOS)
 -> Ruby
 
 ## Now, I am Studying...
@@ -46,18 +42,32 @@ Kazuhiro Homma (@kazuph)
 
 ## My favorite
 
-##### Vim!
+##### Vim
 
 /#section
 
 ## Today
+
+- Golang
+- Japanese Engineer Culture
+
+## Golang
+
+## DEMO
+
+- Creating Simple Web App
+- Comparing with Sinatra (Ruby's WAF)
+
+## Golang SUGEEEE! (is great)
+
+## Next
 
 ## Japanese Engineer Culture
 
 ## 3 topics
 
 -> 1. The Engineer Community
--> 2. The Famous Thing ;)
+-> 2. The Famous Podcat
 
 #section
 
@@ -76,14 +86,21 @@ Kazuhiro Homma (@kazuph)
 ## They twitter each other,
 ## during work.
 
-## I can get <br />the up-to-date information<br /> very easily!
+## What they speak about?
+
+- OpenSSL bug?
+- PyPy.js faster than CPython
+- Docker is disposable Infrastructure
+- etc.
+
+## You can get <br />the up-to-date information<br /> very easily!
 ## during work.
 
 /#section
 
 #section
 
-## 2. The Famous Thing ;)
+## 2. The Japanese Famous Podcast ;)
 
 ## This is
 
@@ -94,29 +111,36 @@ Kazuhiro Homma (@kazuph)
 ## Miyagawa's Podcast
 
 - Miyagawa is one of the most famous Engineers in Japan
-    - He Started Podcast from a year ago
-    - He talk about
+    - Started Podcast from a year ago
+    - about
         - the up-to-date information
         - his experience for 20 years
         - his co-worker (He live in US)
+        - Expert interview
+
+## His Podcast is invaluable!!
+
+## On the other hand
 
 ## English Podcast is a lot
 
 - [37signals podcast](http://37signals.com/podcast)
-- [the changelog](http://37signals.com/podcast)
-- [accidental tech podcat](http://37signals.com/podcast)
-- etc...
+- [the changelog](http://thechangelog.com/)
+- [accidental tech podcat](http://atp.fm/)
+- etc.
 
-## Tech Info by English is shared faster then by Japan
 
 ## Very Useful!
+
+## I study Einglish by listening it...
 
 /#section
 
 ## Summary
 
-- 1. Twitter is Very Convenience for aggregate information.
-- 2. I Thought I'd study English hard... (Podcast is great!)
+-> 1. Golang SUGEEE!
+-> 2. Twitter is Very Convenience for aggregate information.
+-> 3. I Thought I'd study English hard... (Podcast is great!)
 
 ## Thank you
 
