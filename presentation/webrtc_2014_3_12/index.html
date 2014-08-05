@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>最近俺の中でWebRTCが熱いと話題に！wwwwwwwwwww</title>
+<title>Ansibleの発表はしません＞＜</title>
 <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 <meta name="author" content="kazuph">
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -26,6 +26,37 @@ document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.se
 <div class="reveal">
   <div class="slides">
     <section>
+<h1>Ansibleの発表はしません＞＜</h1>
+
+<p>2014 3/12</p>
+
+<p>株式会社GaiaX Kazuhiro Homma (@kazuph)</p>
+
+</section><section>
+<h5>最初はAnsibleの話を考えていた</h5>
+
+</section><section>
+<h5>自分の中の賞味期限が切れたので</h5>
+
+</section><section>
+<h5>急遽、</h5>
+
+</section><section>
+<h5>内容を変えさせていただいて、</h5>
+
+</section><section>
+<h5>WebRTCの話をします！</h5>
+
+</section><section>
+<h2>Agenda</h2>
+
+<ul>
+<li>WebRTCとは？</li>
+<li>使ってみる！</li>
+<li>WebRTCの可能性</li>
+</ul>
+
+</section><section>
 <h1>最近俺の中でWebRTCが熱いと話題に！wwwwwwwwwww</h1>
 
 <p>2014 3/12</p>
@@ -42,7 +73,12 @@ document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.se
 <li>Web &amp; SmartPhone Engineer / 株式会社ガイアックス</li>
 <li><a href="http://kazuph.hateblo.jp/entry/2013/06/16/235744">社内でCPAN Authorになろうハッカソンを開催しました！！</a></li>
 <li><a href="http://kazuph.hateblo.jp/entry/2012/11/28/105633">Vimのsnippetについてあまり知らなかったので設定してみたら便利過ぎてつらい</a></li>
-<li>最近rebuildfmにはまってるのでもし懇親会で話せたら</li>
+<li><a href="http://galactic-railways.com/">ハッカソンとかでは宇宙系の作品をいくつかつくってます</a>
+
+<ul>
+<li>ブラウザで電子コンパス、加速度センサ、WebGLとか、、、</li>
+</ul></li>
+<li><a href="https://itunes.apple.com/us/app/kappuru-zhuan-yong-yin-leapuriwetunes/id788976884?mt=8">WeTunes</a>というiOSのアプリをリリースしました。</li>
 </ul>
 
 </section><section>
@@ -88,41 +124,19 @@ document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.se
 </section>
 
 </section><section>
-<h2>今日話す内容</h2>
-
-<p><div class="fragment"> 最初はAnsibleの話を考えていた</div></p>
-
-<p><div class="fragment"> 自分の中の賞味期限が切れたので</div></p>
-
-</section><section>
-<h5>今日はWebRTCの話をします！</h5>
-
-</section><section>
-<h2>Agenda</h2>
-
-<ul>
-<li>WebRTCとは？</li>
-<li>使ってみる！</li>
-<li>WebRTCの可能性</li>
-</ul>
-
-</section><section>
 <h4>WebRTCとは？</h4>
 
 </section><section>
 <h3>ビデオチャットって何をつかってますか？</h3>
 
 <ul>
-<li>自分の達の開発スタイル
+<li>自分プライベートの開発スタイル
 
 <ul>
+<li>rebuildfmでも最近流行りのリモート開発</li>
 <li>福岡エンジニア１人と東京にエンジニア１人、営業１人という組合せで開発</li>
 <li>会わずにTODOだけ共有して作業と精神的にもつらい</li>
-<li>SkypeかLINEで常に繋ぎっぱなしにしてコミュニケーション
-
-<ul>
-<li>話さないときもつないでる</li>
-</ul></li>
+<li>やはり話さないときでも常に接続しているべき</li>
 </ul></li>
 </ul>
 
@@ -147,6 +161,11 @@ document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.se
 <li>Skypeよりも動画は綺麗だが重い時がある</li>
 <li>画面共有ができない＞＜</li>
 </ul></li>
+<li>共通するいやな点
+
+<ul>
+<li>自分で改造しづらい！(skypeは一応APIあるけどごにょごにょ)</li>
+</ul></li>
 </ul>
 
 </section><section>
@@ -156,17 +175,20 @@ document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.se
 <h5>そこで登場したのが</h5>
 
 </section><section>
-<h5>突然のWebRTC</h5>
+<h5>突然のビデオチャット！</h5>
 
 <p><img class='used-markdown' src="https://scontent-b.xx.fbcdn.net/hphotos-ash3/t1/578981_579894275430228_1006323660_n.jpg" alt="vmux"></p>
 
 <p>※この画像は <a href="https://vmux.co/">vmux</a> 使用時のもの</p>
 
 </section><section>
+<h5>突然のWebRTC！</h5>
+
+</section><section>
 <h3>WebRTCのイケてるところ</h3>
 
 <ul>
-<li>ブラウザだけで完結している</li>
+<li>ブラウザだけで完結しているのでJSで色々できる(できそう)</li>
 <li>動画と音声が綺麗</li>
 <li>画面共有ができるサービスもある（<a href="https://appear.in/">apprear.in</a>）</li>
 <li>コーディングの内容も共有できるサービスもある（<a href="http://codassium.com/">codassium.com</a>）</li>

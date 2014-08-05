@@ -1,0 +1,1025 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>ISUCONとリアルISUCONへの挑戦を支えた技術</title>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+</head>
+<body>
+
+<section><h1>ISUCONとリアルISUCONへの備え</h1>
+
+<p>@kazuph</p>
+
+</section><section><h2>自己紹介</h2>
+
+</section><section><h3>自己紹介</h3>
+
+<p>主に使ってるアイコン</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/6615196/praykazuph.png" alt="left"/>
+
+<img src="https://dl.dropboxusercontent.com/u/6615196/realkazuph.jpeg" alt="right"/>
+</p>
+
+</section><section><h3>自己紹介</h3>
+
+<ul>
+<li>@kazuph</li>
+<li>新潟出身
+
+<ul>
+<li>研究: 脳科学/進化論的最適化</li>
+</ul></li>
+<li>YAPC/Tokyo App Aword(Unity Game)/NASA Hackathon/WebRTC Hackathon</li>
+<li>最近勉強してるやつ
+
+<ul>
+<li>Rails/Golang/iBeacon/IoT/Docker/Elasticserch/kibana/ fluentd/Norikra/capistrano</li>
+</ul></li>
+<li>新規事業部に所属していて事業判断・営業・テレアポ・外注管理からAWS化まで幅広く担当していました。</li>
+</ul>
+
+</section><section><h3>自己紹介: 作成してるIoTプロダクト</h3>
+
+<p><img src="http://i.gyazo.com/b0b9e9c5ec836b223de7d0fd9b92a0af.png" alt="akerun"/>
+</p>
+
+</section><section><h3>今日は</h3>
+
+<ul>
+<li>Webサービスにおける測定と改善の話</li>
+<li>ISUCONと某ブログサービス=リアルISUCONを戦う上で身につけた知識もあるよ</li>
+</ul>
+
+</section><section><h2>前提</h2>
+
+</section><section><h3>ISUCONとリアルISUCON</h3>
+
+<ul>
+<li>ISUCON
+
+<ul>
+<li>お題となるWebサービスを決められたレギュレーションの中で限界まで高速化を図るチューニングバトル</li>
+</ul></li>
+</ul>
+
+<p><img src="http://i.gyazo.com/1dfaf515f4460d2a73aa03d8634fb701.png" alt="isucon"/>
+</p>
+
+</section><section><h3>ISUCONとリアルISUCON</h3>
+
+<ul>
+<li>リアルISUCON
+
+<ul>
+<li>(当時)6, 7年前から稼働していたB2B向けブログサービス</li>
+<li>季節性のあるブログが多く、ピーク時はLA200くらいになって表示不可になることが多かった</li>
+<li>僕がLA200とかはどうにかして、その後120秒とかかかる部分を先輩社員と一緒に改善したりしました</li>
+</ul></li>
+</ul>
+
+</section><section><h2>それら過去のISUCONを振り返る</h2>
+
+</section><section><h3>ISUCON振り返り</h3>
+
+<ul>
+<li>出場した時のお題
+
+<ul>
+<li>チケット販売サイトの高速化</li>
+<li>【予選】gist風アプリの高速化</li>
+</ul></li>
+<li>参考
+
+<ul>
+<li><a href="http://kazuph.hateblo.jp/entry/2013/10/07/001944">#isucon 2013に参加してきた＞＜</a></li>
+<li><a href="http://kazuph.hateblo.jp/entry/2012/11/04/023002">チームルンバとして #isucon2 に参加してきた！</a></li>
+</ul></li>
+</ul>
+
+</section><section><h3>ISUCON振り返り</h3>
+
+<ul>
+<li>ボトルネックの測定すること自体が意外に困難
+
+<ul>
+<li>測定自体に一定の実力が必要</li>
+<li>測定後に正しく判断するのも実力が必要</li>
+<li>測定を自動化するのにもｒｙ</li>
+<li>時間は8時間、思ってるよりも全然ない</li>
+</ul></li>
+<li>理想
+
+<ul>
+<li>ボトルネック測定→それを解決する最低限の修正</li>
+<li>ひらすらそのサイクルの高速化</li>
+</ul></li>
+</ul>
+
+</section><section><h3>リアルISUCON振り返り</h3>
+
+<ul>
+<li>社内オンプレサーバーという制約
+
+<ul>
+<li>AWSなど使ってなかったので、サーバーの調達すぐには困難だった</li>
+</ul></li>
+<li>作業
+
+<ul>
+<li>基本的には上司につき調査やチューニングなどの実作業は１人で行った</li>
+</ul></li>
+<li>自分の実力不足
+
+<ul>
+<li>急いで書籍を購入し2, 3日くらいで全部読んだ</li>
+</ul></li>
+</ul>
+
+</section><section><h3>読んだ書籍</h3>
+
+<ul>
+<li><a href="http://www.amazon.co.jp/Web%E9%96%8B%E7%99%BA%E8%80%85%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE-%E5%A4%A7%E8%A6%8F%E6%A8%A1%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E6%8A%80%E8%A1%93%E5%85%A5%E9%96%80-%E2%80%95%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%80%81%E3%83%A1%E3%83%A2%E3%83%AA%E3%80%81OS%E3%80%81DB%E3%80%81%E3%82%B5%E3%83%BC%E3%83%90-PRESS-plus%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA/dp/4774143073">[Web開発者のための]大規模サービス技術入門</a></li>
+<li><a href="http://www.amazon.co.jp/24%E6%99%82%E9%96%93365%E6%97%A5-%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E3%82%92%E6%94%AF%E3%81%88%E3%82%8B%E6%8A%80%E8%A1%93-%E2%80%BE%E3%82%B9%E3%82%B1%E3%83%BC%E3%83%A9%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%80%81%E3%83%8F%E3%82%A4%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%80%81%E7%9C%81%E5%8A%9B%E9%81%8B%E7%94%A8-PRESS-plus%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA/dp/4774135666/ref=sr_1_2?s=books&amp;amp;ie=UTF8&amp;amp;qid=1407219254&amp;amp;sr=1-2&amp;amp;keywords=%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%80%80%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E3%80%80">[24時間365日] サーバ/インフラを支える技術</a></li>
+<li><a href="http://www.amazon.co.jp/Mobage%E3%82%92%E6%94%AF%E3%81%88%E3%82%8B%E6%8A%80%E8%A1%93-~%E3%82%BD%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%AB%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E8%88%9E%E5%8F%B0%E8%A3%8F~-WEB-PRESS-plus/dp/4774151114/ref=sr_1_1?s=books&amp;amp;ie=UTF8&amp;amp;qid=1407219349&amp;amp;sr=1-1&amp;amp;keywords=web+db+dena">Mobageを支える技術 ~ソーシャルゲームの舞台裏~</a></li>
+</ul>
+
+<p><img src="http://i.gyazo.com/519da7060ad8938cba157d46bb7f6496.png" alt="sicon"/>
+
+<img src="http://i.gyazo.com/97180536f65a491cd0c2f68ec0014e94.png" alt="sicon"/>
+
+<img src="http://i.gyazo.com/ec0aca6583c3cca6b66432308adc93af.png" alt="sicon"/>
+</p>
+
+</section><section><h2>実際の作業</h2>
+
+</section><section><h2>ここからはごちゃまぜです</h2>
+
+</section><section><h3>0. ログだし</h3>
+
+<ul>
+<li>nginx
+
+<ul>
+<li>LTSVとかお好みで</li>
+<li>基本的にはURLに対するレスポンス時間、回数</li>
+<li>ISUCONではstatus codeも確認した</li>
+<li>自前で集計用ワンライナーなどを書く
+
+<ul>
+<li>もちろんワンライナーじゃなくてもいいｗ</li>
+</ul></li>
+</ul></li>
+</ul>
+
+</section><section><h3>0. ログだし</h3>
+
+<ul>
+<li>nginx
+
+<ul>
+<li><a href="https://gist.github.com/kazuph/25d83b19af2e4b5b1dcd">レポート用ソース</a></li>
+</ul></li>
+</ul>
+
+<pre><code># LTSVなログ前提
+LOG_BASE=/home/isucon/tmp
+
+# stat url
+URL_STAT=`cat $LOG_BASE/access.log | perl -F"\t" -anle '{($key = $F[3]) =~ s/(req:|HTTP\/1\.1)//g;$key =~ s/[0-9]//g;$key =~ s/ //g;$key =~ s/\//\//g;$c{$key}++;$t{$key}+=substr($F[8],6,5)}END{for(keys %t){print int($t{$_})." ".int($t{$_}/$c{$_}*1000)." ".$c{$_}. " $_";}}' | sort -nr | tee tmp/nginx-repo.txt.${DATE}`
+echo "sum sec  ave msec  count  URL"
+echo "$URL_STAT" | while read timesum timeave count url; do
+    echo "$timesum  $timeave  $count  $url"
+done
+</code></pre>
+
+</section><section><h3>0. ログだし</h3>
+
+<ul>
+<li>nginx
+
+<ul>
+<li>結果</li>
+</ul></li>
+</ul>
+
+<pre><code>sum[sec] ave[msec] count URL
+1128    1939    582     GET/
+69      43      1598    GET/memo/
+63      50      1247    GET/recent/
+34      147     234     GET/mypage
+2       9       234     POST/memo
+1       0       1528    GET/js/jquery.min.js
+1       0       1528    GET/css/bootstrap.min.css
+0       3       234     POST/signin
+0       2       234     POST/signout
+</code></pre>
+
+</section><section><h3>0. ログだし</h3>
+
+<ul>
+<li>app(sinatraやKossy)
+
+<ul>
+<li>アプリがactionごとの時間を出してくれると嬉しいが
+
+<ul>
+<li>CatalystはdebugモードだとActionごとの実行時間を出してくれて便利</li>
+</ul></li>
+<li>そうじゃない場合はTime.nowなどを仕込んで解決する</li>
+<li>Perlは時間測定、query周りでいいのがそろってる印象</li>
+</ul></li>
+</ul>
+
+</section><section><h3>0. ログだし</h3>
+
+<ul>
+<li>mysql
+
+<ul>
+<li>スローログ
+
+<ul>
+<li>例えば以下をmy.cnfに書いて再起動</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<pre><code>[mysqld]
+slow_query_log=ON
+slow_query_log_file=/tmp/mysql-slow.log
+long_query_time=0 #出力する秒数, 0秒なのですべて
+</code></pre>
+
+</section><section><h3>0. ログだし</h3>
+
+<ul>
+<li>mysql
+
+<ul>
+<li>スローログ
+
+<ul>
+<li>pt-query-digestを使うと便利</li>
+<li>EXPLAINもしてくれる</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<pre><code>pt-query-digest tmp/mysql-slow.log --explain h=localhost, u=isucon --database=isucon | tee tmp/ptqd.log
+</code></pre>
+
+<p><a href="https://gist.githubusercontent.com/kazuph/32aca1d3618495cce750/raw/b7a8af012d46873f16682ccbf8bbd0533442f370/ptqd.txt">実行結果</a></p>
+
+</section><section><h3>0. ログだし</h3>
+
+<ul>
+<li>ログを出すことでのパフォーマンス劣化は初期の時点では完全に誤差。おしみなく出した方がいい。</li>
+<li>もちろん本番では注意！</li>
+</ul>
+
+</section><section><h3>1. 底上げ</h3>
+
+<ul>
+<li>自分の得意な言語への変更
+
+<ul>
+<li>過去2回はPerl、今はRubyで検討中</li>
+<li>近年はRubyの方がPerlよりも初期値が速い
+
+<ul>
+<li>最終値からすると誤差だけど</li>
+</ul></li>
+</ul></li>
+<li>MySQLのパラメータ見直し
+
+<ul>
+<li><a href="http://mysqltuner.pl">mysqltuner.pl</a></li>
+<li><a href="https://gist.github.com/kazuph/c460681d4fa37b944a3e">mymemcheck.rb</a></li>
+<li>前回のISUCONは少し性能が上がった</li>
+</ul></li>
+</ul>
+
+</section><section><h3>2. ボトルネック探し</h3>
+
+<ul>
+<li>コマンドレベル
+
+<ul>
+<li>w ← (僕は重いサーバーに入ったらまず打ちます)</li>
+<li>htop/top</li>
+<li>dstat -v (vmstat)
+
+<ul>
+<li>主にリソース系</li>
+<li>時間ごとのプロセスのTOP占有率もみたいなぁ
+
+<ul>
+<li>IOならiotopが便利</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>ログレベル(繰り返し)</li>
+</ul>
+
+</section><section><h3>3. 可視化・自動化</h3>
+
+<ul>
+<li>この辺はできたらいいなぁって話</li>
+<li>ベンチマーク中に影響を与えないようにする
+
+<ul>
+<li>dstat を10秒に１回とかにするとか</li>
+</ul></li>
+<li>ログはfluentdでバッチ転送
+
+<ul>
+<li>転送後は何世代か残して消す（容量がすぐなくなる）</li>
+<li>クライアントはGoogleSpreadsheetがいいかなと思ってる笑</li>
+</ul></li>
+<li>capでベンチマークから自動実行
+
+<ul>
+<li><a href="http://qiita.com/kazuph/items/deeaa7d3f9889674d7fe">capistrano 3 をできるだけシンプル〜</a></li>
+</ul></li>
+</ul>
+
+</section><section><h3>3. 可視化・自動化</h3>
+
+<ul>
+<li>NewRelicもいいよ！</li>
+<li>できれば導入したいやつ
+
+<ul>
+<li><a href="http://qiita.com/kazunori279/items/6329df57635799405547">Fluent Dashboard＋Norikra</a>
+<img src="http://i.giflike.com/sLgJtW9.gif" alt="center"/></li>
+</ul></li>
+</ul>
+
+</section><section><h3>4. 禁断のパワーに挑戦したい</h3>
+
+<ul>
+<li>handlersocket！！！
+
+<ul>
+<li>INSERT部分がボトルネックになったときに導入したい！</li>
+</ul></li>
+<li>nginx_lua！！！
+
+<ul>
+<li>appに行ったら負けかな！？</li>
+<li>直接mysql・redisなどのデータを返却する</li>
+</ul></li>
+<li>golang！！！
+
+<ul>
+<li>そもそもが速い！！！</li>
+</ul></li>
+<li>etc…</li>
+</ul>
+
+</section><section><h2>名言によるまとめ</h2>
+
+</section><section><h2>推測するな、測定せよ</h2>
+
+</section><section><h2>ご清聴ありがとうございました</h2>
+</section>
+
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+
+<style>
+  html, .view body {
+      background-color: black;
+      counter-reset: slideidx;
+  }
+  body, .view section { background-color: white; border-radius: 12px }
+   
+  section, .view head > title {
+       
+      font-family: 'Oswald', 'Osaka', arial, serif;
+      font-size: 28px;
+  }
+
+  .view section:after {
+    counter-increment: slideidx;
+    content: counter(slideidx, decimal-leading-zero);
+    position: absolute; bottom: -80px; right: 100px;
+    color: white;
+  }
+
+  .view head > title {
+    color: white;
+    text-align: center;
+    margin: 1em 0 1em 0;
+  }
+
+  h1, h2 {
+    margin-top: 170px;
+    text-align: center;
+    font-size: 80px;
+  }
+  h3 {
+    font-size: 40px;
+    margin: 10px 10px 10px 30px;
+  }
+
+  ul {
+      margin: 10px 50px 10px 100px;
+  }
+  li > ul {
+      margin: 5px 45px;
+  }
+
+  h1 + p {
+    font-size: 30px;
+  }
+
+  h3 + p {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  blockquote {
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-size: 60px;
+    padding: 50px;
+  }
+  blockquote:before {
+    content: open-quote;
+  }
+  blockquote:after {
+    content: close-quote;
+  }
+
+   
+  figure {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+  }
+  figure > * {
+    position: absolute;
+  }
+  p > img, p > video {
+    width: 100%
+  }
+  img[alt="center"] {
+    width: 100%;
+  }
+  img[alt="icon"] {
+    width: 280;
+  }
+  img[alt="sicon"] {
+    width: 200;
+    margin: 10px;
+  }
+  img[alt="left"] {
+    float: left;
+    width: 40%;
+    margin: 10px 0 0 30px;
+  }
+  img[alt="right"] {
+    float: right;
+    width: 40%;
+    margin: 10px 30px 0 0;
+  }
+  figcaption {
+    margin: 70px;
+    font-size: 50px;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 40px;
+    text-align: right;
+    background-color: #F3F4F8;
+    border-top: 1px solid #CCC;
+  }
+
+   
+   
+  section {
+    -moz-transition: left 400ms linear 0s;
+    -webkit-transition: left 400ms linear 0s;
+    -ms-transition: left 400ms linear 0s;
+    transition: left 400ms linear 0s;
+  }
+  .view section {
+    -moz-transition: none;
+    -webkit-transition: none;
+    -ms-transition: none;
+    transition: none;
+  }
+
+  .view section[aria-selected] {
+    border: 5px red solid;
+  }
+
+   
+  section { left: -150%; }
+   
+  section[aria-selected] { left: 0; }
+   
+  section[aria-selected] ~ section { left: +150%; }
+
+   
+
+   
+  .incremental > * { opacity: 1; }
+
+   
+  .incremental > *[aria-selected] { opacity: 1; }
+
+   
+  .incremental > *[aria-selected] ~ * { opacity: 0; }
+
+   
+  #progress-bar {
+    height: 2px;
+    background: #AAA;
+  }
+  pre {
+    background: #333;
+    color: white;
+    font-size: 0.8em;
+    margin: 10px;
+  }
+</style>
+
+
+
+<div id="progress-bar"></div>
+
+
+<style>
+  * { margin: 0; padding: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+  [role="note"] { display: none; }
+  body {
+    width: 800px; height: 600px;
+    margin-left: -400px; margin-top: -300px;
+    position: absolute; top: 50%; left: 50%;
+    overflow: hidden;
+    display: none;
+  }
+  .view body {
+    position: static;
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    display: inline-block;
+    overflow: visible; overflow-x: hidden;
+     
+    transform: none !important;
+    -moz-transform: none !important;
+    -webkit-transform: none !important;
+    -o-transform: none !important;
+    -ms-transform: none !important;
+  }
+  .view head, .view head > title { display: block }
+  section {
+    position: absolute;
+    pointer-events: none;
+    width: 100%; height: 100%;
+  }
+  .view section {
+    pointer-events: auto;
+    position: static;
+    width: 800px; height: 600px;
+    margin: -150px -200px;
+    float: left;
+
+    transform: scale(.4);
+    -moz-transform: scale(.4);
+    -webkit-transform: scale(.4);
+    -o-transform: scale(.4);
+    -ms-transform: scale(.4);
+  }
+  .view section > * { pointer-events: none; }
+  section[aria-selected] { pointer-events: auto; }
+  html { overflow: hidden; }
+  html.view { overflow: visible; }
+  body.loaded { display: block; }
+  .incremental {visibility: hidden; }
+  .incremental[active] {visibility: visible; }
+  #progress-bar{
+    bottom: 0;
+    position: absolute;
+    -moz-transition: width 400ms linear 0s;
+    -webkit-transition: width 400ms linear 0s;
+    -ms-transition: width 400ms linear 0s;
+    transition: width 400ms linear 0s;
+  }
+  .view #progress-bar {
+    display: none;
+  }
+</style>
+
+<script>
+  var Dz = {
+    remoteWindows: [],
+    idx: -1,
+    step: 0,
+    html: null,
+    slides: null,
+    progressBar : null,
+    params: {
+      autoplay: "1"
+    }
+  };
+
+  Dz.init = function() {
+    document.body.className = "loaded";
+    this.slides = Array.prototype.slice.call($$("body > section"));
+    this.progressBar = $("#progress-bar");
+    this.html = document.body.parentNode;
+    this.setupParams();
+    this.onhashchange();
+    this.setupTouchEvents();
+    this.onresize();
+    this.setupView();
+  }
+
+  Dz.setupParams = function() {
+    var p = window.location.search.substr(1).split('&');
+    p.forEach(function(e, i, a) {
+      var keyVal = e.split('=');
+      Dz.params[keyVal[0]] = decodeURIComponent(keyVal[1]);
+    });
+  
+    if (!+this.params.autoplay)
+      $$.forEach($$("video"), function(v){ v.controls = true });
+  }
+
+  Dz.onkeydown = function(aEvent) {
+    
+    if (aEvent.altKey
+      || aEvent.ctrlKey
+      || aEvent.metaKey
+      || aEvent.shiftKey) {
+      return;
+    }
+    if ( aEvent.keyCode == 37 
+      || aEvent.keyCode == 38 
+      || aEvent.keyCode == 33 
+    ) {
+      aEvent.preventDefault();
+      this.back();
+    }
+    if ( aEvent.keyCode == 39 
+      || aEvent.keyCode == 40 
+      || aEvent.keyCode == 34 
+    ) {
+      aEvent.preventDefault();
+      this.forward();
+    }
+    if (aEvent.keyCode == 35) { 
+      aEvent.preventDefault();
+      this.goEnd();
+    }
+    if (aEvent.keyCode == 36) { 
+      aEvent.preventDefault();
+      this.goStart();
+    }
+    if (aEvent.keyCode == 32) { 
+      aEvent.preventDefault();
+      this.toggleContent();
+    }
+    if (aEvent.keyCode == 70) { 
+      aEvent.preventDefault();
+      this.goFullscreen();
+    }
+    if (aEvent.keyCode == 79) { 
+      aEvent.preventDefault();
+      this.toggleView();
+    }
+  }
+
+   
+
+  Dz.setupTouchEvents = function() {
+    var orgX, newX;
+    var tracking = false;
+
+    var db = document.body;
+    db.addEventListener("touchstart", start.bind(this), false);
+    db.addEventListener("touchmove", move.bind(this), false);
+
+    function start(aEvent) {
+      aEvent.preventDefault();
+      tracking = true;
+      orgX = aEvent.changedTouches[0].pageX;
+    }
+
+    function move(aEvent) {
+      if (!tracking) return;
+      newX = aEvent.changedTouches[0].pageX;
+      if (orgX - newX > 100) {
+        tracking = false;
+        this.forward();
+      } else {
+        if (orgX - newX < -100) {
+          tracking = false;
+          this.back();
+        }
+      }
+    }
+  }
+
+  Dz.setupView = function() {
+    document.body.addEventListener("click", function ( e ) {
+      if (!Dz.html.classList.contains("view")) return;
+      if (!e.target || e.target.nodeName != "SECTION") return;
+
+      Dz.html.classList.remove("view");
+      Dz.setCursor(Dz.slides.indexOf(e.target) + 1);
+    }, false);
+  }
+
+   
+
+  Dz.onresize = function() {
+    var db = document.body;
+    var sx = db.clientWidth / window.innerWidth;
+    var sy = db.clientHeight / window.innerHeight;
+    var transform = "scale(" + (1/Math.max(sx, sy)) + ")";
+
+    db.style.MozTransform = transform;
+    db.style.WebkitTransform = transform;
+    db.style.OTransform = transform;
+    db.style.msTransform = transform;
+    db.style.transform = transform;
+  }
+
+
+  Dz.getNotes = function(aIdx) {
+    var s = $("section:nth-of-type(" + aIdx + ")");
+    var d = s.$("[role='note']");
+    return d ? d.innerHTML : "";
+  }
+
+  Dz.onmessage = function(aEvent) {
+    var argv = aEvent.data.split(" "), argc = argv.length;
+    argv.forEach(function(e, i, a) { a[i] = decodeURIComponent(e) });
+    var win = aEvent.source;
+    if (argv[0] === "REGISTER" && argc === 1) {
+      this.remoteWindows.push(win);
+      this.postMsg(win, "REGISTERED", document.title, this.slides.length);
+      this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+      return;
+    }
+    if (argv[0] === "BACK" && argc === 1)
+      this.back();
+    if (argv[0] === "FORWARD" && argc === 1)
+      this.forward();
+    if (argv[0] === "START" && argc === 1)
+      this.goStart();
+    if (argv[0] === "END" && argc === 1)
+      this.goEnd();
+    if (argv[0] === "TOGGLE_CONTENT" && argc === 1)
+      this.toggleContent();
+    if (argv[0] === "SET_CURSOR" && argc === 2)
+      window.location.hash = "#" + argv[1];
+    if (argv[0] === "GET_CURSOR" && argc === 1)
+      this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+    if (argv[0] === "GET_NOTES" && argc === 1)
+      this.postMsg(win, "NOTES", this.getNotes(this.idx));
+  }
+
+  Dz.toggleContent = function() {
+    
+    
+    var s = $("section[aria-selected]");
+    if (s) {
+      var video = s.$("video");
+      if (video) {
+        if (video.ended || video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    }
+  }
+
+  Dz.setCursor = function(aIdx, aStep) {
+    
+    
+    aStep = (aStep != 0 && typeof aStep !== "undefined") ? "." + aStep : ".0";
+    window.location.hash = "#" + aIdx + aStep;
+  }
+
+  Dz.onhashchange = function() {
+    var cursor = window.location.hash.split("#"),
+        newidx = 1,
+        newstep = 0;
+    if (cursor.length == 2) {
+      newidx = ~~cursor[1].split(".")[0];
+      newstep = ~~cursor[1].split(".")[1];
+      if (newstep > Dz.slides[newidx - 1].$$('.incremental > *').length) {
+        newstep = 0;
+        newidx++;
+      }
+    }
+    this.setProgress(newidx, newstep);
+    if (newidx != this.idx) {
+      this.setSlide(newidx);
+    }
+    if (newstep != this.step) {
+      this.setIncremental(newstep);
+    }
+    for (var i = 0; i < this.remoteWindows.length; i++) {
+      this.postMsg(this.remoteWindows[i], "CURSOR", this.idx + "." + this.step);
+    }
+  }
+
+  Dz.back = function() {
+    if (this.idx == 1 && this.step == 0) {
+      return;
+    }
+    if (this.step == 0) {
+      this.setCursor(this.idx - 1,
+                     this.slides[this.idx - 2].$$('.incremental > *').length);
+    } else {
+      this.setCursor(this.idx, this.step - 1);
+    }
+  }
+
+  Dz.forward = function() {
+    if (this.idx >= this.slides.length &&
+        this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+        return;
+    }
+    if (this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+      this.setCursor(this.idx + 1, 0);
+    } else {
+      this.setCursor(this.idx, this.step + 1);
+    }
+  }
+
+  Dz.goStart = function() {
+    this.setCursor(1, 0);
+  }
+
+  Dz.goEnd = function() {
+    var lastIdx = this.slides.length;
+    var lastStep = this.slides[lastIdx - 1].$$('.incremental > *').length;
+    this.setCursor(lastIdx, lastStep);
+  }
+
+  Dz.toggleView = function() {
+    this.html.classList.toggle("view");
+
+    if (this.html.classList.contains("view")) {
+      $("section[aria-selected]").scrollIntoView(true);
+    }
+  }
+
+  Dz.setSlide = function(aIdx) {
+    this.idx = aIdx;
+    var old = $("section[aria-selected]");
+    var next = $("section:nth-of-type("+ this.idx +")");
+    if (old) {
+      old.removeAttribute("aria-selected");
+      var video = old.$("video");
+      if (video) {
+        video.pause();
+      }
+    }
+    if (next) {
+      next.setAttribute("aria-selected", "true");
+      if (this.html.classList.contains("view")) {
+        next.scrollIntoView();
+      }
+      var video = next.$("video");
+      if (video && !!+this.params.autoplay) {
+        video.play();
+      }
+    } else {
+      
+      this.idx = -1;
+      
+    }
+  }
+
+  Dz.setIncremental = function(aStep) {
+    this.step = aStep;
+    var old = this.slides[this.idx - 1].$('.incremental > *[aria-selected]');
+    if (old) {
+      old.removeAttribute('aria-selected');
+    }
+    var incrementals = $$('.incremental');
+    if (this.step <= 0) {
+      $$.forEach(incrementals, function(aNode) {
+        aNode.removeAttribute('active');
+      });
+      return;
+    }
+    var next = this.slides[this.idx - 1].$$('.incremental > *')[this.step - 1];
+    if (next) {
+      next.setAttribute('aria-selected', true);
+      next.parentNode.setAttribute('active', true);
+      var found = false;
+      $$.forEach(incrementals, function(aNode) {
+        if (aNode != next.parentNode)
+          if (found)
+            aNode.removeAttribute('active');
+          else
+            aNode.setAttribute('active', true);
+        else
+          found = true;
+      });
+    } else {
+      setCursor(this.idx, 0);
+    }
+    return next;
+  }
+
+  Dz.goFullscreen = function() {
+    var html = $('html'),
+        requestFullscreen = html.requestFullscreen || html.requestFullScreen || html.mozRequestFullScreen || html.webkitRequestFullScreen;
+    if (requestFullscreen) {
+      requestFullscreen.apply(html);
+    }
+  }
+
+  Dz.setProgress = function(aIdx, aStep) {
+    var slide = $("section:nth-of-type("+ aIdx +")");
+    if (!slide)
+      return;
+    var steps = slide.$$('.incremental > *').length + 1,
+        slideSize = 100 / (this.slides.length - 1),
+        stepSize = slideSize / steps;
+    this.progressBar.style.width = ((aIdx - 1) * slideSize + aStep * stepSize) + '%';
+  }
+
+  Dz.postMsg = function(aWin, aMsg) { 
+    aMsg = [aMsg];
+    for (var i = 2; i < arguments.length; i++)
+      aMsg.push(encodeURIComponent(arguments[i]));
+    aWin.postMessage(aMsg.join(" "), "*");
+  }
+
+  function init() {
+    Dz.init();
+    window.onkeydown = Dz.onkeydown.bind(Dz);
+    window.onresize = Dz.onresize.bind(Dz);
+    window.onhashchange = Dz.onhashchange.bind(Dz);
+    window.onmessage = Dz.onmessage.bind(Dz);
+  }
+
+  window.onload = init;
+</script>
+
+
+<script> 
+  if (!Function.prototype.bind) {
+    Function.prototype.bind = function (oThis) {
+
+      
+      
+      if (typeof this !== "function")
+      throw new TypeError(
+        "Function.prototype.bind - what is trying to be fBound is not callable"
+      );
+
+      var aArgs = Array.prototype.slice.call(arguments, 1),
+          fToBind = this,
+          fNOP = function () {},
+          fBound = function () {
+            return fToBind.apply( this instanceof fNOP ? this : oThis || window,
+                   aArgs.concat(Array.prototype.slice.call(arguments)));
+          };
+
+      fNOP.prototype = this.prototype;
+      fBound.prototype = new fNOP();
+
+      return fBound;
+    };
+  }
+
+  var $ = (HTMLElement.prototype.$ = function(aQuery) {
+    return this.querySelector(aQuery);
+  }).bind(document);
+
+  var $$ = (HTMLElement.prototype.$$ = function(aQuery) {
+    return this.querySelectorAll(aQuery);
+  }).bind(document);
+
+  $$.forEach = function(nodeList, fun) {
+    Array.prototype.forEach.call(nodeList, fun);
+  }
+
+</script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

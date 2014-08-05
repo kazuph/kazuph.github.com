@@ -1,3 +1,19 @@
+# Ansibleの発表はしません＞＜
+2014 3/12
+
+株式会社GaiaX Kazuhiro Homma (@kazuph)
+
+##### 最初はAnsibleの話を考えていた
+##### 自分の中の賞味期限が切れたので
+##### 急遽、
+##### 内容を変えさせていただいて、
+##### WebRTCの話をします！
+
+## Agenda
+- WebRTCとは？
+- 使ってみる！
+- WebRTCの可能性
+
 # 最近俺の中でWebRTCが熱いと話題に！wwwwwwwwwww
 
 2014 3/12
@@ -14,7 +30,9 @@
 - Web & SmartPhone Engineer / 株式会社ガイアックス
 - [社内でCPAN Authorになろうハッカソンを開催しました！！](http://kazuph.hateblo.jp/entry/2013/06/16/235744)
 - [Vimのsnippetについてあまり知らなかったので設定してみたら便利過ぎてつらい](http://kazuph.hateblo.jp/entry/2012/11/28/105633)
-- 最近rebuildfmにはまってるのでもし懇親会で話せたら
+- [ハッカソンとかでは宇宙系の作品をいくつかつくってます](http://galactic-railways.com/)
+    - ブラウザで電子コンパス、加速度センサ、WebGLとか、、、
+- [WeTunes](https://itunes.apple.com/us/app/kappuru-zhuan-yong-yin-leapuriwetunes/id788976884?mt=8)というiOSのアプリをリリースしました。
 
 ## Whoami
 スキル
@@ -46,27 +64,15 @@
 
 /#section
 
-## 今日話す内容
-
--> 最初はAnsibleの話を考えていた
-
--> 自分の中の賞味期限が切れたので
-
-##### 今日はWebRTCの話をします！
-## Agenda
-- WebRTCとは？
-- 使ってみる！
-- WebRTCの可能性
-
 #### WebRTCとは？
 
 ### ビデオチャットって何をつかってますか？
 
-- 自分の達の開発スタイル
+- 自分プライベートの開発スタイル
+    - rebuildfmでも最近流行りのリモート開発
     - 福岡エンジニア１人と東京にエンジニア１人、営業１人という組合せで開発
     - 会わずにTODOだけ共有して作業と精神的にもつらい
-    - SkypeかLINEで常に繋ぎっぱなしにしてコミュニケーション
-        - 話さないときもつないでる
+    - やはり話さないときでも常に接続しているべき
 
 ##### 最近まではもっぱらSkypeかLINE
 
@@ -80,18 +86,22 @@
 - LINE
     - Skypeよりも動画は綺麗だが重い時がある
     - 画面共有ができない＞＜
+- 共通するいやな点
+    - 自分で改造しづらい！(skypeは一応APIあるけどごにょごにょ)
 
 ##### なかなかイケてる<br />ビデオチャットツールって<br />ないなぁ(´・ω・｀)
 ##### そこで登場したのが
-##### 突然のWebRTC
+##### 突然のビデオチャット！
 
 ![vmux](https://scontent-b.xx.fbcdn.net/hphotos-ash3/t1/578981_579894275430228_1006323660_n.jpg)
 
 ※この画像は [vmux](https://vmux.co/) 使用時のもの
 
+##### 突然のWebRTC！
+
 ### WebRTCのイケてるところ
 
-- ブラウザだけで完結している
+- ブラウザだけで完結しているのでJSで色々できる(できそう)
 - 動画と音声が綺麗
 - 画面共有ができるサービスもある（[apprear.in](https://appear.in/)）
 - コーディングの内容も共有できるサービスもある（[codassium.com](http://codassium.com/)）
