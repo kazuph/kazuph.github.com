@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>ISUCONとリアルISUCONへの挑戦を支えた技術</title>
+<title>ISUCONとリアルISUCONへの備え</title>
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
 </head>
 <body>
@@ -393,9 +393,9 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
       counter-reset: slideidx;
   }
   body, .view section { background-color: white; border-radius: 12px }
-   
+
   section, .view head > title {
-       
+
       font-family: 'Oswald', 'Osaka', arial, serif;
       font-size: 28px;
   }
@@ -458,7 +458,7 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
     content: close-quote;
   }
 
-   
+
   figure {
     background-color: black;
     width: 100%;
@@ -505,8 +505,8 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
     border-top: 1px solid #CCC;
   }
 
-   
-   
+
+
   section {
     -moz-transition: left 400ms linear 0s;
     -webkit-transition: left 400ms linear 0s;
@@ -524,25 +524,25 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
     border: 5px red solid;
   }
 
-   
+
   section { left: -150%; }
-   
+
   section[aria-selected] { left: 0; }
-   
+
   section[aria-selected] ~ section { left: +150%; }
 
-   
 
-   
+
+
   .incremental > * { opacity: 1; }
 
-   
+
   .incremental > *[aria-selected] { opacity: 1; }
 
-   
+
   .incremental > *[aria-selected] ~ * { opacity: 0; }
 
-   
+
   #progress-bar {
     height: 2px;
     background: #AAA;
@@ -576,7 +576,7 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
     width: 100%; height: 100%;
     display: inline-block;
     overflow: visible; overflow-x: hidden;
-     
+
     transform: none !important;
     -moz-transform: none !important;
     -webkit-transform: none !important;
@@ -653,56 +653,56 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
       var keyVal = e.split('=');
       Dz.params[keyVal[0]] = decodeURIComponent(keyVal[1]);
     });
-  
+
     if (!+this.params.autoplay)
       $$.forEach($$("video"), function(v){ v.controls = true });
   }
 
   Dz.onkeydown = function(aEvent) {
-    
+
     if (aEvent.altKey
       || aEvent.ctrlKey
       || aEvent.metaKey
       || aEvent.shiftKey) {
       return;
     }
-    if ( aEvent.keyCode == 37 
-      || aEvent.keyCode == 38 
-      || aEvent.keyCode == 33 
+    if ( aEvent.keyCode == 37
+      || aEvent.keyCode == 38
+      || aEvent.keyCode == 33
     ) {
       aEvent.preventDefault();
       this.back();
     }
-    if ( aEvent.keyCode == 39 
-      || aEvent.keyCode == 40 
-      || aEvent.keyCode == 34 
+    if ( aEvent.keyCode == 39
+      || aEvent.keyCode == 40
+      || aEvent.keyCode == 34
     ) {
       aEvent.preventDefault();
       this.forward();
     }
-    if (aEvent.keyCode == 35) { 
+    if (aEvent.keyCode == 35) {
       aEvent.preventDefault();
       this.goEnd();
     }
-    if (aEvent.keyCode == 36) { 
+    if (aEvent.keyCode == 36) {
       aEvent.preventDefault();
       this.goStart();
     }
-    if (aEvent.keyCode == 32) { 
+    if (aEvent.keyCode == 32) {
       aEvent.preventDefault();
       this.toggleContent();
     }
-    if (aEvent.keyCode == 70) { 
+    if (aEvent.keyCode == 70) {
       aEvent.preventDefault();
       this.goFullscreen();
     }
-    if (aEvent.keyCode == 79) { 
+    if (aEvent.keyCode == 79) {
       aEvent.preventDefault();
       this.toggleView();
     }
   }
 
-   
+
 
   Dz.setupTouchEvents = function() {
     var orgX, newX;
@@ -743,7 +743,7 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
     }, false);
   }
 
-   
+
 
   Dz.onresize = function() {
     var db = document.body;
@@ -794,8 +794,8 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
   }
 
   Dz.toggleContent = function() {
-    
-    
+
+
     var s = $("section[aria-selected]");
     if (s) {
       var video = s.$("video");
@@ -810,8 +810,8 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
   }
 
   Dz.setCursor = function(aIdx, aStep) {
-    
-    
+
+
     aStep = (aStep != 0 && typeof aStep !== "undefined") ? "." + aStep : ".0";
     window.location.hash = "#" + aIdx + aStep;
   }
@@ -903,9 +903,9 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
         video.play();
       }
     } else {
-      
+
       this.idx = -1;
-      
+
     }
   }
 
@@ -960,7 +960,7 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
     this.progressBar.style.width = ((aIdx - 1) * slideSize + aStep * stepSize) + '%';
   }
 
-  Dz.postMsg = function(aWin, aMsg) { 
+  Dz.postMsg = function(aWin, aMsg) {
     aMsg = [aMsg];
     for (var i = 2; i < arguments.length; i++)
       aMsg.push(encodeURIComponent(arguments[i]));
@@ -979,12 +979,12 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
 </script>
 
 
-<script> 
+<script>
   if (!Function.prototype.bind) {
     Function.prototype.bind = function (oThis) {
 
-      
-      
+
+
       if (typeof this !== "function")
       throw new TypeError(
         "Function.prototype.bind - what is trying to be fBound is not callable"
