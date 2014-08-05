@@ -296,41 +296,28 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
 <ul>
 <li><a href="http://mysqltuner.pl">mysqltuner.pl</a></li>
 <li><a href="https://gist.github.com/kazuph/c460681d4fa37b944a3e">mymemcheck.rb</a></li>
-<li>前回のISUCONは少し性能が上がった</li>
+<li>前回のISUCONはこれだけでも少し性能が上がった</li>
 </ul></li>
 </ul>
 
 </section><section><h3>2. ボトルネック探し</h3>
 
 <ul>
-<li>コマンドレベル
+  <li>コマンドレベル
+    <ul>
+    <li>w ← (僕は重いサーバーに入ったらまず打ちます, uptimeでもいいですがそもそも長いコマンドは重いサーバーでは打てない…)</li>
+    <li>htop/top</li>
+    <li>dstat -v (vmstat)
 
-<ul>
-<li>w ← (僕は重いサーバーに入ったらまず打ちます)</li>
-<li>htop/top</li>
-<li>dstat -v (vmstat)
-
-<ul>
-<li>主にリソース系</li>
-<li>時間ごとのプロセスのTOP占有率もみたいなぁ
-
-<ul>
-<li>IOならiotopが便利</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>ログレベル(繰り返し)</li>
+    <li>IOならiotopが便利</li>
+   </ul>
 </ul>
 
 </section><section><h3>3. 可視化・自動化</h3>
 
 <ul>
 <li>この辺はできたらいいなぁって話</li>
-<li>ベンチマーク中に影響を与えないようにする
-
-<ul>
-<li>dstat を10秒に１回とかにするとか</li>
-</ul></li>
+<li>ベンチマーク中に影響を与えないようにする</li>
 <li>ログはfluentdでバッチ転送
 
 <ul>
@@ -380,7 +367,7 @@ long_query_time=0 #出力する秒数, 0秒なのですべて
 
 </section><section><h2>名言によるまとめ</h2>
 
-</section><section><h2>推測するな、測定せよ</h2>
+</section><section><h2>推測するな測定せよ</h2>
 
 </section><section><h2>ご清聴ありがとうございました</h2>
 </section>
