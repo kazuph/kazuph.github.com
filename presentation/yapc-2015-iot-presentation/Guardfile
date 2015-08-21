@@ -1,0 +1,11 @@
+guard 'shell' do
+  watch(/.*\.md/) {|m|
+    `ruby markdown2slide.rb`
+  }
+end
+
+guard 'livereload' do
+  watch(/index\.html/)
+  # watch(%r{css/theme/*\.css})
+end
+
