@@ -1,0 +1,537 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Web由来の組み込みエンジニアの半年間のすべて 〜WebとiOSとBLEとハードウェアデバイスのこと〜</title>
+  <link rel="stylesheet" href="./dist/talkie.min.css">
+  <link rel="stylesheet" href="./dist/talkie-default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
+</head>
+<body>
+
+<!-- put your slides -->
+
+
+<template layout="cover" invert type="text/x-markdown" backface="./images/sushi.jpg" backface-filter="blur(0px) brightness(.3)">
+# Web由来の組み込みエンジニアの半年間のすべて
+
+
+〜WebとiOSとBLEとハードウェアデバイスのこと〜
+
+株式会社Photosynth Homma Kazuhiro
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/yapc_ore.jpg" backface-filter="blur(0px) brightness(.3)">
+## 自己紹介
+
+
+- ・アカウント…@kazuph
+- ・会社…株式会社Photosynth
+- ・肩書…Co−Founder, Software Engineer
+- ・メインプロダクト…スマートロックロボットAkerun
+- ・担当…組み込み, スマフォアプリ(iOS), API
+- ・開発言語…C, Objective-C, 一部Swift, Ruby(Rails)</template>
+<template layout="bullets" type="text/x-markdown">
+### 前職はYAPCスポンサー企業でもあるGaiaX！！！
+
+
+Perlをガッツリ書いてました( ･`д･´)b</template>
+<template layout="bullets" type="text/x-markdown">
+### YAPCアピール終わり
+
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/yapc_blog.jpg" backface-filter="blur(0px) brightness(.3)">
+## ブログ
+
+
+- ・[IoTやるならまず知っておきたいパーツ屋・オンラインショップ - Qiita](http://qiita.com/kazuph/items/86a1f88e06ff874abe68)
+- ・[Webエンジニアが組み込みプログラミングをすることになったときに知っておきたかったC言語の知識 - Qiita](http://qiita.com/kazuph/items/4b6f0856c555242f3fd5)
+- ・[IoTアプリをつくりたいと思ったあとにまず試すべきBLE開発Kitたち - Qiita](http://qiita.com/kazuph/items/9d97c2fc654df90e8692)
+- ・[3Dプリンターの状況をRaspberry PiとSlackで確認したい - Qiita](http://qiita.com/kazuph/items/cfdd0eec8ef069f8aa0f)
+- ・[USB接続できないArduinoにソースを書き込むとき - Qiita](http://qiita.com/kazuph/items/06e97f5a697b123aac30)
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/yapc_akerun.jpg" backface-filter="blur(0px) brightness(.3)">
+## スマートロックロボットAkerun
+
+
+- ・株式会社Photosynthのメインプロダクト
+- ・2015/4/23より発送開始
+- ・世界初の完全後付けスマートロック
+- ・自分の部屋の鍵をスマートフォンから開閉可能に
+- ・鍵をデジタルにすることで、合鍵のシェアの煩わしさを劇的に改善
+- ・既存の埋込み式の電子錠に比べて圧倒的に安価
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/yapc_akerun.jpg" backface-filter="blur(0px) brightness(.3)">
+## スマートロックロボットAkerun
+
+
+<video src="https://akerun.com/video/akerun_intro.mp4" width="100%" controls></video></template>
+<template layout="bullets" type="text/x-markdown">
+## Akerunが生まれた流れ
+
+
+- アイディアが出たのは飲み会でのこと
+- この世で一番HackされてないものをHackしたいと思った
+- 週末に大手メーカー・キャリア・IT系ベンチャー企業の若手が集まって活動を開始した
+- その活動が取材され日経新聞に取り上げられる
+- 当時25から27歳のメンバー6人で起業して一気に製品化へ！
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="https://scontent-nrt1-1.xx.fbcdn.net/hphotos-xtf1/v/t1.0-9/10456220_701406269912679_125006747612020239_n.jpg?oh=2dcd9a4987910db4bf10c4c97122d028&oe=567A132B" backface-filter="blur(0px) brightness(.3)">
+## 当時の日経新聞
+
+![nikkei](./images/nikkei.jpg)</template>
+<template layout="bullets" type="text/x-markdown">
+## Akerunが生まれた時代的背景
+
+
+- IoT(Internet of Things)技術の発達
+- 直訳は「モノのインターネット」
+- BLEという低消費電力な通信技術の開発とスマフォへの普及
+- クラウドファウンディングとの掛け算も相まって加速</template>
+<template layout="bullets" type="text/x-markdown">
+## モノをHackする時代になった
+</template>
+<template layout="bullets" type="text/x-markdown">
+## そんな中でWebの知識を持ったハード・組み込みエンジニアの重要性がさら上がっていく
+</template>
+<template layout="bullets" type="text/x-markdown">
+## 今回はその「1パターン」として、Webエンジニアが組み込みエンジニアになるまでをお話します。
+</template>
+<template layout="bullets" type="text/x-markdown">
+## Agenda
+
+
+1. Web由来の組み込みエンジニアが生まれるまで
+1. 本番製品開発へ
+1. Webエンジニアの重要性</template>
+<template layout="bullets" type="text/x-markdown">
+# 1. Web由来の組み込みエンジニアが生まれるまで
+</template>
+<template layout="bullets" type="text/x-markdown">
+### IoTプロダクト開発役割分担
+
+
+![yapc_role](./images/yapc_role.png)
+
+※この他に製造・部品調達・販売・CSなど</template>
+<template layout="bullets" type="text/x-markdown">
+### 定義
+
+
+- メカ…筐体制作・3DCAD・3Dプリンターで試作・金型製造・部品調達
+- エレキ…回路図作成・基板作成・電子部品調達
+- ファームウェア…ハードの制御・通信部分プログラミング
+- ※他は知っての通り</template>
+<template layout="bullets" type="text/x-markdown">
+### 開発の流れ
+
+
+![yapc_schedule](./images/yapc_schedule.png)
+
+※厳密にはメカ・エレキ・ファームによって呼び方は異なる</template>
+<template layout="bullets" type="text/x-markdown">
+### 開発の忙しさの波
+
+
+- 変更が難しい物から忙しさの波がくる
+    - ・メカ ---> エレキ---> ファーム
+- メカ…金型をつくった以降はほぼ変更できない
+- エレキ…最終的な形状が決まらないと、基板の形をFixできない。
+- ファーム…エレキが固定されないとファームの実装も固定できない。盛り込みたい機能と販売までを逆算して、QAが完了できる十分な時間が確保できるように、メカ・エレキが長引かない用に協力する。</template>
+<template layout="bullets" type="text/x-markdown">
+### 開発の忙しさの波 理想
+
+
+![yapc_schedule](./images/yapc_busy_wave_idea.jpeg)</template>
+<template layout="bullets" type="text/x-markdown">
+### 開発の忙しさの波 実際 エグい
+
+
+![yapc_schedule](./images/yapc_busy_wave_real.jpeg)</template>
+<template layout="bullets" type="text/x-markdown">
+### メカ・エレキ「あとはファームでカバー」
+
+
+- Webの世界でいうところの「あとは運用でカバー的」な
+- 偉い方に聞いても「最後はファームでなんとかするんだよ」</template>
+<template layout="bullets" type="text/x-markdown">
+### こんなことを知らなかった自分は、純粋に組み込みプログラミングをしてみたいと思い、その世界へ足を踏み入れます。
+</template>
+<template layout="bullets" type="text/x-markdown">
+### 組み込みをやってみて必要だったと思うこと
+
+
+- エレキの知識
+    - ・最低限回路図を読める(ソフトはEagleをつかった)
+    - ・回路図に文句が言える
+    - ・簡単な回路なら自分でハンダ付けして作れる
+    - ・各電子部品のデーターシートが読める</template>
+<template layout="bullets" type="text/x-markdown">
+### 組み込みをやってみて必要だったと思うこと
+
+
+- C/C++がゴリゴリ書ける
+    - ・苦しんで覚えた → [苦しんで覚えるC言語](http://9cguide.appspot.com/)
+- 「物理」的な考え方ができる(数式, xy, 速度, 時間, 角度)
+- デジタルマルチメーターとオシロスコープと友達になること
+    - ・電圧を取得したり波形見るため
+    - ・デバッグではログ以外にこれが必須です！！</template>
+<template layout="bullets" type="text/x-markdown">
+### Arduinoで練習
+
+
+- プロトタイプ・デモ機がつくりやすい
+- 簡単にPC/Macと連動する開発環境が手に入ることが魅力
+- 本番製品に入る前にある程度の予習ができる</template>
+<template layout="bullets" type="text/x-markdown">
+### まずはLチカから
+
+
+- Web業界で言うところの「Hello World」
+- LEDをチカチカ点滅させること</template>
+<template layout="bullets" type="text/x-markdown">
+### 続いてLフワ
+
+
+- LEDをフワフワ点滅させる
+- ArduinoではPWMの関数を使うとすぐできる
+
+<video src="./movies/l_fuwa.mp4" width="100%" controls></video>
+</template>
+<template layout="bullets" type="text/x-markdown">
+### Arduinoで学んでおいて製品に引き継げたもの 1
+
+
+- setup後に無限に動くloopの中で処理を記述するというベースの考え方
+- PWMの知識
+    - ・パルス幅変調
+    - ・デジタル値(0か1)しか出力できないPINでも、周期的に変化させることで、アナログな値を出力できる
+- GPIO制御の知識
+    - ・マイコンから伸びる回路の制御ピン。入力・出力・割り込みなど汎用的に使える。</template>
+<template layout="bullets" type="text/x-markdown">
+### Arduinoで学んでおいて製品に引き継げたもの 2
+
+
+- Timerの知識
+    - ・コールバック関数を定義しておいてそれが一定周期で呼ばれる
+    - ・while内で自前でカウントする必要がない
+- I2Cの知識
+    - ・ある決まったプロトコルで他の電子部品と通信できる
+    - ・電圧の生の値をマイコンが観測するのでなく、数値として送られてくる
+    - ・手順がパーツにより違うのでデータシートを精読する必要</template>
+<template layout="bullets" type="text/x-markdown">
+### Arduinoで製品に引き継げなかったもの
+
+
+- ずっとマイコンが起きている前提のプログラミング書き方
+    - ・消費電力のことを考えるとずっと起きているのは非効率
+    - ・ある程度長い処理はWatchDogで殺す必要があった
+- C++/Arduinoでしかない記法・便利関数
+- ググればブログが出てきたという経験</template>
+<template layout="bullets" type="text/x-markdown">
+### IoTにおける追加で必要な知識
+
+
+- BLE(Bluetooth Low Energy)
+    - ・それ自体の知識
+    - ・選定チップでのBLEまわりの操作方法
+    - ・検証のためにiOS/Android側でのBLEの実装の知識
+- 【重要】セキュリティの知識</template>
+<template layout="bullets" type="text/x-markdown">
+### BLE
+
+
+- Bluetooth 4.0から導入された比較的新しい規格
+- Bluetooth Low Energyの名のごとく低消費電力
+    - ・ただしそもそもの概念が少ない通信量を低頻度で行うことを前提にしているので、頻繁にデータを転送すると以前のBluetoothの消費電力近づく
+    - ・設計でだいぶ消費電力が変わる
+- GATTというプロファイルを開発者が自由に設定して通信に利用する
+- iOS/Androidで今では標準搭載されている
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/ble_serial.jpg" backface-filter="blur(0px) brightness(.3)">
+### BLEはBLESerialで練習
+
+
+- ・Arduinoとスマフォ間でシリアル通信できる
+- ・サンプルが必要十分にある
+- ・GATTはいじれないのでプロトタイプ向き</template>
+<template layout="bullets" type="text/x-markdown">
+### 初期の開発風景 1
+
+![genba](https://scontent-nrt1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/13905_835256983160803_5110222059113492163_n.jpg?oh=f92a7908419dbc390d2cb568b35c16cb&oe=563F7B0E)</template>
+<template layout="bullets" type="text/x-markdown">
+### 初期の開発風景 2
+
+![proto2](./images/yapc_proto2.png)</template>
+<template layout="bullets" type="text/x-markdown">
+### プロトタイプ・デモ機開発
+
+
+ものすごく簡単にできちゃうように見える図
+
+![demo_flow](./images/yapc_demo_flow.png)
+</template>
+<template layout="bullets" type="text/x-markdown">
+### 現実
+
+
+![demo_real](./images/yapc_demo_real.JPG)</template>
+<template layout="bullets" type="text/x-markdown">
+### プロトタイプ完成！
+
+
+<video src="./movies/first_demo.mp4" width="100%" controls></video></template>
+<template layout="bullets" type="text/x-markdown">
+### こんな感じで何かできるたびに喜びを味わってすごしていました
+
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="https://scontent-nrt1-1.xx.fbcdn.net/hphotos-xpt1/t31.0-8/1799071_975586502468249_3405795351721725709_o.jpg" backface-filter="blur(0px) brightness(.3)">
+### デモ機を使ったプレゼンの様子
+</template>
+<template layout="bullets" type="text/x-markdown">
+### 最初につくったデモ機はプレゼン・資金調達としてのデモで大活躍しました。
+</template>
+<template layout="bullets" type="text/x-markdown">
+### ときたまデモが失敗…
+
+
+- BLEの通信に失敗する・アプリが何故か落ちる
+- 会場のBLEの電波を発信している数が100を超えていた…
+- できれば機内モードにしてもらうのがベスト
+- 他のBLEを使ってるベンチャーでもプレゼンやデモは失敗することが多いと聞きました</template>
+<template layout="bullets" type="text/x-markdown">
+# 2. 本番製品開発へ
+
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/52.jpg" backface-filter="blur(0px) brightness(.3)">
+### Arduinoから本番製品へ
+
+
+- ・本番製品でArduinoを使うのは「大学の入学式にお母さんと一緒に行くようなもの」
+- ・使うマイコン・BLEのチップを選定
+- ・使うチップのSDKを学び直す
+- ・Arduinoのライブラリに頼っていた部分はSDKにあるものを使うか自前で書く
+- ・今だとNordicが熱そう！</template>
+<template layout="bullets" type="text/x-markdown">
+### 開発環境
+
+
+- Macで大丈夫なやつを選んだ
+- 某社製BLEチップの開発環境はEclipseベースで魔改造してあった
+- だかしかしVimmer!!!
+- まずどういう仕組みでビルドされてるか確認する
+    - ・CLIでmakeするだけでいいとわかる</template>
+<template layout="bullets" type="text/x-markdown">
+### デバッグは？
+
+
+- 提供Eclipseなら標準でシリアルモニターがついている
+- Macにアプリをいれてデバッグ時でもEclipseを起動しなくていいようにした
+    - ・[CoolTerm](http://freeware.the-meiers.org/)を使用した</template>
+<template layout="bullets" type="text/x-markdown">
+### 以降Vimしか起動しなかった( ･`д･´)v
+</template>
+<template layout="bullets" type="text/x-markdown">
+### 本番製品におけるソフトウェア設計
+
+
+![yapc_role2](./images/yapc_role2.png)</template>
+<template layout="bullets" type="text/x-markdown">
+### 本番製品におけるソフトウェア設計
+
+
+![yapc_software](./images/yapc_software.png)</template>
+<template layout="bullets" type="text/x-markdown">
+### セキュリティ
+
+
+- BLE自体のセキュリティは弱い(4.0当時)
+- 独自実装はせずに汎用的な技術で固める
+    - ・AES256, HMAC, RSA
+- (防御)プロに設計をレビューしてもらう
+    - ・提携先であったドコモのセキュリティのプロの方にレビューを依頼していた
+- (攻撃)プロに脆弱性がないか検証してもらう
+    - ・BLEのスニッフもできる2社に攻撃してもらい問題がないことを確認した</template>
+<template layout="bullets" type="text/x-markdown">
+### セキュリティ 学習
+
+
+- プロについていくための最低限
+- [マスタリングTCP/IP 情報セキュリティ編: 齋藤 孝道: 本](http://www.amazon.co.jp/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0TCP-IP-%E6%83%85%E5%A0%B1%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E7%B7%A8-%E9%BD%8B%E8%97%A4-%E5%AD%9D%E9%81%93/dp/4274069214)
+- [新版暗号技術入門 秘密の国のアリス: 結城 浩: 本](http://www.amazon.co.jp/%E6%96%B0%E7%89%88%E6%9A%97%E5%8F%B7%E6%8A%80%E8%A1%93%E5%85%A5%E9%96%80-%E7%A7%98%E5%AF%86%E3%81%AE%E5%9B%BD%E3%81%AE%E3%82%A2%E3%83%AA%E3%82%B9-%E7%B5%90%E5%9F%8E-%E6%B5%A9/dp/4797350997)
+
+![yapc_security_book](./images/yapc_security_book.png)
+</template>
+<template layout="bullets" type="text/x-markdown">
+### 基本スタンス
+
+
+「わからないこと・自信のないことはプロにすぐ相談する」
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/yapc_ble_bootcamp.jpg" backface-filter="blur(0px) brightness(.3)">
+### BLE Boot Camp
+
+
+日本で一番BLE濃度の高いイベンドで、他の開発者の人とつながりあった
+
+特にBLEのコンサルや受託開発を数多くこなしている[上原昭宏さん](https://www.google.co.jp/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=%E4%B8%8A%E5%8E%9F%E6%98%AD%E5%AE%8F)や[IRKitの大塚さん](http://maaash.jp/2014/09/blebootcamp-willpower/)に講義をしてもらったのはすごい良かった。
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/yapc_2233.JPG" backface-filter="blur(0px) brightness(.3)">
+### 堤修一さん
+
+
+[iOSのBLEマスターである堤修一さん](http://www.amazon.co.jp/dp/4883379736)にBLEについて教えてもらった
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="http://cdn.engineer.typemag.jp/wp-content/uploads/2013/02/pluto_2.jpg" backface-filter="blur(0px) brightness(.3)">
+### Pluto
+
+
+[現役大学生ら3人が開発した、「普通の家電」をスマート家電にするデバイス『Pluto』がすごい【連載:NEOジェネ！】](http://engineer.typemag.jp/article/pluto-neo)
+
+0からハードをつくる部分、当時IoTって言葉も浸透してないころから、IoTをやっていた。
+
+3人でこれがつくれるのか！と個人の能力の高さに嫉妬し、そして追いつきたいと思った。
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/yapc_fukaya.jpg" backface-filter="blur(0px) brightness(.3)">
+### 元NECの74歳現役回路アドバイザー
+
+
+- ・シニアモードというサービスで知り合った、みんなで電子回路を教えてもらったりもした
+- ・電子回路の講義のときに「僕の人生そのものが電気回路の説明になるから〜」といって、戦後の少年時代にラジオをつくった話から講義が始まったりもした</template>
+<template layout="bullets" type="text/x-markdown">
+### その他にも多くのプロの方に協力をいただいた
+</template>
+<template layout="bullets" type="text/x-markdown">
+### アポは全部FBで取れる時代
+
+
+会社員だったころは絶対に会えなかった人にFB経由でアポを取って会いに行った。
+
+そういったことができるのが、なにか新しいことをやるときの強みだと思った。</template>
+<template layout="bullets" type="text/x-markdown">
+### プロに教えてもらうことで、自分たちもそのノウハウを吸収し、なにもないベンチャーから実際に製品を販売できるところまで到達できた
+</template>
+<template layout="bullets" type="text/x-markdown">
+# 3. Webエンジニアの重要性
+</template>
+<template layout="bullets" type="text/x-markdown">
+### IoTプロダクトの全体設計ができる
+
+
+- ハード・ソフトを両方行き来できる人が必要
+- 全体のアーキテクチャを見ることができるか？
+- 通信のセキュリティの概念・実装
+- Webからの設定変更・合鍵の権限確認・初期化
+- OTADFUで進化できる</template>
+<template layout="bullets" type="text/x-markdown">
+### 出荷管理・検査の自動化・Web化ができる
+
+
+- 出荷アプリケーションをSinatraで１日で原型をつくった
+- APIを使ってID管理
+- 作業者がChromeからボタンクリックでファームの書き込みができるようにした
+- 書き込み成功・エラー時にSlackへ通知
+- 工場の管理がSlackでできるようになった
+- ハードの世界だけだとWeb化するのは画期的</template>
+<template layout="bullets" type="text/x-markdown">
+### 検査アプリ・オートメーション化
+
+
+- ファームのセンサーの値をBLEでスマフォにNotificationしてセンサーの出力を検査できるようにした
+- 作業員にiPod Touchを渡してボタンを押せば接続し検査できるようにした
+- 現在はMacアプリを用いることでで自動化された
+- 検査したときの値はDBにためて、不具合解析に当てることが可能になった</template>
+<template layout="bullets" type="text/x-markdown">
+# 最後に
+</template>
+<template layout="bullets" type="text/x-markdown">
+### 普通の会社だったころと違ったこと
+
+
+- 起業していたこと
+- 競合が販売がせまっていること
+- 失敗したら死ぬ、という恐怖があったこと
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/yapc_all_you_need_is_kill.png" backface-filter="blur(0px) brightness(.3)">
+## All You Need is Kill
+
+
+- 「今、この瞬間から次の瞬間を予測し対策を立て、最善の動きをする・・・！」
+- 「時間は伸びない、だが無限に分割することができる・・・！」
+- 「一秒を一秒だと思っている奴は今の僕には勝てない」
+- 「一秒を切り刻め」</template>
+<template layout="bullets" type="text/x-markdown">
+### 自分にとって一番の学びは「これがベンチャーだ！」って言える経験ができたことだった。
+</template>
+<template layout="bullets" type="text/x-markdown">
+### 口癖は「大手メーカにスピードで負けたら、ベンチャーを起業した意味がない…！」だった。
+</template>
+<template layout="bullets" type="text/x-markdown">
+### そして
+</template>
+<template layout="bullets" type="text/x-markdown">
+### 2015月4月23日、初期ロットのAkerunが無事出荷された
+</template>
+<template layout="bullets" type="text/x-markdown">
+### 2014年9月1日に起業してから半年ほどが経過していた
+</template>
+<template layout="bullets" type="text/x-markdown">
+### そして今日が出荷から4ヶ月後の、2015月8月21日―
+</template>
+<template layout="bullets" type="text/x-markdown">
+### まとめ
+
+
+- 週末の日曜電子工作でも続けていることで成果につながるかも
+- Webエンジニアでも組み込みエンジニアになれる
+- Webエンジニアの発想がハードウェアベンチャーを助ける
+- 人のつながりを大事にして開発を加速させる
+- 起業はスリリングだけどすごい楽しい！</template>
+<template layout="bullets" type="text/x-markdown">
+## あなたもハードウェアの世界に飛び込んで見ませんか？
+
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="https://scontent-nrt1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10942451_1023549507671948_919270398936165489_n.jpg?oh=72508f20f69fc0ce2e1a023b6598bc4c&oe=5678C1FF" backface-filter="blur(0px) brightness(.3)">
+## 採用情報
+
+
+株式会社PhotosynthではIoTに興味のあるWeb・アプリエンジニアの方を募集しています！</template>
+<template layout="bullets" type="text/x-markdown">
+## ご清聴ありがとうございました
+
+
+</template>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script src="./dist/talkie.js"></script>
+<script>
+var talkie = Talkie({wide: false});
+
+talkie.next.plug(talkie.control.keydown('s'));
+talkie.next.plug(talkie.control.keydown('n'));
+talkie.prev.plug(talkie.control.keydown('a'));
+talkie.prev.plug(talkie.control.keydown('p'));
+
+document.addEventListener('DOMContentLoaded', function() {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('[layout]'));
+  talkie.changed.onValue(function(current) {
+    console.clear();
+    // print presenter notes
+    console.info(talkie.notes[current.getAttribute('page')]);
+  });
+});
+</script>
+</body>
+</html>

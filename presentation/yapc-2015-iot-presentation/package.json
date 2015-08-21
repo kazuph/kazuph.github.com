@@ -1,0 +1,76 @@
+{
+  "name": "talkiejs",
+  "version": "0.8.3",
+  "description": "Simple slide presentation library. Responsive scaling & markdown ready.",
+  "main": "dist/talkie.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "npm run build && serve .",
+    "test": "npm run lint && karma start --singleRun",
+    "watch": "gulp watch-css & npm run watchify & serve .",
+    "lint": "gulp lint",
+    "build": "gulp build",
+    "patch": "npm version patch -m \"bump v%s !\"",
+    "minor": "npm version minor -m \"bump v%s !!\"",
+    "major": "npm version major -m \"bump v%s !!!\"",
+    "tdd": "karma start",
+    "watchify": "watchify src/index.js -o dist/talkie.js --debug --verbose --transform=babelify --standalone=Talkie"
+  },
+  "files": [
+    "src",
+    "dist",
+    "README.md",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahomu/Talkie"
+  },
+  "author": "ahomu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahomu/Talkie/issues"
+  },
+  "homepage": "https://github.com/ahomu/Talkie",
+  "dependencies": {
+    "baconjs": "^0.7.42",
+    "keycode": "^2.1.0",
+    "markdown-it": "^4.2.1",
+    "object-assign": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^5.3.1",
+    "babel-eslint": "^3.1.10",
+    "babel-plugin-espower": "^0.4.1",
+    "babelify": "^6.1.0",
+    "browserify": "9.0.4",
+    "gulp": "~3.8.10",
+    "gulp-debug": "~1.0.1",
+    "gulp-eslint": "^0.11.1",
+    "gulp-espower": "^0.10.0",
+    "gulp-header": "~1.2.2",
+    "gulp-jshint": "~1.9.0",
+    "gulp-pleeease": "^1.1.0",
+    "gulp-plumber": "~0.6.6",
+    "gulp-rename": "~1.2.0",
+    "gulp-uglify": "~1.0.1",
+    "jshint-stylish": "~1.0.0",
+    "karma": "^0.12.31",
+    "karma-browserify": "^4.0.0",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-cli": "0.0.4",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-mocha": "^0.1.10",
+    "minimist": "^1.1.0",
+    "mocha": "~2.0.1",
+    "power-assert": "^0.11.0",
+    "serve": "^1.4.0",
+    "sinon": "~1.12.2",
+    "testem": "~0.6.18",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^2.4.0"
+  }
+}
