@@ -243,18 +243,6 @@ Chromeに表示、ボタンを押すとファーム書込開始！それだけ�
                 });
             });
         </script>
-        <script>
-            console.log('websocket: connecting...')
-            var socket = io.connect("http://localhost:8080");
-            socket.on('connect', function() {
-                console.log("websocket connected");　
-            });
-            socket.on('click', function(data) {　　
-                // pushを受けて次のページへ
-                talkie.next.push();
-                console.log(data);　
-            });
-        </script>
 </body>
 
 </html>
