@@ -1,0 +1,260 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CTO Night</title>
+    <link rel="stylesheet" href="./dist/talkie.min.css">
+    <link rel="stylesheet" href="./dist/talkie-default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io.min.js"></script>
+</head>
+
+<body>
+
+    <!-- put your slides -->
+
+    
+<template layout="bullets" type="text/x-markdown">
+# 「IoT」は<br>ものづくりを<br>加速する
+
+
+<center>
+<p style="font-size:177%;text-align:center;">
+TechCrunch Tokyo CTO Night<br>
+株式会社フォトシンス CTO 本間和弘
+</p>
+</center>
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/wakate.png" backface-filter="blur(0px) brightness(.5)">
+## 株式会社フォトシンス
+
+
+- ◯創業1年, 調達総額4.7億円, IoTベンチャー
+- ◯NEDO採択、多数の特許出願、若手技術者集団
+- ◯ハード/ソフト両方を内製している数少ないIoTベンチャーです
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/yapc_akerun.jpg" backface-filter="blur(0px) brightness(.5)">
+## メインプロダクト
+
+
+- ◯スマートロック「Akerun」の開発・提供
+- ◯Akerun…スマートフォンで鍵の開閉、ネットワークを介した合鍵共有
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/yapc2015-01.jpg" backface-filter="blur(0px) brightness(.5)">
+### 自己紹介
+
+
+- ・本間和弘 / @kazuph
+- ・株式会社フォトシンス 創業メンバー CTO
+- ・Webから組み込みまで幅広く開発
+- ・好きなAWSは「AWS IoT」
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/iot_button.jpg" backface-filter="blur(0px) brightness(.5)">
+## 実はこの発表も…「AWS IoT」を使っています！
+</template>
+<template layout="bullets" type="text/x-markdown">
+## プレゼンボタン全体図
+
+
+![iot_button_description](./images/iot_button_description.png)</template>
+<template layout="bullets" type="text/x-markdown">
+### 社内の自由工作で生まれたボタン
+
+
+![自由工作](./images/henshin.png)</template>
+<template layout="bullets" type="text/x-markdown">
+## 本題
+</template>
+<template layout="bullets" type="text/x-markdown">
+### 本題
+
+
+創業時のベンチャーが最初にすること
+
+↓
+
+「一刻も早くプロダクトを市場に出す！」</template>
+<template layout="bullets" type="text/x-markdown">
+### ハードウェア開発期間
+
+
+![yakariyasui](./images/wakariyasui_zu.png)</template>
+<template layout="bullets" type="text/x-markdown">
+### どうやったら開発期間を<br>半年にできるのか？
+</template>
+<template layout="bullets" type="text/x-markdown">
+## 3つの解決方法
+</template>
+<template layout="bullets" type="text/x-markdown">
+## 解決方法 その1
+
+
+<p style="font-size:178%;text-align:center;">「あとからでも変更可能なファームウェア設計」<br>でスピードアップ！</p></template>
+<template layout="bullets" type="text/x-markdown">
+### 従来のファームウェア開発
+
+
+- 製品の出荷後変更はできない
+- 機能は出荷前に全部実装する必要がある
+
+出荷後に変更できないという心理で、仕様や評価がどんどん膨れ上がる</template>
+<template layout="bullets" type="text/x-markdown">
+### 弊社のIoT製品の設計
+
+
+- あとからでも仕様変更できる設計へ
+- 「その機能、今は必要ないよね？」と言える
+
+![atomae](./images/atomae.png)</template>
+<template layout="bullets" type="text/x-markdown">
+### 弊社のIoT製品の設計
+
+
+- デバイスの設定・制御を必ずネット越しに
+- → ファーム側で計算することが大幅に減った
+
+![1-2](./images/1-2.png)</template>
+<template layout="bullets" type="text/x-markdown">
+### 無駄な開発を省き<br>出荷までをスピードアップ！
+</template>
+<template layout="bullets" type="text/x-markdown">
+## 解決方法 その2
+
+
+<p style="font-size:260%;text-align:center;">「耐久試験の自動化」<br>でスピードアップ！</p></template>
+<template layout="bullets" type="text/x-markdown">
+### 耐久試験
+
+
+- Akerunは10万回の開閉試験を行った
+
+普通にファームだけで動かしても、問題の原因特定や停止がすぐに検知できない</template>
+<template layout="bullets" type="text/x-markdown">
+### 弊社の耐久試験
+
+
+- iOSでAkerunのテストスクリプトを書いた
+- リアルタイムに問題や停止などがわかる
+
+![taikyu](./images/taikyu_gram.png)</template>
+<template layout="bullets" type="text/x-markdown">
+### 耐久試験を自動化して<br>スピードアップ！
+</template>
+<template layout="bullets" type="text/x-markdown">
+## 解決方法 その3
+
+
+<p style="font-size:224%;text-align:center;">「ハードウェア製造工程のウェブ化」でスピードアップ！</p></template>
+<template layout="bullets" type="text/x-markdown">
+### 製品の完成後は？
+
+
+Capistranoで3分でデプロイ？
+
+とはいきません！
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="./images/kojo.jpg" backface-filter="blur(0px) brightness(.5)">
+### 製品の「製造」が必要です！
+
+
+筐体作成 回路基板作成 筐体組み立て作業 ファームウェア書き込み 筐体組み込み 動作チェック 接着 ID付与 梱包 出荷・・・
+
+この製造の工程を効率化したい！！</template>
+<template layout="bullets" type="text/x-markdown">
+### 「それWeb APIでできるよ？」
+</template>
+<template layout="bullets" type="text/x-markdown">
+### ファーム書き込みくん
+
+
+Chromeに表示、ボタンを押すとファーム書込開始！それだけ！
+
+![k1](./images/kakikomikun1.png)</template>
+<template layout="bullets" type="text/x-markdown">
+### 工場に行かなくても問題検知!
+
+
+- エラーがあればSlackへ通知
+- ツール自体のオンラインアップデート
+
+![k3](./images/kakikomikun3.png)</template>
+<template layout="bullets" type="text/x-markdown">
+### 製造工程の自動化で管理コストも<br>作業時間も大幅ダウン！
+
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="images/kaiken2.png" backface-filter="blur(0px) brightness(.5)">
+## 結果
+
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="images/kaiken.png" backface-filter="blur(0px) brightness(.5)">
+### 結果
+
+
+- 2014/09 創業
+- 2015/03 記者会見で量産品でのデモ
+- 2015/04 出荷開始</template>
+<template layout="bullets" type="text/x-markdown">
+### 初めてのハードウェア開発
+</template>
+<template layout="bullets" type="text/x-markdown">
+### Webのちからを<br>ものづくり自体に組み込む
+</template>
+<template layout="bullets" type="text/x-markdown">
+### それが僕達の「IoT」です
+
+
+</template>
+<template layout="cover" invert type="text/x-markdown" backface="images/last.jpg" backface-filter="blur(0px) brightness(.5)">
+## ご清聴ありがとう<br>ございました！
+
+
+</template>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+        <script src="./dist/talkie.js"></script>
+        <script>
+            var talkie = Talkie(
+            {
+                wide: false
+            });
+
+            talkie.next.plug(talkie.control.keydown('s'));
+            talkie.next.plug(talkie.control.keydown('n'));
+            talkie.prev.plug(talkie.control.keydown('a'));
+            talkie.prev.plug(talkie.control.keydown('p'));
+
+            document.addEventListener('DOMContentLoaded', function()
+            {
+                var slides = Array.prototype.slice.call(document.querySelectorAll(
+                    '[layout]'));
+                talkie.changed.onValue(function(current)
+                {
+                    // console.clear();
+                    // print presenter notes
+                    console.info(talkie.notes[current.getAttribute(
+                        'page')]);
+                });
+            });
+        </script>
+        <script>
+            console.log('websocket: connecting...')
+            var socket = io.connect("http://localhost:8080");
+            socket.on('connect', function() {
+                console.log("websocket connected");　
+            });
+            socket.on('click', function(data) {　　
+                // pushを受けて次のページへ
+                talkie.next.push();
+                console.log(data);　
+            });
+        </script>
+</body>
+
+</html>
