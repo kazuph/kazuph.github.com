@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CTO Night</title>
+    <title>「IoT」はものづくりを加速する | TechCrunch Tokyo 2015 CTO Night</title>
     <link rel="stylesheet" href="./dist/talkie.min.css">
     <link rel="stylesheet" href="./dist/talkie-default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
@@ -13,7 +13,7 @@
 
     <!-- put your slides -->
 
-    
+
 <template layout="bullets" type="text/x-markdown">
 # 「IoT」は<br>ものづくりを<br>加速する
 
@@ -241,18 +241,6 @@ Chromeに表示、ボタンを押すとファーム書込開始！それだけ�
                     console.info(talkie.notes[current.getAttribute(
                         'page')]);
                 });
-            });
-        </script>
-        <script>
-            console.log('websocket: connecting...')
-            var socket = io.connect("http://localhost:8080");
-            socket.on('connect', function() {
-                console.log("websocket connected");　
-            });
-            socket.on('click', function(data) {　　
-                // pushを受けて次のページへ
-                talkie.next.push();
-                console.log(data);　
             });
         </script>
 </body>
